@@ -31,7 +31,7 @@ namespace Entidades
         /// <returns>El resultado de la operacion o 0 en caso de caracter invalido</returns>
         public static double Operar(Operando num1,Operando num2,char operador)
         {
-            double operacion = 0;
+            double operacion = num1 + num2;
             if (ValidarOperador((char)operador))
             {
                 switch (operador)
