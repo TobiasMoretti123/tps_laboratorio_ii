@@ -19,7 +19,7 @@ namespace Entidades
             this.numero = 0;
         }
 
-        public Operando(double numero)
+        public Operando(double numero):this()
         {
             this.numero = numero;
         }
@@ -119,10 +119,7 @@ namespace Entidades
             {
                 return numero;
             }
-            else
-            {
-                return 0;
-            }
+            return 0;
         }
         /// <summary>
         /// Resta dos objetos de tipo operando
