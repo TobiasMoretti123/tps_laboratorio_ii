@@ -60,14 +60,23 @@ namespace Entidades
             {
                 switch (tipo)
                 {
-                    case ETipo.Camioneta:
-                        sb.AppendLine(v.Mostrar());
-                        break;
                     case ETipo.Moto:
-                        sb.AppendLine(v.Mostrar());
+                        if (v.GetType() == typeof(Ciclomotor))
+                        {
+                            sb.AppendLine(v.Mostrar());
+                        }
                         break;
                     case ETipo.Automovil:
-                        sb.AppendLine(v.Mostrar());
+                        if (v.GetType() == typeof(Sedan))
+                        {
+                            sb.AppendLine(v.Mostrar());
+                        }
+                        break;
+                    case ETipo.Camioneta:
+                        if (v.GetType() == typeof(Suv))
+                        {
+                            sb.AppendLine(v.Mostrar());
+                        }
                         break;
                     default:
                         sb.AppendLine(v.Mostrar());
