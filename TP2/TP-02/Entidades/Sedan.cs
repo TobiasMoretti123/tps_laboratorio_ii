@@ -20,25 +20,23 @@ namespace Entidades
         /// <param name="chasis"></param>
         /// <param name="color"></param>
         public Sedan(EMarca marca, string chasis, ConsoleColor color)
-            : base(chasis, marca, color)
+            : this (marca, chasis, color,ETipo.CuatroPuertas)
         {
-            tipo = ETipo.CuatroPuertas;
         }
 
         public Sedan(EMarca marca, string chasis, ConsoleColor color, ETipo tipo)
-           : base(chasis, marca, color)
+            :base (chasis, marca, color)
         {
             this.tipo = tipo;
         }
-
         /// <summary>
         /// Sedan son 'Mediano'
         /// </summary>
-        public override ETamanio Tamanio
+        protected override Vehiculo.ETamanio Tamanio
         {
             get
             {
-                return ETamanio.Mediano;
+                return Vehiculo.ETamanio.Mediano;
             }
         }
 
@@ -47,8 +45,7 @@ namespace Entidades
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine("SEDAN");
-            sb.AppendLine(base.Mostrar());
-            sb.AppendLine("");
+            sb.AppendLine((string)this);
             sb.AppendFormat("TAMAÑO : {0}", this.Tamanio);
             sb.AppendLine("TIPO : " + this.tipo);
             sb.AppendLine("");

@@ -26,22 +26,17 @@ namespace Entidades
         /// <summary>
         /// ReadOnly: Retornará el tamaño
         /// </summary>
-        public abstract ETamanio Tamanio
-        {
-            get ; 
+        protected abstract ETamanio Tamanio   
+        {   
+            get;  
         }
-        public Vehiculo(string chasis,EMarca marca,ConsoleColor color)
-        {
-            this.chasis = chasis;
-            this.marca = marca;
-            this.color = color;
-        }
+
         /// <summary>
         /// Publica todos los datos del Vehiculo.
         /// </summary>
         /// <returns></returns>
         public virtual string Mostrar()
-        {          
+        {
             return (string)this;
         }
 
@@ -52,7 +47,7 @@ namespace Entidades
             sb.AppendFormat("CHASIS: {0}\r\n", p.chasis);
             sb.AppendFormat("MARCA : {0}\r\n", p.marca.ToString());
             sb.AppendFormat("COLOR : {0}\r\n", p.color.ToString());
-            sb.AppendFormat("---------------------");
+            sb.AppendLine("---------------------");
 
             return sb.ToString();
         }
@@ -75,7 +70,14 @@ namespace Entidades
         /// <returns></returns>
         public static bool operator !=(Vehiculo v1, Vehiculo v2)
         {
-            return !(v1==v2);
+            return (v1.chasis == v2.chasis);
+        }
+
+        public Vehiculo (string chasis,EMarca marca, ConsoleColor color)
+        {
+            this.chasis = chasis;
+            this.marca = marca;
+            this.color = color;
         }
     }
 }
