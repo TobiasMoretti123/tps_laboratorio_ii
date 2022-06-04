@@ -1,0 +1,16 @@
+Nombre Jugador: Agustin
+Personaje: Clase: GUERRERO
+Nombre Personaje: Megumin
+Vida del personaje: 21
+FUE: 3
+DES: 4
+CONS: -1
+INT: -1
+SAB: 0
+CAR: 0
+Tipo de arma: Espada
+
+
+
+
+
