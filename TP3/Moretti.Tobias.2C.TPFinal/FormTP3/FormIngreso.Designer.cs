@@ -184,7 +184,7 @@
             // 
             // grbCaracteristicas
             // 
-            this.grbCaracteristicas.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.grbCaracteristicas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.grbCaracteristicas.Controls.Add(this.txtVidaPersonaje);
             this.grbCaracteristicas.Controls.Add(this.lblVida);
             this.grbCaracteristicas.Controls.Add(this.txtCarisma);

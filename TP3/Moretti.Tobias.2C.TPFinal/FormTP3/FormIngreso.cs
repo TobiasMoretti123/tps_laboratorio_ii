@@ -205,6 +205,6 @@ namespace FormIngreso
                 }
                 VentanaDeErrores(excepciones);
             }
-        }     
+        }
     }
 }

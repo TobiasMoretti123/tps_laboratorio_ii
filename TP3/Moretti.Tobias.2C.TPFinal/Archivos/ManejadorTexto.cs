@@ -4,22 +4,21 @@ using Excepciones;
 
 namespace Archivos
 {
+    /// <summary>
+    /// Clase que maneja los archivos de texto utilizando la interfaz de manejo de datos
+    /// </summary>
     public class ManejadorTexto : IManejadorDatos<string>
     {
         /// <summary>
-        /// Guarda el string que recibe como parametro en la ruta especificada
-        /// Si el archivo no exite lo crea
-        /// Si el archivo existe pisa el contenido
-        /// Si el directorio no existe lanza una ArchivoException
+        /// Guarda el archivo a modo de texto, si no existe lo crea
         /// </summary>
-        /// <param name="path">ruta de directorios</param>
-        /// <param name="nombreArchivo">nombre del archivo con sus extension</param>
-        /// <param name="contenido"> texto a guardar</param>
+        /// <param name="nombreArchivo">El nombre/ruta del archivo donde guardar</param>
+        /// <param name="contenido">El contenido a guardar</param>
+        /// <exception cref="ArchivoException">Esta excepcion es lanzada cuando no encuentra su directorio</exception>
         public void Guardar(string nombreArchivo, string contenido)
         {
             try
             {
-                //Pat.Combine combina dos string en una ruta
                 string rutaCompleta = Path.Combine(nombreArchivo);
 
                 using (StreamWriter streamWriter = new StreamWriter(rutaCompleta))
@@ -40,12 +39,11 @@ namespace Archivos
 
         }
         /// <summary>
-        /// Lee el archivo en la ruta especificada
+        /// Lee el archivo
         /// </summary>
-        /// <param name="path">ruta de directoros</param>
-        /// <param name="nombreArchivo">nombre del archivo y su extension</param>
-        /// <returns>contenido del archivo</returns>
-        /// <exception cref="ArchivoException">si el directorio o el archivo no existe</exception>
+        /// <param name="nombreArchivo">El archivo a leer</param>
+        /// <returns></returns>
+        /// <exception cref="ArchivoException">Esta excepcion es lanzada cuando no encuentra el archivo o su directorio</exception>
         public string Leer(string nombreArchivo)
         {
             try

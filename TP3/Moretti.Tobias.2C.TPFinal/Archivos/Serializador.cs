@@ -7,42 +7,50 @@ using Excepciones;
 
 namespace Archivos
 {
+    /// <summary>
+    /// Clase que serializa archivos de tipo json y xml utilizando la interfaz de manejo de datos
+    /// </summary>
+    /// <typeparam name="T">dato a serializar</typeparam>
     public class Serializador<T> : IManejadorDatos<T>
         where T : class, new()
     {
+        /// <summary>
+        /// Atributo estatico manejador de archivos del serializador
+        /// </summary>
         static ManejadorTexto manejadorArchivos;
 
+        /// <summary>
+        /// Constructor estatico de serializador que inicializa el atributo manejador de archivos
+        /// </summary>
         static Serializador()
         {
             manejadorArchivos = new ManejadorTexto();
         }
 
+        /// <summary>
+        /// Guarda el archivo json o xml a modo de texto
+        /// verifica si la extencion es json para guardarlo como tal si no lo guarda como xml
+        /// </summary>
+        /// <param name="nombreArchivo">El nombre/ruta del archivo a guardar</param>
+        /// <param name="contenido">El contenido a guarda</param>
         public void Guardar(string nombreArchivo, T contenido)
         {
             try
             {
-                //verifica si la extension es json y serializa en json sino xml
                 if (Path.GetExtension(nombreArchivo) == ".json")
                 {
                     JsonSerializerOptions options = new JsonSerializerOptions();
                     options.WriteIndented = true;
-
                     string json = JsonSerializer.Serialize(contenido, options);
-
-                    //Guardo el objeto en formato JSON en un archivo de texto
                     manejadorArchivos.Guardar(nombreArchivo, json);
 
                 }
                 else if (Path.GetExtension(nombreArchivo) == ".xml")
                 {
-                    //Pat.Combine combina dos string en una ruta
                     string rutaCompleta = Path.Combine(nombreArchivo);
-
                     using (StreamWriter streamWriter = new StreamWriter(rutaCompleta))
                     {
                         XmlSerializer serializer = new XmlSerializer(typeof(T));
-
-                        //serializa el objeto y lo guarda en el archivo que recibe en el stream
                         serializer.Serialize(streamWriter, contenido);
                     }
                 }
@@ -57,17 +65,19 @@ namespace Archivos
             }
 
         }
-
+        /// <summary>
+        /// Lee el archivo json o xml, verificando si es json lee json si no lee xml
+        /// </summary>
+        /// <param name="nombreArchivo">El archivo a leer</param>
+        /// <returns>La deserializacion de xml o json del objeto</returns>
         public T Leer(string nombreArchivo)
         {
             try
             {
                 if (Path.GetExtension(nombreArchivo) == ".json")
                 {
-                    //leo el archivo de texto con el objeto serializado en json
                     string json = manejadorArchivos.Leer(nombreArchivo);
 
-                    //recibe el string y lo convierte en objeto
                     return JsonSerializer.Deserialize<T>(json);
                 }
                 if (Path.GetExtension(nombreArchivo) == ".xml")
