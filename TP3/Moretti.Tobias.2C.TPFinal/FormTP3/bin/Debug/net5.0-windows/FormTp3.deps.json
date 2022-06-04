@@ -1,0 +1,65 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "FormTp3/1.0.0": {
+        "dependencies": {
+          "Archivos": "1.0.0",
+          "Biblioteca": "1.0.0",
+          "Excepciones": "1.0.0"
+        },
+        "runtime": {
+          "FormTp3.dll": {}
+        }
+      },
+      "Archivos/1.0.0": {
+        "dependencies": {
+          "Excepciones": "1.0.0"
+        },
+        "runtime": {
+          "Archivos.dll": {}
+        }
+      },
+      "Biblioteca/1.0.0": {
+        "dependencies": {
+          "Archivos": "1.0.0",
+          "Excepciones": "1.0.0"
+        },
+        "runtime": {
+          "Biblioteca.dll": {}
+        }
+      },
+      "Excepciones/1.0.0": {
+        "runtime": {
+          "Excepciones.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FormTp3/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Archivos/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Biblioteca/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Excepciones/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

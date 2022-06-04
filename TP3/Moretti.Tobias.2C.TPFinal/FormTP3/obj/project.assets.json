@@ -71,11 +71,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\TP3\\Moretti.Tobias.2C.TPFinal\\FormIngreso\\FormIngreso.csproj",
-      "projectName": "FormIngreso",
-      "projectPath": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\TP3\\Moretti.Tobias.2C.TPFinal\\FormIngreso\\FormIngreso.csproj",
+      "projectUniqueName": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\TP3\\Moretti.Tobias.2C.TPFinal\\FormTP3\\FormTp3.csproj",
+      "projectName": "FormTp3",
+      "projectPath": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\TP3\\Moretti.Tobias.2C.TPFinal\\FormTP3\\FormTp3.csproj",
       "packagesPath": "C:\\Users\\Tobias\\.nuget\\packages\\",
-      "outputPath": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\TP3\\Moretti.Tobias.2C.TPFinal\\FormIngreso\\obj\\",
+      "outputPath": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\TP3\\Moretti.Tobias.2C.TPFinal\\FormTP3\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Tobias\\AppData\\Roaming\\NuGet\\NuGet.Config",
