@@ -221,9 +221,9 @@
             this.lblVida.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblVida.Location = new System.Drawing.Point(242, 32);
             this.lblVida.Name = "lblVida";
-            this.lblVida.Size = new System.Drawing.Size(112, 21);
+            this.lblVida.Size = new System.Drawing.Size(45, 21);
             this.lblVida.TabIndex = 18;
-            this.lblVida.Text = "Vida Personaje";
+            this.lblVida.Text = "Vida ";
             // 
             // txtCarisma
             // 
@@ -359,7 +359,7 @@
             this.MinimizeBox = false;
             this.Name = "FormIngreso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Partida Dungeons And Dragons Tobias Moretti";
+            this.Text = "Ficha Personaje";
             this.Load += new System.EventHandler(this.FormIngreso_Load);
             this.grbPersonaje.ResumeLayout(false);
             this.grbPersonaje.PerformLayout();

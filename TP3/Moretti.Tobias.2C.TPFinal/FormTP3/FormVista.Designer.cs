@@ -108,7 +108,7 @@
             this.MinimizeBox = false;
             this.Name = "FormVista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormVista";
+            this.Text = "Lista de Jugadores";
             this.Load += new System.EventHandler(this.FormVista_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
