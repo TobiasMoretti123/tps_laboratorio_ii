@@ -1,15 +1,14 @@
-Nombre Jugador: Agustin
-Personaje: Clase: GUERRERO
-Nombre Personaje: Megumin
-Vida del personaje: 21
-FUE: 3
-DES: 4
-CONS: -1
-INT: -1
-SAB: 0
-CAR: 0
+Nombre Jugador: Tobias
+Personaje: Clase: Arquero
+Nombre Personaje: Alduin
+Vida del personaje: 20
+FUE: 1
+DES: -3
+CONS: -2
+INT: -2
+SAB: -1
+CAR: -1
 Tipo de arma: Espada
-
 
 
 

@@ -15,7 +15,7 @@ namespace Biblioteca
         /// </summary>
         public enum EEscuelaDeMago
         {
-            Conjuracion,Ilusion,Nigromancia,Transmutacion
+            Conjuracion, Ilusion, Nigromancia, Transmutacion
         }
         #endregion
 
@@ -48,18 +48,19 @@ namespace Biblioteca
         /// Constructor sin parametros utiliza el constructor de la base sin parametros
         /// </summary>
         public Mago()
-            :base()
+            : base()
         {
-
+            this.escuelaDeMago = EEscuelaDeMago.Conjuracion;
         }
         /// <summary>
-        /// Constructor que solo toma el nombre del personaje utilizando el constructor de la base que toma el nombre
+        /// Constructor que solo toma el nombre del personaje utilizando el constructor de la base que toma el nombre y la escuela del mago
         /// </summary>
         /// <param name="nombrePersonaje">El nombre del personaje</param>
-        public Mago(string nombrePersonaje)
+        /// <param name="escuelaDeMago">La escuela del mago</param>
+        public Mago(string nombrePersonaje, EEscuelaDeMago escuelaDeMago)
             : base(nombrePersonaje)
         {
-
+            this.escuelaDeMago=escuelaDeMago;
         }
         /// <summary>
         /// Constructor que toma todos los atributos del personaje utilizando el constructor de la base que toma todos los parametros 
@@ -76,7 +77,7 @@ namespace Biblioteca
         /// <param name="nivel">El nivel del personaje</param>
         public Mago(string nombrePersonaje, int vidaPersonaje,
             int fuerza, int destreza, int constitucion, int inteligencia, int sabiduria, int carisma, int nivel)
-            :base(nombrePersonaje,vidaPersonaje,fuerza,destreza,constitucion,inteligencia,sabiduria,carisma,nivel,ETipoArma.Baston)
+            : base(nombrePersonaje, vidaPersonaje, fuerza, destreza, constitucion, inteligencia, sabiduria, carisma, nivel, ETipoArma.Baston)
         {
 
         }
@@ -94,7 +95,7 @@ namespace Biblioteca
         /// <param name="nivel">El nivel del personaje</param>
         public Mago(string nombrePersonaje, int vidaPersonaje,
             int fuerza, int destreza, int constitucion, int inteligencia, int sabiduria, int carisma, int nivel, EEscuelaDeMago escuelaDeMago)
-            :this(nombrePersonaje, vidaPersonaje, fuerza, destreza, constitucion, inteligencia, sabiduria, carisma,nivel)
+            : this(nombrePersonaje, vidaPersonaje, fuerza, destreza, constitucion, inteligencia, sabiduria, carisma, nivel)
         {
             this.escuelaDeMago = escuelaDeMago;
         }

@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Partida xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <NombrePartida>Dungeons and Dragons</NombrePartida>
-  <Jugadores />
-</Partida>
+<string>Nombre Jugador: Tobias
+Personaje: Clase: Arquero
+Nombre Personaje: Alduin
+Vida del personaje: 20
+FUE: 1
+DES: -3
+CONS: -2
+INT: -2
+SAB: -1
+CAR: -1
+Tipo de arma: Espada
+
+
+
+</string>

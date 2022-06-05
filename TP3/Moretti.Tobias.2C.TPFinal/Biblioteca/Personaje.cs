@@ -230,16 +230,15 @@ namespace Biblioteca
         /// </summary>
         public Personaje()
         {
-            this.nombrePersonaje = string.Empty;
+            this.NombrePersonaje = string.Empty;
             this.VidaPersonaje = 0;
-            this.Fuerza = 0;
-            this.Destreza = 0;
-            this.Constitucion = 0;
-            this.Inteligencia = 0;
-            this.Sabiduria = 0;
-            this.Carisma = 0;
-            this.Nivel = 0;
-            this.tipoArma = 0;
+            this.Fuerza = 3;
+            this.Destreza = 3;
+            this.Constitucion = 3;
+            this.Inteligencia = 3;
+            this.Sabiduria = 3;
+            this.Carisma = 3;
+            this.Nivel = 3;
         }
         /// <summary>
         /// Constructor que solo toma el nombre del personaje 
@@ -263,6 +262,7 @@ namespace Biblioteca
         /// <param name="sabiduria">La caracteristica sabiduria del personaje</param>
         /// <param name="carisma">La caracteristica carisma del personaje</param>
         /// <param name="nivel">El nivel del personaje</param>
+        /// <param name="tipoArma">El tipo de arma del personaje</param>
         public Personaje(string nombrePersonaje,int vidaPersonaje,
             int fuerza,int destreza,int constitucion,int inteligencia,int sabiduria,int carisma,int nivel,ETipoArma tipoArma)
             :this(nombrePersonaje)

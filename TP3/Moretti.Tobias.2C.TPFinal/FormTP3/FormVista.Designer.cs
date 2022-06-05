@@ -39,9 +39,9 @@
             // 
             // rtxInfo
             // 
-            this.rtxInfo.BackColor = System.Drawing.SystemColors.InfoText;
+            this.rtxInfo.BackColor = System.Drawing.SystemColors.HighlightText;
             this.rtxInfo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rtxInfo.ForeColor = System.Drawing.Color.Lime;
+            this.rtxInfo.ForeColor = System.Drawing.SystemColors.ControlText;
             this.rtxInfo.Location = new System.Drawing.Point(12, 39);
             this.rtxInfo.Name = "rtxInfo";
             this.rtxInfo.Size = new System.Drawing.Size(776, 399);
@@ -97,10 +97,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.rtxInfo);
             this.Controls.Add(this.menuStrip1);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
