@@ -98,9 +98,13 @@ namespace FormIngreso
             Jugador jugador = new Jugador();
             List<Exception> excepciones = new List<Exception>();
 
-            if (SonParametrosVacios())
+            try
             {
-                excepciones.Add(new ParametrosVaciosException("Uno o mas parametros estan vacios"));
+                SonParametrosVacios();
+            }
+            catch (ParametrosVaciosException ex)
+            {
+                excepciones.Add(ex);
             }
 
             jugador.NombreJugador = txtNombreJugador.Text;
@@ -258,8 +262,7 @@ namespace FormIngreso
         /// <summary>
         /// Pregunta si los ingresos del formulario estan vacios
         /// </summary>
-        /// <returns>true si lo estan false si no</returns>
-        private bool SonParametrosVacios()
+        private void SonParametrosVacios()
         {
             if (string.IsNullOrEmpty(txtNombreJugador.Text) || string.IsNullOrEmpty(txtNombrePersonaje.Text)
                 || string.IsNullOrEmpty(txtSabiduria.Text) || string.IsNullOrEmpty(txtConstitucion.Text)
@@ -267,9 +270,8 @@ namespace FormIngreso
                 || string.IsNullOrEmpty(txtInteligencia.Text) || string.IsNullOrEmpty(txtSabiduria.Text)
                 || string.IsNullOrEmpty(txtVidaPersonaje.Text) || string.IsNullOrEmpty(txtNivel.Text))
             {
-                return true;
+                throw new ParametrosVaciosException("Uno o mas parametros estan vacios");
             }
-            return false;
         }
     }
 }
