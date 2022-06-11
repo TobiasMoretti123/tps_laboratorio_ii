@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Text;
 
-
 namespace Biblioteca
 {
     /// <summary>
@@ -48,9 +47,9 @@ namespace Biblioteca
         /// Constructor sin parametros utiliza el constructor de la base sin parametros
         /// </summary>
         public Mago()
-            : base()
+            :base()
         {
-            this.escuelaDeMago = EEscuelaDeMago.Conjuracion;
+            
         }
         /// <summary>
         /// Constructor que solo toma el nombre del personaje utilizando el constructor de la base que toma el nombre y la escuela del mago
@@ -60,11 +59,10 @@ namespace Biblioteca
         public Mago(string nombrePersonaje, EEscuelaDeMago escuelaDeMago)
             : base(nombrePersonaje)
         {
-            this.escuelaDeMago=escuelaDeMago;
+            this.escuelaDeMago = escuelaDeMago;
         }
         /// <summary>
         /// Constructor que toma todos los atributos del personaje utilizando el constructor de la base que toma todos los parametros 
-        /// Un mago posee un baston por defecto
         /// </summary>
         /// <param name="nombrePersonaje">El nombre del personaje</param>
         /// <param name="vidaPersonaje">La vida del personaje</param>
@@ -76,8 +74,8 @@ namespace Biblioteca
         /// <param name="carisma">La caracteristica carisma del personaje</param>
         /// <param name="nivel">El nivel del personaje</param>
         public Mago(string nombrePersonaje, int vidaPersonaje,
-            int fuerza, int destreza, int constitucion, int inteligencia, int sabiduria, int carisma, int nivel)
-            : base(nombrePersonaje, vidaPersonaje, fuerza, destreza, constitucion, inteligencia, sabiduria, carisma, nivel, ETipoArma.Baston)
+            int fuerza, int destreza, int constitucion, int inteligencia, int sabiduria, int carisma, int nivel, ETipoArma tipoArma)
+            : base(nombrePersonaje, vidaPersonaje, fuerza, destreza, constitucion, inteligencia, sabiduria, carisma, nivel, tipoArma)
         {
 
         }
@@ -94,8 +92,8 @@ namespace Biblioteca
         /// <param name="carisma">La caracteristica carisma del personaje</param>
         /// <param name="nivel">El nivel del personaje</param>
         public Mago(string nombrePersonaje, int vidaPersonaje,
-            int fuerza, int destreza, int constitucion, int inteligencia, int sabiduria, int carisma, int nivel, EEscuelaDeMago escuelaDeMago)
-            : this(nombrePersonaje, vidaPersonaje, fuerza, destreza, constitucion, inteligencia, sabiduria, carisma, nivel)
+            int fuerza, int destreza, int constitucion, int inteligencia, int sabiduria, int carisma, int nivel, ETipoArma tipoArma,EEscuelaDeMago escuelaDeMago)
+            : this(nombrePersonaje, vidaPersonaje, fuerza, destreza, constitucion, inteligencia, sabiduria, carisma, nivel, tipoArma)
         {
             this.escuelaDeMago = escuelaDeMago;
         }
@@ -108,10 +106,9 @@ namespace Biblioteca
         /// <returns>El nombre de la clase mas el dato del personaje a modo de string</returns>
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine("Clase: MAGO");
-            sb.AppendLine($"Escuela: {escuelaDeMago}");
+            StringBuilder sb = new StringBuilder(); 
             sb.AppendLine(base.ToString());
+            sb.AppendLine($"Escuela: {escuelaDeMago}");
             return sb.ToString();
         }
         #endregion

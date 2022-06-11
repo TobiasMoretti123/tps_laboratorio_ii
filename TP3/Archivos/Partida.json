@@ -1,1 +1,53 @@
-"Nombre Jugador: Tobias\nPersonaje: Clase: Arquero\nNombre Personaje: Alduin\nVida del personaje: 20\nFUE: 1\nDES: -3\nCONS: -2\nINT: -2\nSAB: -1\nCAR: -1\nTipo de arma: Espada\n\n\n\n"
+{
+  "NombrePartida": "Dungeons and Dragons",
+  "Jugadores": [
+    {
+      "NombreJugador": "Tobias",
+      "Personaje": {
+        "NombrePersonaje": "Guerrero",
+        "VidaPersonaje": 24,
+        "Fuerza": 12,
+        "Destreza": 13,
+        "Constitucion": 14,
+        "Inteligencia": 15,
+        "Sabiduria": 16,
+        "Carisma": 17,
+        "Nivel": 3,
+        "TipoArma": 0,
+        "Clase": 1
+      }
+    },
+    {
+      "NombreJugador": "Fede",
+      "Personaje": {
+        "NombrePersonaje": "Arquero",
+        "VidaPersonaje": 23,
+        "Fuerza": 11,
+        "Destreza": 12,
+        "Constitucion": 13,
+        "Inteligencia": 14,
+        "Sabiduria": 15,
+        "Carisma": 16,
+        "Nivel": 3,
+        "TipoArma": 1,
+        "Clase": 0
+      }
+    },
+    {
+      "NombreJugador": "Agustin",
+      "Personaje": {
+        "NombrePersonaje": "Mago",
+        "VidaPersonaje": 23,
+        "Fuerza": 11,
+        "Destreza": 12,
+        "Constitucion": 13,
+        "Inteligencia": 14,
+        "Sabiduria": 15,
+        "Carisma": 16,
+        "Nivel": 3,
+        "TipoArma": 2,
+        "Clase": 2
+      }
+    }
+  ]
+}

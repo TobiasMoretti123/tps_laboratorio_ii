@@ -13,7 +13,7 @@ namespace Biblioteca
         /// Constructor sin parametros utiliza el constructor de la base sin parametros
         /// </summary>
         public Arquero()
-            : base()
+            :base()
         {
 
         }
@@ -24,11 +24,10 @@ namespace Biblioteca
         public Arquero(string nombrePersonaje)
             :base(nombrePersonaje)
         {
-
+           
         }
         /// <summary>
         /// Constructor que toma todos los atributos del personaje utilizando el constructor de la base que toma todos los parametros 
-        /// Un arquero posee un arco por defecto
         /// </summary>
         /// <param name="nombrePersonaje">El nombre del personaje</param>
         /// <param name="vidaPersonaje">La vida del personaje</param>
@@ -40,8 +39,8 @@ namespace Biblioteca
         /// <param name="carisma">La caracteristica carisma del personaje</param>
         /// <param name="nivel">El nivel del personaje</param>
         public Arquero(string nombrePersonaje, int vidaPersonaje,
-            int fuerza, int destreza, int constitucion, int inteligencia, int sabiduria, int carisma, int nivel)
-           : base(nombrePersonaje, vidaPersonaje, fuerza, destreza, constitucion, inteligencia, sabiduria, carisma,nivel, ETipoArma.Arco)
+            int fuerza, int destreza, int constitucion, int inteligencia, int sabiduria, int carisma, int nivel, ETipoArma tipoArma)
+           : base(nombrePersonaje, vidaPersonaje, fuerza, destreza, constitucion, inteligencia, sabiduria, carisma,nivel,tipoArma)
         {
             
         }
@@ -55,7 +54,6 @@ namespace Biblioteca
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine("Clase: Arquero");
             sb.AppendLine(base.ToString());
             return sb.ToString();
         }

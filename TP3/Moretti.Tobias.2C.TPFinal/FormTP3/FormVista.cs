@@ -37,11 +37,11 @@ namespace FormIngreso
         /// <summary>
         /// Atributo privado que va a manejar los archivos json
         /// </summary>
-        private Json<string> json;
+        private Json<Partida> json;
         /// <summary>
         /// Atributo privado que va a manejar los archivos xml
         /// </summary>
-        private Xml<string> xml;
+        private Xml<Partida> xml;
         /// <summary>
         /// Atributo privado que va a manejar los archivos txt
         /// </summary>
@@ -78,7 +78,7 @@ namespace FormIngreso
             openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Archivo de texto|*.txt|Archivo JSON|*.json|Archivo XML|*.xml";
             saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Archivo de texto|*.txt|Archivo JSON|*.json|Archivo XML|*.xml";       
+            saveFileDialog.Filter = "Archivo de texto|*.txt|Archivo JSON|*.json|Archivo XML|*.xml";
         }
         /// <summary>
         /// Al cargar el formulario el richtextbox obtiene la partida cargada
@@ -90,9 +90,12 @@ namespace FormIngreso
         /// <param name="e"></param>
         private void FormVista_Load(object sender, EventArgs e)
         {
-            rtxInfo.Text = partida.ToString();
-            json = new Json<string>();
-            xml = new Xml<string>();
+            if (partida.Jugadores is not null)
+            {
+                rtxInfo.Text = partida.ToString();
+            }
+            json = new Json<Partida>();
+            xml = new Xml<Partida>();
             texto = new Texto();
         }
         /// <summary>
@@ -112,10 +115,22 @@ namespace FormIngreso
                     switch (Path.GetExtension(ultimoArchivo))
                     {
                         case ".json":
-                            rtxInfo.Text = json.Leer(ultimoArchivo);
+                            rtxInfo.Text = string.Empty;
+                            Partida partidaJson = json.Leer(ultimoArchivo);
+                            rtxInfo.Text += $"{partidaJson.NombrePartida.ToUpper()}\n";
+                            foreach (Jugador j in partidaJson.Jugadores)
+                            {
+                                rtxInfo.Text += j.ToString();
+                            }
                             break;
                         case ".xml":
-                            rtxInfo.Text = xml.Leer(ultimoArchivo);
+                            rtxInfo.Text = string.Empty;
+                            Partida partidaXml = xml.Leer(ultimoArchivo);
+                            rtxInfo.Text += $"{partidaXml.NombrePartida.ToUpper()}\n";
+                            foreach (Jugador j in partidaXml.Jugadores)
+                            {
+                                rtxInfo.Text += j.ToString();
+                            }
                             break;
                         case ".txt":
                             rtxInfo.Text = texto.Leer(ultimoArchivo);
@@ -168,10 +183,10 @@ namespace FormIngreso
                 switch (Path.GetExtension(UltimoArchivo))
                 {
                     case ".json":
-                        json.GuardarComo(UltimoArchivo, rtxInfo.Text);
+                        json.GuardarComo(ultimoArchivo, partida);
                         break;
                     case ".xml":
-                        xml.GuardarComo(UltimoArchivo, rtxInfo.Text);
+                        xml.GuardarComo(UltimoArchivo, partida);
                         break;
                     case ".txt":
                         texto.GuardarComo(UltimoArchivo, rtxInfo.Text);
@@ -193,10 +208,10 @@ namespace FormIngreso
                 switch (Path.GetExtension(UltimoArchivo))
                 {
                     case ".json":
-                        json.Guardar(UltimoArchivo, rtxInfo.Text);
+                        json.Guardar(ultimoArchivo, partida);
                         break;
                     case ".xml":
-                        xml.Guardar(UltimoArchivo, rtxInfo.Text);
+                        xml.Guardar(UltimoArchivo, partida);
                         break;
                     case ".txt":
                         texto.Guardar(UltimoArchivo, rtxInfo.Text);
@@ -224,12 +239,12 @@ namespace FormIngreso
         /// <summary>
         /// Muestra la excepcion a modo de messabox
         /// </summary>
-        /// <param name="ex"></param>
+        /// <param name="ex">La exepcion a leer</param>
         private void VentanaDeError(Exception ex)
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"Error: {ex.Message}");
             MessageBox.Show(sb.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }  
+        }
     }
 }

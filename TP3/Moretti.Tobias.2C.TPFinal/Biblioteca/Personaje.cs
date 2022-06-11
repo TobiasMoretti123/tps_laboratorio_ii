@@ -12,12 +12,17 @@ namespace Biblioteca
     {
         Espada,Arco,Baston
     }
+
+    public enum EClase
+    {
+        Arquero,Guerrero,Mago
+    }
     #endregion
 
     /// <summary>
-    /// Clase abstracta personaje
+    /// Clase personaje
     /// </summary>
-    public abstract class Personaje
+    public class Personaje
     {
         #region Atributos
         /// <summary>
@@ -60,6 +65,10 @@ namespace Biblioteca
         /// Atributo privado del tipo de arma del personaje
         /// </summary>
         private ETipoArma tipoArma;
+        /// <summary>
+        /// Atributo privado de la clase del personaje
+        /// </summary>
+        private EClase clase;
         #endregion
 
         #region Propiedades
@@ -222,6 +231,34 @@ namespace Biblioteca
                 this.nivel = value;
             }
         }
+        /// <summary>
+        /// Propiedad que obtiene y establece el atributo tipo de arma del personaje
+        /// </summary>
+        public ETipoArma TipoArma
+        {
+            get
+            {
+                return this.tipoArma;
+            }
+            set
+            {
+                this.tipoArma = value;
+            }
+        }
+        /// <summary>
+        /// Propiedad que obtiene y establece el atributo clase del personaje
+        /// </summary>
+        public EClase Clase
+        {
+            get
+            {
+                return this.clase;
+            }
+            set
+            {
+                this.clase = value;
+            }
+        }
         #endregion
 
         #region Constructores
@@ -340,6 +377,7 @@ namespace Biblioteca
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"Nombre Personaje: {NombrePersonaje}");
+            sb.AppendLine($"Clase: {Clase}");
             sb.AppendLine($"Vida del personaje: {GetVida(this.VidaPersonaje, this.Constitucion)}");
             sb.AppendLine($"FUE: {GetCaracteristicas(this.Fuerza)}");
             sb.AppendLine($"DES: {GetCaracteristicas(this.Destreza)}");

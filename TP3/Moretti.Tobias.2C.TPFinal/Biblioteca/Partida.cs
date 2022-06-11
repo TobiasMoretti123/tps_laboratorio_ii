@@ -1,14 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
+using System.Xml.Serialization;
 using Excepciones;
+
 
 namespace Biblioteca
 {
     /// <summary>
-    /// Clase sellada partida
+    /// Clase partida
     /// </summary>
-    public sealed class Partida
+    [XmlInclude(typeof(Arquero))]
+    [XmlInclude(typeof(Mago))]
+    [XmlInclude(typeof(Guerrero))]
+    public class Partida
     {
         #region Atributos
         /// <summary>
@@ -45,6 +51,10 @@ namespace Biblioteca
             {
                 return this.jugadores;
             }
+            set
+            {
+                this.jugadores = value;
+            }
         }
         #endregion
 
@@ -74,9 +84,10 @@ namespace Biblioteca
         /// <returns>Retorna la lista de jugadores a modo de string</returns>
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();   
             if(Jugadores is not null)
             {
+                sb.AppendLine(this.nombrePartida.ToUpper());
                 foreach (Jugador j in jugadores)
                 {
                     sb.AppendLine(j.ToString());

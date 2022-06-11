@@ -1,15 +1,45 @@
+DUNGEONS AND DRAGONS
 Nombre Jugador: Tobias
-Personaje: Clase: Arquero
-Nombre Personaje: Alduin
-Vida del personaje: 20
+Nombre Personaje: Guerrero
+Clase: Guerrero
+Vida del personaje: 24
 FUE: 1
-DES: -3
-CONS: -2
-INT: -2
-SAB: -1
-CAR: -1
+DES: 1
+CONS: 2
+INT: 2
+SAB: 3
+CAR: 3
 Tipo de arma: Espada
 
+
+
+Nombre Jugador: Fede
+Nombre Personaje: Arquero
+Clase: Arquero
+Vida del personaje: 23
+FUE: 0
+DES: 1
+CONS: 1
+INT: 2
+SAB: 2
+CAR: 3
+Tipo de arma: Arco
+
+
+
+Nombre Jugador: Agustin
+Nombre Personaje: Mago
+Clase: Mago
+Vida del personaje: 23
+FUE: 0
+DES: 1
+CONS: 1
+INT: 2
+SAB: 2
+CAR: 3
+Tipo de arma: Baston
+
+Escuela: Nigromancia
 
 
 

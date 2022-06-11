@@ -113,9 +113,13 @@ namespace FormIngreso
             {
                 case 0:
                     jugador.Personaje = new Arquero(txtNombrePersonaje.Text);
+                    jugador.Personaje.TipoArma = ETipoArma.Arco;
+                    jugador.Personaje.Clase = EClase.Arquero;
                     break;
                 case 1:
                     jugador.Personaje = new Guerrero(txtNombrePersonaje.Text);
+                    jugador.Personaje.TipoArma = ETipoArma.Espada;
+                    jugador.Personaje.Clase = EClase.Guerrero;
                     break;
                 case 2:
                     if (string.IsNullOrEmpty(cmbEscuela.Text))
@@ -125,7 +129,9 @@ namespace FormIngreso
                     }
                     else
                     {
-                        jugador.Personaje = new Mago(txtNombrePersonaje.Text, (Mago.EEscuelaDeMago)cmbEscuela.SelectedItem);
+                        jugador.Personaje = new Mago(txtNombrePersonaje.Text,(Mago.EEscuelaDeMago)cmbEscuela.SelectedItem);
+                        jugador.Personaje.TipoArma = ETipoArma.Baston;
+                        jugador.Personaje.Clase = EClase.Mago;
                     }
                     break;
                 default:

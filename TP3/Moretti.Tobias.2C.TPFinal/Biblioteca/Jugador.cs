@@ -100,7 +100,7 @@ namespace Biblioteca
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"Nombre Jugador: {this.NombreJugador}");
-            sb.AppendLine($"Personaje: {this.personaje.ToString()}");
+            sb.AppendLine($"{this.personaje.ToString()}");
             return sb.ToString();
         }
         #endregion
