@@ -1,0 +1,17 @@
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Base De Datos\bin\Debug\net5.0\BaseDeDatos.deps.json
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Base De Datos\bin\Debug\net5.0\BaseDeDatos.dll
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Base De Datos\bin\Debug\net5.0\BaseDeDatos.pdb
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Base De Datos\bin\Debug\net5.0\Biblioteca.dll
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Base De Datos\bin\Debug\net5.0\Excepciones.dll
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Base De Datos\bin\Debug\net5.0\Biblioteca.pdb
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Base De Datos\bin\Debug\net5.0\Excepciones.pdb
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Base De Datos\obj\Debug\net5.0\BaseDeDatos.csproj.AssemblyReference.cache
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Base De Datos\obj\Debug\net5.0\BaseDeDatos.GeneratedMSBuildEditorConfig.editorconfig
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Base De Datos\obj\Debug\net5.0\BaseDeDatos.AssemblyInfoInputs.cache
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Base De Datos\obj\Debug\net5.0\BaseDeDatos.AssemblyInfo.cs
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Base De Datos\obj\Debug\net5.0\BaseDeDatos.csproj.CoreCompileInputs.cache
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Base De Datos\obj\Debug\net5.0\BaseDeDatos.csproj.CopyComplete
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Base De Datos\obj\Debug\net5.0\BaseDeDatos.dll
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Base De Datos\obj\Debug\net5.0\refint\BaseDeDatos.dll
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Base De Datos\obj\Debug\net5.0\BaseDeDatos.pdb
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Base De Datos\obj\Debug\net5.0\ref\BaseDeDatos.dll

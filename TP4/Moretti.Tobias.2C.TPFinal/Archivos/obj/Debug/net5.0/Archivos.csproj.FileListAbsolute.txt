@@ -1,0 +1,15 @@
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Archivos\bin\Debug\net5.0\Archivos.deps.json
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Archivos\bin\Debug\net5.0\Archivos.dll
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Archivos\bin\Debug\net5.0\Archivos.pdb
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Archivos\bin\Debug\net5.0\Excepciones.dll
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Archivos\bin\Debug\net5.0\Excepciones.pdb
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Archivos\obj\Debug\net5.0\Archivos.csproj.AssemblyReference.cache
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Archivos\obj\Debug\net5.0\Archivos.GeneratedMSBuildEditorConfig.editorconfig
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Archivos\obj\Debug\net5.0\Archivos.AssemblyInfoInputs.cache
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Archivos\obj\Debug\net5.0\Archivos.AssemblyInfo.cs
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Archivos\obj\Debug\net5.0\Archivos.csproj.CoreCompileInputs.cache
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Archivos\obj\Debug\net5.0\Archivos.csproj.CopyComplete
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Archivos\obj\Debug\net5.0\Archivos.dll
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Archivos\obj\Debug\net5.0\refint\Archivos.dll
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Archivos\obj\Debug\net5.0\Archivos.pdb
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Archivos\obj\Debug\net5.0\ref\Archivos.dll
