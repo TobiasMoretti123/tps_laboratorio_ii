@@ -15,8 +15,8 @@ namespace Biblioteca
 
         public string NombreEmpresa
         {
-            get => this.nombreEmpresa; 
-            set => this.nombreEmpresa = value; 
+            get => this.nombreEmpresa;
+            set => this.nombreEmpresa = value;
         }
 
         public List<Cliente> Clientes
@@ -31,12 +31,12 @@ namespace Biblioteca
         }
 
         public Empresa(string nombreEmpresa)
-            :this()
+            : this()
         {
             this.nombreEmpresa = nombreEmpresa;
         }
 
-        public static Empresa operator + (Empresa em, Cliente cl)
+        public static Empresa operator +(Empresa em, Cliente cl)
         {
             if (em == cl)
             {
@@ -45,11 +45,11 @@ namespace Biblioteca
             else
             {
                 em.clientes.Add(cl);
-            }           
+            }
             return em;
         }
 
-        public static Empresa operator - (Empresa em, Cliente cl)
+        public static Empresa operator -(Empresa em, Cliente cl)
         {
             if (em == cl)
             {
@@ -58,11 +58,11 @@ namespace Biblioteca
             return em;
         }
 
-        public static bool operator == (Empresa em , Cliente cl)
+        public static bool operator ==(Empresa em, Cliente cl)
         {
-            foreach(Cliente c in em.clientes)
+            foreach (Cliente c in em.clientes)
             {
-                if(c == cl)
+                if (c == cl)
                 {
                     return true;
                 }

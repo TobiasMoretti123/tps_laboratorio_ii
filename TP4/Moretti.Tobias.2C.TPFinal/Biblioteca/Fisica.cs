@@ -8,7 +8,7 @@ namespace Biblioteca
 {
     public class Fisica : Cilindro
     {
-        public override double Precio  
+        public override double Precio
         {
             get
             {
@@ -26,7 +26,7 @@ namespace Biblioteca
         }
 
         public Fisica(int tamanio)
-            :base(tamanio)
+            : base(tamanio)
         {
 
         }

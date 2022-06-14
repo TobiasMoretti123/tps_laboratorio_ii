@@ -20,7 +20,7 @@ namespace Biblioteca
         public string Nombre
         {
             get => this.nombre;
-            set => this.nombre = value;              
+            set => this.nombre = value;
         }
 
         public int IdCliente
@@ -30,14 +30,14 @@ namespace Biblioteca
         }
         public string Cuit
         {
-            get => this.cuit; 
-            set => this.cuit = value; 
+            get => this.cuit;
+            set => this.cuit = value;
         }
 
         public Cilindro Cilindro
         {
-            get => this.cilindro; 
-            set => cilindro = value; 
+            get => this.cilindro;
+            set => cilindro = value;
         }
 
         public Cliente()
@@ -51,24 +51,24 @@ namespace Biblioteca
             this.cuit = cuit;
         }
 
-        public Cliente(int id,string nombre, string cuit)
-           : this(nombre,cuit)
+        public Cliente(int id, string nombre, string cuit)
+           : this(nombre, cuit)
         {
             this.idCliente = id;
         }
 
-        public Cliente(string nombre, string cuit,Cilindro cilindro)
-            :this(nombre,cuit)
+        public Cliente(string nombre, string cuit, Cilindro cilindro)
+            : this(nombre, cuit)
         {
             this.Cilindro = cilindro;
         }
 
         public override string ToString()
-        {   
+        {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"Nombre Empresa: {this.nombre} ");
             sb.AppendLine($"Cuit: {this.cuit} ");
-            return sb.ToString();   
+            return sb.ToString();
         }
 
         public static bool operator ==(Cliente clienteUno, Cliente clienteDos)

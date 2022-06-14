@@ -11,17 +11,16 @@ using Excepciones;
 using Biblioteca;
 using BaseDeDatos;
 
-namespace Formularios_Tp3
+namespace Formularios_TP4
 {
     public partial class FrmIngreso : Form
     {
         private Cliente cliente;
-        private ClientesDao clientesDao;
+        private ClienteDao clienteDao;
         public FrmIngreso()
         {
             InitializeComponent();
         }
-
         public string Nombre
         {
             get
@@ -45,13 +44,7 @@ namespace Formularios_Tp3
                 this.txtCuit.Text = value;
             }
         }
-        private void FrmIngreso_Load(object sender, EventArgs e)
-        {
-            clientesDao = new ClientesDao();
-            cmbResistencia.DataSource = Enum.GetValues(typeof(Cilindro.ETipoResistencia));
-        }
-
-        private void btnSeguir_Click(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
             List<Exception> excepciones = new List<Exception>();
             try
@@ -97,7 +90,7 @@ namespace Formularios_Tp3
             {
                 try
                 {
-                    clientesDao.Guardar(cliente);
+                    clienteDao.Guardar(cliente);
                     this.Close();
                 }
                 catch (Exception ex)
@@ -108,12 +101,18 @@ namespace Formularios_Tp3
             else
             {
                 VentanaDeErrores(excepciones);
-            }    
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void FrmIngreso_Load(object sender, EventArgs e)
+        {
+            clienteDao = new ClienteDao();
+            cmbResistencia.DataSource = Enum.GetValues(typeof(Cilindro.ETipoResistencia));
         }
 
         private void VentanaDeErrores(List<Exception> ex)

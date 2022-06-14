@@ -1,4 +1,4 @@
-﻿namespace Formularios_Tp3
+﻿namespace Formularios_TP4
 {
     partial class FrmModificar
     {
@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.lsbClientes = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.lblLista = new System.Windows.Forms.Label();
             this.txtCuit = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnModificar = new System.Windows.Forms.Button();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCuit = new System.Windows.Forms.Label();
@@ -47,22 +47,15 @@
             this.lsbClientes.TabIndex = 0;
             this.lsbClientes.DoubleClick += new System.EventHandler(this.lsbClientes_DoubleClick);
             // 
-            // label1
+            // lblLista
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 95);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(217, 21);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Seleccione Cliente a Modificar";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(12, 67);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(255, 23);
-            this.txtNombre.TabIndex = 2;
+            this.lblLista.AutoSize = true;
+            this.lblLista.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblLista.Location = new System.Drawing.Point(12, 95);
+            this.lblLista.Name = "lblLista";
+            this.lblLista.Size = new System.Drawing.Size(217, 21);
+            this.lblLista.TabIndex = 1;
+            this.lblLista.Text = "Seleccione Cliente a Modificar";
             // 
             // txtCuit
             // 
@@ -70,6 +63,13 @@
             this.txtCuit.Name = "txtCuit";
             this.txtCuit.Size = new System.Drawing.Size(255, 23);
             this.txtCuit.TabIndex = 3;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(12, 67);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(255, 23);
+            this.txtNombre.TabIndex = 2;
             // 
             // btnModificar
             // 
@@ -112,7 +112,7 @@
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.txtCuit);
             this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblLista);
             this.Controls.Add(this.lsbClientes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -129,9 +129,9 @@
         #endregion
 
         private System.Windows.Forms.ListBox lsbClientes;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.Label lblLista;
         private System.Windows.Forms.TextBox txtCuit;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblCuit;

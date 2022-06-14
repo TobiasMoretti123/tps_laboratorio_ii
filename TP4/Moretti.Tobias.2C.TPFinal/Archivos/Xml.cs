@@ -3,7 +3,7 @@ using System.Xml.Serialization;
 
 namespace Archivos
 {
-    public class Xml<T> : Archivo,IArchivo<T>
+    public class Xml<T> : Archivo, IArchivo<T>
         where T : class
     {
         /// <summary>

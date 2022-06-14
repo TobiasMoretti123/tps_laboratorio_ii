@@ -468,8 +468,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "Excepciones >= 1.0.0",
-      "System.Data.SqlClient >= 4.8.3"
+      "Excepciones >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -514,12 +513,6 @@
     "frameworks": {
       "net5.0": {
         "targetAlias": "net5.0",
-        "dependencies": {
-          "System.Data.SqlClient": {
-            "target": "Package",
-            "version": "[4.8.3, )"
-          }
-        },
         "imports": [
           "net461",
           "net462",

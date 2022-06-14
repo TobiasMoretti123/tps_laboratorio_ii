@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -12,12 +15,12 @@ using BaseDeDatos;
 using Archivos;
 using Biblioteca;
 
-namespace Formularios_Tp3
+namespace Formularios_TP4
 {
     public partial class FrmLista : Form
     {
         private Empresa empresa;
-        private ClientesDao clientesDao;
+        private ClienteDao clientesDao;
         private OpenFileDialog openFileDialog;
         private SaveFileDialog saveFileDialog;
         private Xml<Empresa> xml;
@@ -53,24 +56,6 @@ namespace Formularios_Tp3
                 }
             }
         }
-
-        private void FrmLista_Load(object sender, EventArgs e)
-        {
-            texto = new Txt();
-            xml = new Xml<Empresa>();
-            clientesDao = new ClientesDao();
-
-            foreach(Cliente c in clientesDao.Leer())
-            {
-                rtxLista.Text += "--------------------------------\n";
-                rtxLista.Text += c.ToString();
-                rtxLista.Text += "Cilindro de Goma\n";
-                rtxLista.Text += c.Cilindro.ToString();
-                rtxLista.Text += "--------------------------------\n";
-                empresa += c;
-            }
-        }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (!File.Exists(UltimoArchivo))
@@ -80,6 +65,44 @@ namespace Formularios_Tp3
             else
             {
                 Guardar();
+            }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            FrmCancelar frmCancelar = new FrmCancelar();
+            this.Hide();
+            frmCancelar.ShowDialog();
+            this.Close();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            FrmModificar frmModificar = new FrmModificar();
+            this.Hide();
+            frmModificar.ShowDialog();
+            this.Close();
+        }
+
+        private void FrmLista_Load(object sender, EventArgs e)
+        {
+            texto = new Txt();
+            xml = new Xml<Empresa>();
+            clientesDao = new ClienteDao();
+
+            foreach (Cliente c in clientesDao.Leer())
+            {
+                rtxLista.Text += "--------------------------------\n";
+                rtxLista.Text += c.ToString();
+                rtxLista.Text += "Cilindro de Goma\n";
+                rtxLista.Text += c.Cilindro.ToString();
+                rtxLista.Text += "--------------------------------\n";
+                empresa += c;
             }
         }
 
@@ -140,27 +163,6 @@ namespace Formularios_Tp3
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"Error: {ex.Message}");
             MessageBox.Show(sb.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            FrmModificar frmModificar = new FrmModificar();
-            this.Hide();
-            frmModificar.ShowDialog();
-            this.Close();
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            FrmCancelar frmCancelar = new FrmCancelar();
-            this.Hide();
-            frmCancelar.ShowDialog();
-            this.Close();
         }
     }
 }

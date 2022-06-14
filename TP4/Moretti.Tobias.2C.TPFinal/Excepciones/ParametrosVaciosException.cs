@@ -9,7 +9,7 @@ namespace Excepciones
     public class ParametrosVaciosException : Exception
     {
         public ParametrosVaciosException(string mensaje)
-          : this(mensaje, null)
+         : this(mensaje, null)
         {
 
         }

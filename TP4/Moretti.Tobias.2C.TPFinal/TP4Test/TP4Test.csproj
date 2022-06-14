@@ -11,12 +11,10 @@
     <PackageReference Include="MSTest.TestAdapter" Version="2.2.7" />
     <PackageReference Include="MSTest.TestFramework" Version="2.2.7" />
     <PackageReference Include="coverlet.collector" Version="3.1.0" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Excepciones\Excepciones.csproj" />
-    <ProjectReference Include="..\TP4\Biblioteca.csproj" />
+    <ProjectReference Include="..\Biblioteca\Biblioteca.csproj" />
   </ItemGroup>
 
 </Project>

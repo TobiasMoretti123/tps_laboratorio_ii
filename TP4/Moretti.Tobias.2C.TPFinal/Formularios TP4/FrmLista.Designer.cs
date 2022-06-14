@@ -1,4 +1,4 @@
-﻿namespace Formularios_Tp3
+﻿namespace Formularios_TP4
 {
     partial class FrmLista
     {
@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.rtxLista = new System.Windows.Forms.RichTextBox();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.lblListado = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -44,29 +44,17 @@
             this.rtxLista.TabIndex = 0;
             this.rtxLista.Text = "";
             // 
-            // btnModificar
+            // btnGuardar
             // 
-            this.btnModificar.BackColor = System.Drawing.Color.White;
-            this.btnModificar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnModificar.Location = new System.Drawing.Point(397, 60);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(176, 83);
-            this.btnModificar.TabIndex = 1;
-            this.btnModificar.Text = "Modificar Cliente";
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.Color.White;
-            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCancelar.Location = new System.Drawing.Point(397, 149);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(176, 83);
-            this.btnCancelar.TabIndex = 2;
-            this.btnCancelar.Text = "Eliminar Cliente";
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnGuardar.BackColor = System.Drawing.Color.White;
+            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnGuardar.Location = new System.Drawing.Point(397, 238);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(176, 83);
+            this.btnGuardar.TabIndex = 7;
+            this.btnGuardar.Text = "Guardar Lista Clientes";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnSalir
             // 
@@ -80,17 +68,29 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // btnGuardar
+            // btnModificar
             // 
-            this.btnGuardar.BackColor = System.Drawing.Color.White;
-            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnGuardar.Location = new System.Drawing.Point(397, 238);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(176, 83);
-            this.btnGuardar.TabIndex = 7;
-            this.btnGuardar.Text = "Guardar Lista Clientes";
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.btnModificar.BackColor = System.Drawing.Color.White;
+            this.btnModificar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnModificar.Location = new System.Drawing.Point(397, 60);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(176, 83);
+            this.btnModificar.TabIndex = 1;
+            this.btnModificar.Text = "Modificar Cliente";
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.White;
+            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnEliminar.Location = new System.Drawing.Point(397, 149);
+            this.btnEliminar.Name = "btnCancelar";
+            this.btnEliminar.Size = new System.Drawing.Size(176, 83);
+            this.btnEliminar.TabIndex = 2;
+            this.btnEliminar.Text = "Eliminar Cliente";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // lblListado
             // 
@@ -110,7 +110,7 @@
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.lblListado);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.rtxLista);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -128,10 +128,10 @@
         #endregion
 
         private System.Windows.Forms.RichTextBox rtxLista;
-        private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Label lblListado;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Label lblListado;
     }
 }

@@ -1,6 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Biblioteca;
-using Excepciones;
 
 namespace TP4Test
 {
@@ -28,8 +27,8 @@ namespace TP4Test
             empresa += cl2;
             int actual = empresa.Clientes.Count;
             int expected = 1;
-            
-            Assert.AreEqual (expected, actual);
+
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
@@ -39,7 +38,7 @@ namespace TP4Test
             Cilindro.ETipoResistencia actual = cilindrofisico.TipoResistencia;
             Cilindro.ETipoResistencia expected = Cilindro.ETipoResistencia.Fisica;
 
-            Assert.AreEqual(actual,expected);
+            Assert.AreEqual(actual, expected);
         }
 
         [TestMethod]
@@ -49,7 +48,7 @@ namespace TP4Test
 
             bool actual = cuit.CacularCuit();
 
-            bool expected =  true;
+            bool expected = true;
 
             Assert.AreEqual(expected, actual);
         }

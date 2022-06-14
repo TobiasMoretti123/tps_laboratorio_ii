@@ -3,20 +3,15 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
-    <RootNamespace>Formularios_Tp3</RootNamespace>
+    <RootNamespace>Formularios_TP4</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Archivos\Archivos.csproj" />
-    <ProjectReference Include="..\Base De Datos\BaseDeDatos.csproj" />
-    <ProjectReference Include="..\Excepciones\Excepciones.csproj" />
-    <ProjectReference Include="..\TP4\Biblioteca.csproj" />
+    <ProjectReference Include="..\BaseDeDatos\BaseDeDatos.csproj" />
+    <ProjectReference Include="..\Biblioteca\Biblioteca.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,4 +1,4 @@
-﻿namespace Formularios_Tp3
+﻿namespace Formularios_TP4
 {
     partial class FrmCancelar
     {
@@ -28,20 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.lsbLista = new System.Windows.Forms.ListBox();
             this.lblLista = new System.Windows.Forms.Label();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(476, 12);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(169, 45);
-            this.btnEliminar.TabIndex = 0;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // lsbLista
             // 
@@ -62,6 +52,16 @@
             this.lblLista.TabIndex = 2;
             this.lblLista.Text = "Seleccione Cliente a Eliminar";
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(476, 12);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(169, 45);
+            this.btnEliminar.TabIndex = 0;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // FrmCancelar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -80,12 +80,13 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.ListBox lsbLista;
         private System.Windows.Forms.Label lblLista;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

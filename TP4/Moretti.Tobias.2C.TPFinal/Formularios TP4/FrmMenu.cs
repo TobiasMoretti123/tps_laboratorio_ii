@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Biblioteca;
 
-namespace Formularios_Tp3
+
+namespace Formularios_TP4
 {
     public partial class FrmMenu : Form
     {
@@ -29,7 +30,6 @@ namespace Formularios_Tp3
 
         private void btnOpciones_Click(object sender, EventArgs e)
         {
-            Random rnd = new Random();
             FrmLista frmLista = new FrmLista(empresa);
 
             frmLista.ShowDialog();
@@ -40,6 +40,11 @@ namespace Formularios_Tp3
             Close();
         }
 
+        private void FrmMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void FrmMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("¿Seguro desea salir?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -48,11 +53,6 @@ namespace Formularios_Tp3
             {
                 e.Cancel = true;
             }
-        }
-
-        private void FrmMenu_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

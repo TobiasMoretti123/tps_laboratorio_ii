@@ -32,7 +32,7 @@ namespace Biblioteca
         }
 
         public Termica(int tamanio, Cilindro.ETipoResistencia tipoResistencia)
-            : base(tamanio,tipoResistencia)
+            : base(tamanio, tipoResistencia)
         {
 
         }

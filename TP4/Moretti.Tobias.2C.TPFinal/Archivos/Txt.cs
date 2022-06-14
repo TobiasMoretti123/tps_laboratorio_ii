@@ -3,7 +3,7 @@ using System.IO;
 
 namespace Archivos
 {
-    public class Txt : Archivo,IArchivo<string>
+    public class Txt : Archivo, IArchivo<string>
     {
         /// <summary>
         /// Propiedad heredada de archivos obtiene la extension .txt harcodeada

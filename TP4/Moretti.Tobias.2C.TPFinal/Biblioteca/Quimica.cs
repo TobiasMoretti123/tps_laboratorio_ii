@@ -15,7 +15,7 @@ namespace Biblioteca
                 return this.tamanio.CacularPrecio(Cilindro.ETipoResistencia.Quimica);
             }
             set
-            {              
+            {
                 this.Precio = value;
             }
         }

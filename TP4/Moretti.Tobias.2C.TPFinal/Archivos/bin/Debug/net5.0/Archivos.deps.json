@@ -8,8 +8,7 @@
     ".NETCoreApp,Version=v5.0": {
       "Archivos/1.0.0": {
         "dependencies": {
-          "Excepciones": "1.0.0",
-          "System.Data.SqlClient": "4.8.3"
+          "Excepciones": "1.0.0"
         },
         "runtime": {
           "Archivos.dll": {}

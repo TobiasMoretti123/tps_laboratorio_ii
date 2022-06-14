@@ -10,9 +10,7 @@
         "dependencies": {
           "Archivos": "1.0.0",
           "BaseDeDatos": "1.0.0",
-          "Biblioteca": "1.0.0",
-          "Excepciones": "1.0.0",
-          "System.Data.SqlClient": "4.8.3"
+          "Biblioteca": "1.0.0"
         },
         "runtime": {
           "Formularios TP4.dll": {}
@@ -95,8 +93,7 @@
       "System.Security.Principal.Windows/4.7.0": {},
       "Archivos/1.0.0": {
         "dependencies": {
-          "Excepciones": "1.0.0",
-          "System.Data.SqlClient": "4.8.3"
+          "Excepciones": "1.0.0"
         },
         "runtime": {
           "Archivos.dll": {}

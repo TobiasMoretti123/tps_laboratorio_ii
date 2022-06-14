@@ -10,15 +10,30 @@ using System.Windows.Forms;
 using Biblioteca;
 using BaseDeDatos;
 
-namespace Formularios_Tp3
+namespace Formularios_TP4
 {
     public partial class FrmModificar : Form
     {
-        ClientesDao clientesDao;
+        ClienteDao clienteDao;
         public FrmModificar()
         {
             InitializeComponent();
-            clientesDao = new ClientesDao();
+            clienteDao = new ClienteDao();
+        }
+
+        private void FrmModificar_Load(object sender, EventArgs e)
+        {
+            lsbClientes.DataSource = clienteDao.Leer();
+        }
+
+        private void lsbClientes_DoubleClick(object sender, EventArgs e)
+        {
+            Cliente? cliente = lsbClientes.SelectedItem as Cliente;
+            if (cliente is not null)
+            {
+                txtNombre.Text = cliente.Nombre;
+                txtCuit.Text = cliente.Cuit;
+            }
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -36,32 +51,17 @@ namespace Formularios_Tp3
                 {
                     if (dialogResult == DialogResult.Yes)
                     {
-                        clientesDao.Modificar(clienteSeleccionado.IdCliente, nuevoCliente);
+                        clienteDao.Modificar(clienteSeleccionado.IdCliente, nuevoCliente);
                         this.ActualizarLstClientes();
-                    }                      
-                }     
-            }
-        }
-
-        private void FrmModificar_Load(object sender, EventArgs e)
-        {
-            lsbClientes.DataSource = clientesDao.Leer();
-        }
-
-        private void lsbClientes_DoubleClick(object sender, EventArgs e)
-        {
-            Cliente? cliente = lsbClientes.SelectedItem as Cliente;
-            if (cliente is not null)
-            {
-                txtNombre.Text = cliente.Nombre;
-                txtCuit.Text = cliente.Cuit;
+                    }
+                }
             }
         }
 
         private void ActualizarLstClientes()
         {
             lsbClientes.DataSource = null;
-            lsbClientes.DataSource = clientesDao.Leer();
+            lsbClientes.DataSource = clienteDao.Leer();
         }
     }
 }

@@ -8,9 +8,9 @@ namespace Biblioteca
         protected int tamanio;
         protected ETipoResistencia tipoResistencia;
 
-        public enum ETipoResistencia 
+        public enum ETipoResistencia
         {
-            Fisica,Quimica,Termica
+            Fisica, Quimica, Termica
         }
         public int Tamanio
         {
@@ -39,11 +39,11 @@ namespace Biblioteca
             this.Tamanio = tamanio;
         }
 
-        public Cilindro(int tamanio,ETipoResistencia tipoResistencia)
-            :this(tamanio)
+        public Cilindro(int tamanio, ETipoResistencia tipoResistencia)
+            : this(tamanio)
         {
             this.tipoResistencia = tipoResistencia;
-        }   
+        }
 
         public override string ToString()
         {
