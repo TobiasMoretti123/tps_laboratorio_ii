@@ -14,7 +14,9 @@ namespace Formularios_TP4
 {
     public partial class FrmModificar : Form
     {
-        ClienteDao clienteDao;
+        private ClienteDao clienteDao;
+        private delegate void LeerDelegate();
+        private Task t;
         public FrmModificar()
         {
             InitializeComponent();
@@ -23,7 +25,7 @@ namespace Formularios_TP4
 
         private void FrmModificar_Load(object sender, EventArgs e)
         {
-            lsbClientes.DataSource = clienteDao.Leer();
+            t = Task.Run(() => Leer());
         }
 
         private void lsbClientes_DoubleClick(object sender, EventArgs e)
@@ -46,12 +48,11 @@ namespace Formularios_TP4
                 Cliente clienteSeleccionado = lsbClientes.SelectedItem as Cliente;
                 DialogResult dialogResult = MessageBox.Show($"¿Seguro desea modificar a {clienteSeleccionado.Nombre}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-
                 if (clienteSeleccionado is not null)
                 {
                     if (dialogResult == DialogResult.Yes)
                     {
-                        clienteDao.Modificar(clienteSeleccionado.IdCliente, nuevoCliente);
+                        t = Task.Run(() => clienteDao.Modificar(clienteSeleccionado.IdCliente, nuevoCliente));
                         this.ActualizarLstClientes();
                     }
                 }
@@ -61,7 +62,20 @@ namespace Formularios_TP4
         private void ActualizarLstClientes()
         {
             lsbClientes.DataSource = null;
-            lsbClientes.DataSource = clienteDao.Leer();
+            t = Task.Run(() => Leer());
+        }
+
+        public void Leer()
+        {
+            if (this.InvokeRequired)
+            {
+                LeerDelegate leer = new LeerDelegate(Leer);
+                this.lsbClientes.Invoke(leer);
+            }
+            else
+            {
+                lsbClientes.DataSource = clienteDao.Leer();
+            }
         }
     }
 }

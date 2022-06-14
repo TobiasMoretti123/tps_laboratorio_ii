@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -20,6 +17,7 @@ namespace Formularios_TP4
     public partial class FrmLista : Form
     {
         private Empresa empresa;
+        private delegate void LeerDelegate();
         private ClienteDao clientesDao;
         private OpenFileDialog openFileDialog;
         private SaveFileDialog saveFileDialog;
@@ -94,16 +92,7 @@ namespace Formularios_TP4
             texto = new Txt();
             xml = new Xml<Empresa>();
             clientesDao = new ClienteDao();
-
-            foreach (Cliente c in clientesDao.Leer())
-            {
-                rtxLista.Text += "--------------------------------\n";
-                rtxLista.Text += c.ToString();
-                rtxLista.Text += "Cilindro de Goma\n";
-                rtxLista.Text += c.Cilindro.ToString();
-                rtxLista.Text += "--------------------------------\n";
-                empresa += c;
-            }
+            Task t = Task.Run(() => Mostrar());        
         }
 
         private void GuardarComo()
@@ -156,6 +145,27 @@ namespace Formularios_TP4
             }
 
             return string.Empty;
+        }
+
+        private void Mostrar()
+        {
+            if (this.InvokeRequired)
+            {
+                LeerDelegate leer = new LeerDelegate(Mostrar);
+                this.rtxLista.Invoke(leer);
+            }
+            else
+            {
+                foreach (Cliente c in clientesDao.Leer())
+                {
+                    rtxLista.Text += "--------------------------------\n";
+                    rtxLista.Text += c.ToString();
+                    rtxLista.Text += "Cilindro de Goma\n";
+                    rtxLista.Text += c.Cilindro.ToString();
+                    rtxLista.Text += "--------------------------------\n";
+                    empresa += c;
+                }
+            }      
         }
 
         private void VentanaDeError(Exception ex)

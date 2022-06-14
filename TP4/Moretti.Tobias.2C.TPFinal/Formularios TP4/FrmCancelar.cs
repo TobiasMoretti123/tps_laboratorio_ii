@@ -15,6 +15,8 @@ namespace Formularios_TP4
     public partial class FrmCancelar : Form
     {
         private ClienteDao clienteDao;
+        private Task t;
+        private delegate void LeerDelegate();
         public FrmCancelar()
         {
             InitializeComponent();
@@ -30,7 +32,7 @@ namespace Formularios_TP4
             {
                 if (dialogResult == DialogResult.Yes)
                 {
-                    clienteDao.Eliminar(clienteSeleccionado.IdCliente);
+                    t = Task.Run(() => clienteDao.Eliminar(clienteSeleccionado.IdCliente));
                     this.ActualizarLstClientes();
                 }
             }
@@ -38,13 +40,26 @@ namespace Formularios_TP4
 
         private void FrmCancelar_Load(object sender, EventArgs e)
         {
-            lsbLista.DataSource = clienteDao.Leer();
+            t = Task.Run(() => Leer());
         }
 
         private void ActualizarLstClientes()
         {
             lsbLista.DataSource = null;
-            lsbLista.DataSource = clienteDao.Leer();
+            t = Task.Run(() => Leer());
+        }
+
+        public void Leer()
+        {
+            if (this.InvokeRequired)
+            {
+                LeerDelegate leer = new LeerDelegate(Leer);
+                this.lsbLista.Invoke(leer);
+            }
+            else
+            {
+                lsbLista.DataSource = clienteDao.Leer();
+            }
         }
     }
 }

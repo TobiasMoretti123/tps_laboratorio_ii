@@ -47,6 +47,7 @@ namespace Formularios_TP4
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             List<Exception> excepciones = new List<Exception>();
+            Task t;
             try
             {
                 if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtCuit.Text)
@@ -90,7 +91,7 @@ namespace Formularios_TP4
             {
                 try
                 {
-                    clienteDao.Guardar(cliente);
+                    t = Task.Run(() => clienteDao.Guardar(cliente));
                     this.Close();
                 }
                 catch (Exception ex)
