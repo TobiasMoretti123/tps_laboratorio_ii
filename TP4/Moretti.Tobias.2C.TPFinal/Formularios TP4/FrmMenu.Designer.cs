@@ -43,7 +43,7 @@
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(207, 82);
             this.btnAgregar.TabIndex = 0;
-            this.btnAgregar.Text = "Realizar Pedido";
+            this.btnAgregar.Text = "Agregar Cliente";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
@@ -54,7 +54,7 @@
             this.btnOpciones.Name = "btnOpciones";
             this.btnOpciones.Size = new System.Drawing.Size(207, 82);
             this.btnOpciones.TabIndex = 1;
-            this.btnOpciones.Text = "Opciones de Pedidos";
+            this.btnOpciones.Text = "Opciones de Cliente";
             this.btnOpciones.UseVisualStyleBackColor = true;
             this.btnOpciones.Click += new System.EventHandler(this.btnOpciones_Click);
             // 

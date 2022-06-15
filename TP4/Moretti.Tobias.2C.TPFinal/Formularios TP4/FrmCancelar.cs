@@ -32,7 +32,7 @@ namespace Formularios_TP4
             {
                 if (dialogResult == DialogResult.Yes)
                 {
-                    t = Task.Run(() => clienteDao.Eliminar(clienteSeleccionado.IdCliente));
+                    clienteDao.Eliminar(clienteSeleccionado.IdCliente);
                     this.ActualizarLstClientes();
                 }
             }

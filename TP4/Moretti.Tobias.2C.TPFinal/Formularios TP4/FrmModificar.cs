@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Biblioteca;
@@ -16,6 +17,8 @@ namespace Formularios_TP4
     {
         private ClienteDao clienteDao;
         private delegate void LeerDelegate();
+        public delegate void ModificarDelegate(int i,Cliente c);
+        CancellationTokenSource cts = new CancellationTokenSource();
         private Task t;
         public FrmModificar()
         {
@@ -44,7 +47,6 @@ namespace Formularios_TP4
                 && txtCuit.Text.CacularCuit())
             {
                 Cliente nuevoCliente = new Cliente(txtNombre.Text, txtCuit.Text);
-
                 Cliente clienteSeleccionado = lsbClientes.SelectedItem as Cliente;
                 DialogResult dialogResult = MessageBox.Show($"¿Seguro desea modificar a {clienteSeleccionado.Nombre}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -52,17 +54,23 @@ namespace Formularios_TP4
                 {
                     if (dialogResult == DialogResult.Yes)
                     {
-                        t = Task.Run(() => clienteDao.Modificar(clienteSeleccionado.IdCliente, nuevoCliente));
+                        clienteDao.Modificar(clienteSeleccionado.IdCliente,nuevoCliente);
                         this.ActualizarLstClientes();
-                    }
+                    }                 
                 }
             }
         }
 
         private void ActualizarLstClientes()
-        {
+        {         
             lsbClientes.DataSource = null;
             t = Task.Run(() => Leer());
+        }
+
+        public void Cancelar(ModificarDelegate modificar,CancellationToken token)
+        {
+            if(token.IsCancellationRequested)
+                return;
         }
 
         public void Leer()

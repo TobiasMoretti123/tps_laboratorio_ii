@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Empresa xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <NombreEmpresa>Rotadyne</NombreEmpresa>
+  <Clientes>
+    <Cliente>
+      <Nombre>Arcor</Nombre>
+      <IdCliente>19</IdCliente>
+      <Cuit>30710969619</Cuit>
+      <Cilindro xsi:type="Fisica">
+        <Tamanio>120</Tamanio>
+        <Precio>26000</Precio>
+        <TipoResistencia>Fisica</TipoResistencia>
+      </Cilindro>
+    </Cliente>
+    <Cliente>
+      <Nombre>Zicamor</Nombre>
+      <IdCliente>20</IdCliente>
+      <Cuit>30710123388</Cuit>
+      <Cilindro xsi:type="Quimica">
+        <Tamanio>120</Tamanio>
+        <Precio>32000</Precio>
+        <TipoResistencia>Quimica</TipoResistencia>
+      </Cilindro>
+    </Cliente>
+    <Cliente>
+      <Nombre>Estrada</Nombre>
+      <IdCliente>21</IdCliente>
+      <Cuit>30717145220</Cuit>
+      <Cilindro xsi:type="Termica">
+        <Tamanio>120</Tamanio>
+        <Precio>40000</Precio>
+        <TipoResistencia>Termica</TipoResistencia>
+      </Cilindro>
+    </Cliente>
+    <Cliente>
+      <Nombre>Textil iberoamérica</Nombre>
+      <IdCliente>22</IdCliente>
+      <Cuit>30717582922</Cuit>
+      <Cilindro xsi:type="Fisica">
+        <Tamanio>120</Tamanio>
+        <Precio>26000</Precio>
+        <TipoResistencia>Fisica</TipoResistencia>
+      </Cilindro>
+    </Cliente>
+    <Cliente>
+      <Nombre>INPACO</Nombre>
+      <IdCliente>23</IdCliente>
+      <Cuit>30715645579</Cuit>
+      <Cilindro xsi:type="Quimica">
+        <Tamanio>120</Tamanio>
+        <Precio>32000</Precio>
+        <TipoResistencia>Quimica</TipoResistencia>
+      </Cilindro>
+    </Cliente>
+    <Cliente>
+      <Nombre>Ipesa</Nombre>
+      <IdCliente>24</IdCliente>
+      <Cuit>30717248534</Cuit>
+      <Cilindro xsi:type="Termica">
+        <Tamanio>120</Tamanio>
+        <Precio>40000</Precio>
+        <TipoResistencia>Termica</TipoResistencia>
+      </Cilindro>
+    </Cliente>
+    <Cliente>
+      <Nombre>Ball</Nombre>
+      <IdCliente>25</IdCliente>
+      <Cuit>30714583960</Cuit>
+      <Cilindro xsi:type="Fisica">
+        <Tamanio>100</Tamanio>
+        <Precio>20000</Precio>
+        <TipoResistencia>Fisica</TipoResistencia>
+      </Cilindro>
+    </Cliente>
+    <Cliente>
+      <Nombre>Abbatiello</Nombre>
+      <IdCliente>26</IdCliente>
+      <Cuit>30717149889</Cuit>
+      <Cilindro xsi:type="Quimica">
+        <Tamanio>100</Tamanio>
+        <Precio>25000</Precio>
+        <TipoResistencia>Quimica</TipoResistencia>
+      </Cilindro>
+    </Cliente>
+    <Cliente>
+      <Nombre>Bolsaflex</Nombre>
+      <IdCliente>27</IdCliente>
+      <Cuit>30708442034</Cuit>
+      <Cilindro xsi:type="Termica">
+        <Tamanio>120</Tamanio>
+        <Precio>40000</Precio>
+        <TipoResistencia>Termica</TipoResistencia>
+      </Cilindro>
+    </Cliente>
+    <Cliente>
+      <Nombre>Coca cola</Nombre>
+      <IdCliente>37</IdCliente>
+      <Cuit>12345678911</Cuit>
+      <Cilindro xsi:type="Quimica">
+        <Tamanio>100</Tamanio>
+        <Precio>25000</Precio>
+        <TipoResistencia>Quimica</TipoResistencia>
+      </Cilindro>
+    </Cliente>
+  </Clientes>
+</Empresa>
