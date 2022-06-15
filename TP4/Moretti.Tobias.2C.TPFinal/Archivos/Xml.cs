@@ -3,6 +3,10 @@ using System.Xml.Serialization;
 
 namespace Archivos
 {
+    /// <summary>
+    /// Clase encargada de manejar archivos xml 
+    /// hereda de Archivo y utiliza la interfaz IArchivo
+    /// </summary>
     public class Xml<T> : Archivo, IArchivo<T>
         where T : class
     {

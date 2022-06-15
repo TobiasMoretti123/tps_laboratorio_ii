@@ -14,16 +14,56 @@ using Biblioteca;
 
 namespace Formularios_TP4
 {
+    /// <summary>
+    /// Formulario encargadado de listar los clientes
+    /// </summary>
     public partial class FrmLista : Form
     {
-        private Empresa empresa;
+        #region Delegados
+        /// <summary>
+        /// Delegado privado encargado de leer
+        /// </summary>
         private delegate void LeerDelegate();
+        #endregion
+
+        #region Atributos
+        /// <summary>
+        /// Atributo privado de la empresa 
+        /// </summary>
+        private Empresa empresa;
+        /// <summary>
+        /// Atributo privado de la base de datos de cliente
+        /// </summary>
         private ClienteDao clientesDao;
+        /// <summary>
+        /// Atributo privado de la apertura de un archivo
+        /// </summary>
         private OpenFileDialog openFileDialog;
+        /// <summary>
+        /// Atributo privado del guardado de un archivo
+        /// </summary>
         private SaveFileDialog saveFileDialog;
+        /// <summary>
+        /// Atributo privado encargado del xml
+        /// </summary>
         private Xml<Empresa> xml;
+        /// <summary>
+        /// Atributo privado encargado del txt
+        /// </summary>
         private Txt texto;
+        /// <summary>
+        /// Atributo privado de la ruta del ultimo archivo
+        /// </summary>
         private string ultimoArchivo;
+        #endregion
+
+        #region Constructores
+        /// <summary>
+        /// Constructor del formulario de la lista, recibe una empresa
+        /// Inicializa sus componentes, Inicializa la apertura de archivos
+        /// Inicializa el guardado de archivos, Aplica filtros a ambos y establece la empresa
+        /// </summary>
+        /// <param name="empresa"></param>
         public FrmLista(Empresa empresa)
         {
             InitializeComponent();
@@ -33,13 +73,20 @@ namespace Formularios_TP4
             saveFileDialog.Filter = "Archivo de texto|*.txt|Archivo XML|*.xml";
             this.empresa = empresa;
         }
+        #endregion
 
+        #region Propiedades
+        /// <summary>
+        /// Propiedad que obtiene y establece lo que este dentro del richtextbox
+        /// </summary>
         public string Contenido
         {
             set { this.rtxLista.Text = value; }
             get { return this.rtxLista.Text; }
         }
-
+        /// <summary>
+        /// Propiedad que obtiene y establece la ruta del ultimo archivo
+        /// </summary>
         private string UltimoArchivo
         {
             get
@@ -54,6 +101,14 @@ namespace Formularios_TP4
                 }
             }
         }
+        #endregion
+
+        #region Botones
+        /// <summary>
+        /// Boton guardar archivo permite el guardado del mismo, en uno existente o en uno nuevo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (!File.Exists(UltimoArchivo))
@@ -65,12 +120,20 @@ namespace Formularios_TP4
                 Guardar();
             }
         }
-
+        /// <summary>
+        /// Boton salir cierra el formulario de la lista
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Close();
         }
-
+        /// <summary>
+        /// Boton eliminar abre el formulario encargado de eliminar clientes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             FrmCancelar frmCancelar = new FrmCancelar(empresa);
@@ -78,7 +141,11 @@ namespace Formularios_TP4
             frmCancelar.ShowDialog();
             this.Close();
         }
-
+        /// <summary>
+        /// Boton modificar abre el formulario encargado de modificar clientes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModificar_Click(object sender, EventArgs e)
         {
             FrmModificar frmModificar = new FrmModificar();
@@ -86,7 +153,15 @@ namespace Formularios_TP4
             frmModificar.ShowDialog();
             this.Close();
         }
+        #endregion
 
+        #region Eventos
+        /// <summary>
+        /// Al cargar el formulario el mismo inicializa el txt, xml y la base de datos
+        /// Tambien muestra la lista de clientes en la base de datos a ttraves de un hilo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmLista_Load(object sender, EventArgs e)
         {
             texto = new Txt();
@@ -102,7 +177,12 @@ namespace Formularios_TP4
             }
                    
         }
+        #endregion
 
+        #region Metodos
+        /// <summary>
+        /// Metodo que guarda el archivo en una ubicacion seleccionada
+        /// </summary>
         private void GuardarComo()
         {
             UltimoArchivo = SeleccionarUbicacionGuardado();
@@ -115,7 +195,7 @@ namespace Formularios_TP4
                         xml.GuardarComo(UltimoArchivo, empresa);
                         break;
                     case ".txt":
-                        texto.GuardarComo(UltimoArchivo, rtxLista.Text);
+                        texto.GuardarComo(UltimoArchivo, Contenido);
                         break;
                 }
             }
@@ -124,7 +204,9 @@ namespace Formularios_TP4
                 VentanaDeError(ex);
             }
         }
-
+        /// <summary>
+        /// Metodo que guarda el ultimo archivo 
+        /// </summary>
         private void Guardar()
         {
             try
@@ -135,7 +217,7 @@ namespace Formularios_TP4
                         xml.Guardar(UltimoArchivo, empresa);
                         break;
                     case ".txt":
-                        texto.Guardar(UltimoArchivo, rtxLista.Text);
+                        texto.Guardar(UltimoArchivo, Contenido);
                         break;
                 }
             }
@@ -144,7 +226,10 @@ namespace Formularios_TP4
                 VentanaDeError(ex);
             }
         }
-
+        /// <summary>
+        /// Metodo que permite seleccionar la ubicacion para guardar el archivo
+        /// </summary>
+        /// <returns>La ruta donde se guardo el archivo</returns>
         private string SeleccionarUbicacionGuardado()
         {
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
@@ -154,7 +239,10 @@ namespace Formularios_TP4
 
             return string.Empty;
         }
-
+        /// <summary>
+        /// Metodo que muestra la lista de clientes de la base de datos
+        /// A traves del delegado de leer
+        /// </summary>
         private void Mostrar()
         {
             if (this.InvokeRequired)
@@ -174,12 +262,16 @@ namespace Formularios_TP4
                 }
             }      
         }
-
+        /// <summary>
+        /// Metodo encargado de mostrar cualquier excepcion como un error
+        /// </summary>
+        /// <param name="ex"></param>
         private void VentanaDeError(Exception ex)
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"Error: {ex.Message}");
             MessageBox.Show(sb.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+        #endregion
     }
 }

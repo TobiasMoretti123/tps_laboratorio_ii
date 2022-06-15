@@ -43,7 +43,7 @@ namespace TP4Test
         }
 
         [TestMethod]
-        public void MetodoExtendido_RetornaTrueSiElCuitTiene11Digitos()
+        public void MetodoExtendidoCalcularCuit_RetornaTrueSiElCuitTiene11Digitos()
         {
             string cuit = "12345678911";
 
@@ -55,7 +55,7 @@ namespace TP4Test
         }
 
         [TestMethod]
-        public void ClientesIguales_RetornaTrueSiClietesSonIguales()
+        public void ClientesIguales_RetornaTrueSiClientesSonIguales()
         {
             bool esperado = true;
             Cliente c2 = new Cliente("Maria", "21234567891");
@@ -66,6 +66,18 @@ namespace TP4Test
 
             Assert.AreEqual(esperado, actual);
 
+        }
+
+        [TestMethod]
+        public void MetodoExtendidoValidarNombre_RetornaElStringVacioSiElStringContieneNumeros()
+        {
+            string nombre = "12345678911";
+
+            string actual = nombre.ValidarNombre();
+
+            string expected = string.Empty;
+
+            Assert.AreEqual(expected, actual);
         }
     }
 }

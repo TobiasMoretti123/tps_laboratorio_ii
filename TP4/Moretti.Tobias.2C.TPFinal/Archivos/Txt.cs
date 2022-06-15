@@ -3,6 +3,10 @@ using System.IO;
 
 namespace Archivos
 {
+    /// <summary>
+    /// Clase encargada de manejar archivos de texto 
+    /// hereda de Archivo y utiliza la interfaz IArchivo
+    /// </summary>
     public class Txt : Archivo, IArchivo<string>
     {
         /// <summary>

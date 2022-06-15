@@ -9,17 +9,37 @@ using Biblioteca;
 
 namespace BaseDeDatos
 {
+    /// <summary>
+    /// Clase encargada de manejar la base de datos
+    /// </summary>
     public class ClienteDao
     {
+        #region Atributos
+        /// <summary>
+        /// Atributo privado de la connection string de la base de datos
+        /// </summary>
         private static string connectionString;
+        /// <summary>
+        /// Atributo privado de la conexion de la base de datos
+        /// </summary>
         private SqlConnection connection;
+        /// <summary>
+        /// Atributo privado del comando de la base de datos
+        /// </summary>
         private SqlCommand command;
+        #endregion
 
+        #region Contructores
+        /// <summary>
+        /// Constructor estatico que establece la connection string
+        /// </summary>
         static ClienteDao()
         {
-            connectionString = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Cliente_DB;Data Source=DESKTOP-C2SN2MS";
+            connectionString = @"Server=DESKTOP-C2SN2MS;Database=TP4_DB;Trusted_Connection=True;";
         }
-
+        /// <summary>
+        /// Constructor sin parametros que inicializa la conexcion los comandos y setea la base de datos
+        /// </summary>
         public ClienteDao()
         {
             connection = new SqlConnection(ClienteDao.connectionString);
@@ -27,7 +47,14 @@ namespace BaseDeDatos
             command.CommandType = System.Data.CommandType.Text;
             command.Connection = connection;
         }
+        #endregion
 
+        #region Metodos
+        /// <summary>
+        /// Guarda el cliente en la base de datos utilizando una query
+        /// una vez guardado cierra la base de datos
+        /// </summary>
+        /// <param name="cliente">El cliente a guardar en la base de datos</param>
         public void Guardar(Cliente cliente)
         {
 
@@ -59,14 +86,17 @@ namespace BaseDeDatos
                 }
             }
         }
-
+        /// <summary>
+        /// Lee la base de datos de cliente utilizando una query y establece cada dato que lee de ella en un cliente
+        /// luego lo agrega a una lista de clientes. Al terminar de leer y agregar cierra la conexion
+        /// </summary>
+        /// <returns>La lista de los clientes leidos</returns>
         public List<Cliente> Leer()
         {
             List<Cliente> lista = new List<Cliente>();
             try
             {
                 string query = "Select * FROM Cliente";
-                Random random = new Random();
                 connection.Open();
                 command.CommandText = query;
 
@@ -116,7 +146,12 @@ namespace BaseDeDatos
                 }
             }
         }
-
+        /// <summary>
+        /// Modifica a un cliente de la base de datos en base a su id utilizando una query
+        /// Cuando termina cierra la conexion
+        /// </summary>
+        /// <param name="id">El id del cliente a modificar</param>
+        /// <param name="cliente">El cliente a modificar</param>
         public void Modificar(int id, Cliente cliente)
         {
             try
@@ -148,7 +183,11 @@ namespace BaseDeDatos
                 }
             }
         }
-
+        /// <summary>
+        /// Elimina un cliente de la base de datos en base a su id utilizando una query
+        /// al finalizar cierra la conexion
+        /// </summary>
+        /// <param name="id">El id a eliminar</param>
         public void Eliminar(int id)
         {
             try
@@ -177,5 +216,6 @@ namespace BaseDeDatos
                 }
             }
         }
+        #endregion
     }
 }

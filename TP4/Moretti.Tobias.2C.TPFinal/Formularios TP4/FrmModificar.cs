@@ -13,44 +13,51 @@ using BaseDeDatos;
 
 namespace Formularios_TP4
 {
+    /// <summary>
+    /// Formulario encargado de modificar al cliente
+    /// </summary>
     public partial class FrmModificar : Form
     {
-        private ClienteDao clienteDao;
+        #region Delegados
+        /// <summary>
+        /// Delegado privado encargado de leer
+        /// </summary>
         private delegate void LeerDelegate();
-        CancellationTokenSource cts = new CancellationTokenSource();
+        #endregion
+
+        #region Atributos
+        /// <summary>
+        /// Atributo privado con la base de datos
+        /// </summary>
+        private ClienteDao clienteDao;
+        /// <summary>
+        /// Atributo privado con las task
+        /// </summary>
         private Task t;
+        #endregion
+
+        #region Constructores
+        /// <summary>
+        /// Constructor del formulario, Inicializa sus componentes e inicializa la base de datos
+        /// </summary>
         public FrmModificar()
         {
             InitializeComponent();
             clienteDao = new ClienteDao();
         }
+        #endregion
 
-        private void FrmModificar_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                t = Task.Run(() => Leer());
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            
-        }
-
-        private void lsbClientes_DoubleClick(object sender, EventArgs e)
-        {
-            Cliente? cliente = lsbClientes.SelectedItem as Cliente;
-            if (cliente is not null)
-            {
-                txtNombre.Text = cliente.Nombre;
-                txtCuit.Text = cliente.Cuit;
-            }
-        }
-
+        #region Botones
+        /// <summary>
+        /// Boton modificar, luego de seleccionar un cliente de la lista e ingresar sus nuevos datos
+        /// Este es modificado utilizando la base de datos, siempre y cuando los cuadros no esten vacios
+        /// Pregunta si esta seguro de la modificacion antes de hacerla
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtCuit.Text) && !string.IsNullOrEmpty(txtNombre.Text)
+            if (!string.IsNullOrEmpty(txtCuit.Text) && !string.IsNullOrEmpty(txtNombre.Text.ValidarNombre())
                 && txtCuit.Text.CacularCuit())
             {
                 Cliente nuevoCliente = new Cliente(txtNombre.Text, txtCuit.Text);
@@ -61,27 +68,53 @@ namespace Formularios_TP4
                 {
                     if (dialogResult == DialogResult.Yes)
                     {
-                        clienteDao.Modificar(clienteSeleccionado.IdCliente,nuevoCliente);
+                        clienteDao.Modificar(clienteSeleccionado.IdCliente, nuevoCliente);
                         this.ActualizarLstClientes();
-                    }                 
+                    }
                 }
             }
         }
+        #endregion
 
-        private void ActualizarLstClientes()
-        {         
-            lsbClientes.DataSource = null;
-            try
-            {
-                t = Task.Run(() => Leer());
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            
+        #region Eventos
+        /// <summary>
+        /// Al cargar el formulario este lee la base de datos y la muestra en la listbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FrmModificar_Load(object sender, EventArgs e)
+        {
+            t = Task.Run(() => Leer());
         }
+        /// <summary>
+        /// Al hacerle doble click a un cliente de la lista su nombre y su cuit apareceran
+        /// en los cuadros de texto pudiendo modificarlos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void lsbClientes_DoubleClick(object sender, EventArgs e)
+        {
+            Cliente? cliente = lsbClientes.SelectedItem as Cliente;
+            if (cliente is not null)
+            {
+                txtNombre.Text = cliente.Nombre;
+                txtCuit.Text = cliente.Cuit;
+            }
+        }
+        #endregion
 
+        #region Metodos
+        /// <summary>
+        /// Actualiza la listbox con los nuevos datos del cliente modificado
+        /// </summary>
+        private void ActualizarLstClientes()
+        {
+            lsbClientes.DataSource = null;
+            t = Task.Run(() => Leer());
+        }
+        /// <summary>
+        /// Metodo encargado de leer la base de datos utilizando el delegado 
+        /// </summary>
         public void Leer()
         {
             if (this.InvokeRequired)
@@ -91,8 +124,16 @@ namespace Formularios_TP4
             }
             else
             {
-                lsbClientes.DataSource = clienteDao.Leer();
+                try
+                {
+                    lsbClientes.DataSource = clienteDao.Leer();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
+        #endregion
     }
 }

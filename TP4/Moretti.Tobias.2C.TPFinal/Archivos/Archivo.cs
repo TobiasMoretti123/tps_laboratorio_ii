@@ -4,6 +4,9 @@ using Excepciones;
 
 namespace Archivos
 {
+    /// <summary>
+    /// Clase abtracta de manejo de archivos
+    /// </summary>
     public abstract class Archivo
     {
         /// <summary>

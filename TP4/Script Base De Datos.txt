@@ -1,0 +1,22 @@
+CREATE DATABASE [TP4_DB];
+GO
+USE [TP4_DB];
+GO
+CREATE TABLE [TP4_DB].dbo.Cliente
+    (
+    idCliente INT IDENTITY(1,1) PRIMARY KEY ,
+    nombre VARCHAR(255) NOT NULL,
+    cuit VARCHAR(11) NOT NULL ,
+    idCilindro int NOT NULL,
+    tamanioCilindro int(255) NOT NULL,
+    );
+GO
+INSERT INTO Cliente(nombre,cuit,idCilindro,tamanioCilindro) Values ('Arcor','30710969619',0,100)
+INSERT INTO Cliente(nombre,cuit,idCilindro,tamanioCilindro) Values ('Zicamor','30710123388',1,120)
+INSERT INTO Cliente(nombre,cuit,idCilindro,tamanioCilindro) Values ('Estrada','30717145220',2,100)
+INSERT INTO Cliente(nombre,cuit,idCilindro,tamanioCilindro) Values ('Textil iberoamérica','30717582922',0,120)
+INSERT INTO Cliente(nombre,cuit,idCilindro,tamanioCilindro) Values ('INPACO','30715645579',1,100)
+INSERT INTO Cliente(nombre,cuit,idCilindro,tamanioCilindro) Values ('Ipesa','30717248534',2,120)
+INSERT INTO Cliente(nombre,cuit,idCilindro,tamanioCilindro) Values ('Ball','30714583960',0,120)
+INSERT INTO Cliente(nombre,cuit,idCilindro,tamanioCilindro) Values ('Abbatiello','30717149889',1,120)
+INSERT INTO Cliente(nombre,cuit,idCilindro,tamanioCilindro) Values ('Bolsaflex','30708442034',2,100)

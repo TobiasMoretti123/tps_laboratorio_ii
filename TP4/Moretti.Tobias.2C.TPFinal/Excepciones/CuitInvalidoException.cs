@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Excepciones
 {
-    public class ClienteRepetidoException : Exception
+    public class CuitInvalidoException : Exception
     {
-        public ClienteRepetidoException(string mensaje)
-          : this(mensaje, null)
+        public CuitInvalidoException(string mensaje)
+         : this(mensaje, null)
         {
 
         }
-        public ClienteRepetidoException(string mensaje, Exception inner)
+        public CuitInvalidoException(string mensaje, Exception inner)
             : base(mensaje, inner)
         {
 
