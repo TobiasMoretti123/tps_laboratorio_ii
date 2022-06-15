@@ -51,7 +51,7 @@ namespace Formularios_TP4
             try
             {
                 if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtCuit.Text)
-                 || string.IsNullOrEmpty(cmbResistencia.Text))
+                 || string.IsNullOrEmpty(cmbResistencia.Text) || string.IsNullOrEmpty(cmbTamanioCilindro.Text))
                 {
                     throw new ParametrosVaciosException("Uno o mas cuadros de texto estan vacios");
                 }
@@ -78,13 +78,13 @@ namespace Formularios_TP4
             switch (cmbResistencia.SelectedIndex)
             {
                 case 0:
-                    cliente = new Cliente(this.Nombre, this.Cuit, new Fisica(100, Cilindro.ETipoResistencia.Fisica));
+                    cliente = new Cliente(this.Nombre, this.Cuit, new Fisica(int.Parse(cmbTamanioCilindro.Text), Cilindro.ETipoResistencia.Fisica));
                     break;
                 case 1:
-                    cliente = new Cliente(this.Nombre, this.Cuit, new Quimica(100, Cilindro.ETipoResistencia.Quimica));
+                    cliente = new Cliente(this.Nombre, this.Cuit, new Quimica(int.Parse(cmbTamanioCilindro.Text), Cilindro.ETipoResistencia.Quimica));
                     break;
                 case 2:
-                    cliente = new Cliente(this.Nombre, this.Cuit, new Termica(100, Cilindro.ETipoResistencia.Quimica));
+                    cliente = new Cliente(this.Nombre, this.Cuit, new Termica(int.Parse(cmbTamanioCilindro.Text), Cilindro.ETipoResistencia.Quimica));
                     break;
             }
             if (excepciones.Count == 0)

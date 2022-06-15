@@ -35,7 +35,7 @@ namespace BaseDeDatos
             {
                 connection.Open();
 
-                string query = "INSERT INTO Cliente (nombre, cuit, idCilindro) VALUES (@nombre, @cuit, @idCilindro)";
+                string query = "INSERT INTO Cliente (nombre, cuit, idCilindro,tamanioCilindro) VALUES (@nombre, @cuit, @idCilindro, @tamanioCilindro)";
 
                 command.CommandText = query;
 
@@ -43,6 +43,7 @@ namespace BaseDeDatos
                 command.Parameters.AddWithValue("nombre", cliente.Nombre);
                 command.Parameters.AddWithValue("cuit", cliente.Cuit);
                 command.Parameters.AddWithValue("idCilindro", cliente.Cilindro.TipoResistencia);
+                command.Parameters.AddWithValue("tamanioCilindro", cliente.Cilindro.Tamanio);
 
                 command.ExecuteNonQuery();
             }
@@ -77,29 +78,26 @@ namespace BaseDeDatos
                     string nombre = dataReader.GetString(1);
                     string cuit = dataReader.GetString(2);
                     int idCilindro = dataReader.GetInt32(3);
+                    int tamanioCilindro = dataReader.GetInt32(4);
 
                     Cliente cliente = new Cliente(idCliente, nombre, cuit);
 
                     switch (idCilindro)
                     {
                         case 0:
-                            cliente.Cilindro = new Fisica(random.Next(0, 3), Cilindro.ETipoResistencia.Fisica);
+                            cliente.Cilindro = new Fisica();
+                            cliente.Cilindro.TipoResistencia = Cilindro.ETipoResistencia.Fisica;
                             break;
                         case 1:
-                            cliente.Cilindro = new Quimica(random.Next(0, 3), Cilindro.ETipoResistencia.Quimica);
+                            cliente.Cilindro = new Quimica();
+                            cliente.Cilindro.TipoResistencia = Cilindro.ETipoResistencia.Quimica;
                             break;
                         case 2:
-                            cliente.Cilindro = new Termica(random.Next(0, 3), Cilindro.ETipoResistencia.Termica);
+                            cliente.Cilindro = new Termica();
+                            cliente.Cilindro.TipoResistencia = Cilindro.ETipoResistencia.Termica;
                             break;
                     }
-                    if (cliente.Cilindro.Tamanio == 1)
-                    {
-                        cliente.Cilindro.Tamanio = 100;
-                    }
-                    else
-                    {
-                        cliente.Cilindro.Tamanio = 120;
-                    }
+                    cliente.Cilindro.Tamanio = tamanioCilindro;
                     lista.Add(cliente);
                 }
                 return lista;

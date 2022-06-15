@@ -3,8 +3,8 @@ Nombre Empresa: Arcor
 Cuit: 30710969619 
 Cilindro de Goma
 Resistencia: Fisica 
-Tamaño: 120 
-Precio: 26000 
+Tamaño: 100 
+Precio: 20000 
 --------------------------------
 --------------------------------
 Nombre Empresa: Zicamor 
@@ -35,8 +35,8 @@ Nombre Empresa: INPACO
 Cuit: 30715645579 
 Cilindro de Goma
 Resistencia: Quimica 
-Tamaño: 120 
-Precio: 32000 
+Tamaño: 100 
+Precio: 25000 
 --------------------------------
 --------------------------------
 Nombre Empresa: Ipesa 
@@ -51,8 +51,8 @@ Nombre Empresa: Ball
 Cuit: 30714583960 
 Cilindro de Goma
 Resistencia: Fisica 
-Tamaño: 100 
-Precio: 20000 
+Tamaño: 120 
+Precio: 26000 
 --------------------------------
 --------------------------------
 Nombre Empresa: Abbatiello 
@@ -67,7 +67,7 @@ Nombre Empresa: Bolsaflex
 Cuit: 30708442034 
 Cilindro de Goma
 Resistencia: Termica 
-Tamaño: 120 
-Precio: 40000 
+Tamaño: 100 
+Precio: 30000 
 --------------------------------
 

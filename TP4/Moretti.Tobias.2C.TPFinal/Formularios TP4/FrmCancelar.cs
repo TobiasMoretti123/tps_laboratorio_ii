@@ -15,12 +15,14 @@ namespace Formularios_TP4
     public partial class FrmCancelar : Form
     {
         private ClienteDao clienteDao;
+        private Empresa empresa;
         private Task t;
         private delegate void LeerDelegate();
-        public FrmCancelar()
+        public FrmCancelar(Empresa empresa)
         {
             InitializeComponent();
             clienteDao = new ClienteDao();
+            this.empresa = empresa;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -32,21 +34,45 @@ namespace Formularios_TP4
             {
                 if (dialogResult == DialogResult.Yes)
                 {
-                    clienteDao.Eliminar(clienteSeleccionado.IdCliente);
-                    this.ActualizarLstClientes();
+                    try
+                    {
+                        clienteDao.Eliminar(clienteSeleccionado.IdCliente);
+                        empresa -= clienteSeleccionado;
+                        this.ActualizarLstClientes();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    
                 }
             }
         }
 
         private void FrmCancelar_Load(object sender, EventArgs e)
         {
-            t = Task.Run(() => Leer());
+            try
+            {
+                t = Task.Run(() => Leer());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }         
         }
 
         private void ActualizarLstClientes()
         {
             lsbLista.DataSource = null;
-            t = Task.Run(() => Leer());
+            try
+            {
+                t = Task.Run(() => Leer());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         public void Leer()
@@ -58,7 +84,7 @@ namespace Formularios_TP4
             }
             else
             {
-                lsbLista.DataSource = clienteDao.Leer();
+                    lsbLista.DataSource = clienteDao.Leer();             
             }
         }
     }

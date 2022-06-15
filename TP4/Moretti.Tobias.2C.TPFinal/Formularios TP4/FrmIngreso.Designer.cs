@@ -36,6 +36,8 @@
             this.lblCuit = new System.Windows.Forms.Label();
             this.lblResistencia = new System.Windows.Forms.Label();
             this.cmbResistencia = new System.Windows.Forms.ComboBox();
+            this.cmbTamanioCilindro = new System.Windows.Forms.ComboBox();
+            this.lblTamanio = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtNombre
@@ -57,7 +59,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAgregar.Location = new System.Drawing.Point(466, 99);
+            this.btnAgregar.Location = new System.Drawing.Point(274, 172);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(170, 30);
             this.btnAgregar.TabIndex = 6;
@@ -68,7 +70,7 @@
             // btnSalir
             // 
             this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSalir.Location = new System.Drawing.Point(466, 149);
+            this.btnSalir.Location = new System.Drawing.Point(450, 173);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(170, 30);
             this.btnSalir.TabIndex = 7;
@@ -116,11 +118,36 @@
             this.cmbResistencia.Size = new System.Drawing.Size(170, 29);
             this.cmbResistencia.TabIndex = 11;
             // 
+            // cmbTamanioCilindro
+            // 
+            this.cmbTamanioCilindro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTamanioCilindro.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmbTamanioCilindro.FormattingEnabled = true;
+            this.cmbTamanioCilindro.Items.AddRange(new object[] {
+            "100",
+            "120"});
+            this.cmbTamanioCilindro.Location = new System.Drawing.Point(450, 99);
+            this.cmbTamanioCilindro.Name = "cmbTamanioCilindro";
+            this.cmbTamanioCilindro.Size = new System.Drawing.Size(170, 29);
+            this.cmbTamanioCilindro.TabIndex = 13;
+            // 
+            // lblTamanio
+            // 
+            this.lblTamanio.AutoSize = true;
+            this.lblTamanio.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTamanio.Location = new System.Drawing.Point(450, 71);
+            this.lblTamanio.Name = "lblTamanio";
+            this.lblTamanio.Size = new System.Drawing.Size(123, 21);
+            this.lblTamanio.TabIndex = 12;
+            this.lblTamanio.Text = "Tamaño Cilindro";
+            // 
             // FrmIngreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(648, 275);
+            this.Controls.Add(this.cmbTamanioCilindro);
+            this.Controls.Add(this.lblTamanio);
             this.Controls.Add(this.cmbResistencia);
             this.Controls.Add(this.lblResistencia);
             this.Controls.Add(this.lblCuit);
@@ -151,5 +178,7 @@
         private System.Windows.Forms.Label lblCuit;
         private System.Windows.Forms.Label lblResistencia;
         private System.Windows.Forms.ComboBox cmbResistencia;
+        private System.Windows.Forms.ComboBox cmbTamanioCilindro;
+        private System.Windows.Forms.Label lblTamanio;
     }
 }

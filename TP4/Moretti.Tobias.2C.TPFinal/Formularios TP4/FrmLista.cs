@@ -73,7 +73,7 @@ namespace Formularios_TP4
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            FrmCancelar frmCancelar = new FrmCancelar();
+            FrmCancelar frmCancelar = new FrmCancelar(empresa);
             this.Hide();
             frmCancelar.ShowDialog();
             this.Close();
@@ -92,7 +92,15 @@ namespace Formularios_TP4
             texto = new Txt();
             xml = new Xml<Empresa>();
             clientesDao = new ClienteDao();
-            Task t = Task.Run(() => Mostrar());        
+            try
+            {
+                Task t = Task.Run(() => Mostrar());
+            }
+            catch (Exception ex)
+            {
+                VentanaDeError(ex);
+            }
+                   
         }
 
         private void GuardarComo()
@@ -158,12 +166,11 @@ namespace Formularios_TP4
             {
                 foreach (Cliente c in clientesDao.Leer())
                 {
-                    rtxLista.Text += "--------------------------------\n";
-                    rtxLista.Text += c.ToString();
-                    rtxLista.Text += "Cilindro de Goma\n";
-                    rtxLista.Text += c.Cilindro.ToString();
-                    rtxLista.Text += "--------------------------------\n";
-                    empresa += c;
+                    Contenido += "--------------------------------\n";
+                    Contenido += c.ToString();
+                    Contenido += "Cilindro de Goma\n";
+                    Contenido += c.Cilindro.ToString();
+                    Contenido += "--------------------------------\n";
                 }
             }      
         }

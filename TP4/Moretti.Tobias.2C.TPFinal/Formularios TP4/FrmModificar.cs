@@ -17,7 +17,6 @@ namespace Formularios_TP4
     {
         private ClienteDao clienteDao;
         private delegate void LeerDelegate();
-        public delegate void ModificarDelegate(int i,Cliente c);
         CancellationTokenSource cts = new CancellationTokenSource();
         private Task t;
         public FrmModificar()
@@ -28,7 +27,15 @@ namespace Formularios_TP4
 
         private void FrmModificar_Load(object sender, EventArgs e)
         {
-            t = Task.Run(() => Leer());
+            try
+            {
+                t = Task.Run(() => Leer());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void lsbClientes_DoubleClick(object sender, EventArgs e)
@@ -64,13 +71,15 @@ namespace Formularios_TP4
         private void ActualizarLstClientes()
         {         
             lsbClientes.DataSource = null;
-            t = Task.Run(() => Leer());
-        }
-
-        public void Cancelar(ModificarDelegate modificar,CancellationToken token)
-        {
-            if(token.IsCancellationRequested)
-                return;
+            try
+            {
+                t = Task.Run(() => Leer());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         public void Leer()

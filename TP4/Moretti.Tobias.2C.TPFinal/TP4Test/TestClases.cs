@@ -25,6 +25,7 @@ namespace TP4Test
             Cliente cl3 = new Cliente("juan", "2012131415", new Fisica(100));
             empresa += cl1;
             empresa += cl2;
+            empresa += cl3;
             int actual = empresa.Clientes.Count;
             int expected = 1;
 
@@ -51,6 +52,20 @@ namespace TP4Test
             bool expected = true;
 
             Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void ClientesIguales_RetornaTrueSiClietesSonIguales()
+        {
+            bool esperado = true;
+            Cliente c2 = new Cliente("Maria", "21234567891");
+            Cliente c = new Cliente("Maria", "21234567891");
+            bool actual;
+
+            actual = (c == c2);
+
+            Assert.AreEqual(esperado, actual);
+
         }
     }
 }
