@@ -19,12 +19,6 @@ namespace Formularios_TP4
     /// </summary>
     public partial class FrmLista : Form
     {
-        #region Delegados
-        /// <summary>
-        /// Delegado privado encargado de leer
-        /// </summary>
-        private delegate void LeerDelegate();
-        #endregion
 
         #region Atributos
         /// <summary>
@@ -55,13 +49,18 @@ namespace Formularios_TP4
         /// Atributo privado de la ruta del ultimo archivo
         /// </summary>
         private string ultimoArchivo;
+        /// <summary>
+        /// Atributo encargado de manejar eventos
+        /// </summary>
+        private Eventos eventos;
         #endregion
 
         #region Constructores
         /// <summary>
         /// Constructor del formulario de la lista, recibe una empresa
         /// Inicializa sus componentes, Inicializa la apertura de archivos
-        /// Inicializa el guardado de archivos, Aplica filtros a ambos y establece la empresa
+        /// Inicializa el guardado de archivos, Aplica filtros a ambos, inicializa la empresa
+        /// e inicializa el eveto de leer
         /// </summary>
         /// <param name="empresa"></param>
         public FrmLista(Empresa empresa)
@@ -71,6 +70,8 @@ namespace Formularios_TP4
             openFileDialog.Filter = "Archivo de texto|*.txt|Archivo XML|*.xml";
             saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Archivo de texto|*.txt|Archivo XML|*.xml";
+            eventos = new Eventos();
+            eventos.OnLeer += Mostrar;
             this.empresa = empresa;
         }
         #endregion
@@ -247,7 +248,7 @@ namespace Formularios_TP4
         {
             if (this.InvokeRequired)
             {
-                LeerDelegate leer = new LeerDelegate(Mostrar);
+                Action leer = new Action(Mostrar);
                 this.rtxLista.Invoke(leer);
             }
             else

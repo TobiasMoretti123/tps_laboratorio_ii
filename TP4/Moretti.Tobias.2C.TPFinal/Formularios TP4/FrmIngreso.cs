@@ -27,6 +27,10 @@ namespace Formularios_TP4
         /// Atributo privado de la base de datos de cliente
         /// </summary>
         private ClienteDao clienteDao;
+        /// <summary>
+        /// Atributo privado de los eventos
+        /// </summary>
+        private Eventos eventos;
         #endregion
 
         #region Constructores
@@ -37,6 +41,7 @@ namespace Formularios_TP4
         public FrmIngreso()
         {
             InitializeComponent();
+            
         }
         #endregion
 
@@ -83,7 +88,6 @@ namespace Formularios_TP4
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             List<Exception> excepciones = new List<Exception>();
-            Task t;
             try
             {
                 if (string.IsNullOrEmpty(txtNombre.Text.ValidarNombre()) || string.IsNullOrEmpty(txtCuit.Text)
@@ -127,7 +131,7 @@ namespace Formularios_TP4
             {
                 try
                 {
-                    t = Task.Run(() => clienteDao.Guardar(cliente));
+                    Guardar(cliente);
                     this.Close();
                 }
                 catch (Exception ex)
@@ -155,12 +159,15 @@ namespace Formularios_TP4
         /// <summary>
         /// Al cargar el formulario el mismo inicializa la base de datos y
         /// establece los valores del combobox con las resistencias de los cilindros
+        /// e inicializa el evento de guardar
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void FrmIngreso_Load(object sender, EventArgs e)
         {
             clienteDao = new ClienteDao();
+            eventos = new Eventos();
+            eventos.OnGuardar += Guardar;
             cmbResistencia.DataSource = Enum.GetValues(typeof(Cilindro.ETipoResistencia));
         }
         #endregion
@@ -178,6 +185,11 @@ namespace Formularios_TP4
                 sb.AppendLine($"{e.Message}");
             }
             MessageBox.Show(sb.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void Guardar(Cliente c)
+        {
+            Task.Run(() => clienteDao.Guardar(cliente));
         }
         #endregion
     }

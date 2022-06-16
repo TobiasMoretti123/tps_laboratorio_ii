@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Biblioteca;
@@ -17,12 +18,6 @@ namespace Formularios_TP4
     /// </summary>
     public partial class FrmCancelar : Form
     {
-        #region Delegados
-        /// <summary>
-        /// Delegado privado encargado de leer
-        /// </summary>
-        private delegate void LeerDelegate();
-        #endregion
 
         #region Atributos
         /// <summary>
@@ -37,18 +32,25 @@ namespace Formularios_TP4
         /// Atributo privado de las task 
         /// </summary>
         private Task t;
+        /// <summary>
+        /// Atributo privado de los eventos
+        /// </summary>
+        private Eventos eventos;
         #endregion
 
         #region Constructores
         /// <summary>
         /// Constructor parametrizado del formulario cancelar
-        /// Establece la empresa, inicializa sus componentes e inicializa el cliente de la base de datos
+        /// Establece la empresa, inicializa sus componentes, inicializa el cliente de la base de datos
+        /// e inicializa el evento de leer
         /// </summary>
         /// <param name="empresa"></param>
         public FrmCancelar(Empresa empresa)
         {
             InitializeComponent();
             clienteDao = new ClienteDao();
+            eventos = new Eventos();
+            eventos.OnLeer += Leer;
             this.empresa = empresa;
         }
         #endregion
@@ -94,7 +96,7 @@ namespace Formularios_TP4
         /// <param name="e"></param>
         private void FrmCancelar_Load(object sender, EventArgs e)
         {
-            t = Task.Run(() => Leer());
+            ActualizarLstClientes();
         }
         #endregion
 
@@ -104,7 +106,6 @@ namespace Formularios_TP4
         /// </summary>
         private void ActualizarLstClientes()
         {
-            lsbLista.DataSource = null;
             t = Task.Run(() => Leer());
         }
         /// <summary>
@@ -114,7 +115,7 @@ namespace Formularios_TP4
         {
             if (this.InvokeRequired)
             {
-                LeerDelegate leer = new LeerDelegate(Leer);
+                Action leer = new Action(Leer);
                 this.lsbLista.Invoke(leer);
             }
             else

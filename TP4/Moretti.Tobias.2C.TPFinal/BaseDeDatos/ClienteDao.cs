@@ -35,7 +35,7 @@ namespace BaseDeDatos
         /// </summary>
         static ClienteDao()
         {
-            connectionString = @"Server=DESKTOP-C2SN2MS;Database=TP4_DB;Trusted_Connection=True;";
+            connectionString = @"Server=DESKTOP-C2SN2MS;Database=Cliente_DB;Trusted_Connection=True;";
         }
         /// <summary>
         /// Constructor sin parametros que inicializa la conexcion los comandos y setea la base de datos

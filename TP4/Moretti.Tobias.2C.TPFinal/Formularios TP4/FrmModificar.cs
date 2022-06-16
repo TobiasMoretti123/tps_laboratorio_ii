@@ -18,13 +18,6 @@ namespace Formularios_TP4
     /// </summary>
     public partial class FrmModificar : Form
     {
-        #region Delegados
-        /// <summary>
-        /// Delegado privado encargado de leer
-        /// </summary>
-        private delegate void LeerDelegate();
-        #endregion
-
         #region Atributos
         /// <summary>
         /// Atributo privado con la base de datos
@@ -34,16 +27,23 @@ namespace Formularios_TP4
         /// Atributo privado con las task
         /// </summary>
         private Task t;
+        /// <summary>
+        /// Atributo privado con los eventos
+        /// </summary>
+        private Eventos eventos;
         #endregion
 
         #region Constructores
         /// <summary>
-        /// Constructor del formulario, Inicializa sus componentes e inicializa la base de datos
+        /// Constructor del formulario, Inicializa sus componentes, inicializa la base de datos
+        /// e inicializa el evento de leer
         /// </summary>
         public FrmModificar()
         {
             InitializeComponent();
             clienteDao = new ClienteDao();
+            eventos = new Eventos();
+            eventos.OnLeer += Leer;
         }
         #endregion
 
@@ -84,7 +84,7 @@ namespace Formularios_TP4
         /// <param name="e"></param>
         private void FrmModificar_Load(object sender, EventArgs e)
         {
-            t = Task.Run(() => Leer());
+            this.ActualizarLstClientes();
         }
         /// <summary>
         /// Al hacerle doble click a un cliente de la lista su nombre y su cuit apareceran
@@ -109,8 +109,7 @@ namespace Formularios_TP4
         /// </summary>
         private void ActualizarLstClientes()
         {
-            lsbClientes.DataSource = null;
-            t = Task.Run(() => Leer());
+            Task.Run(() => Leer());
         }
         /// <summary>
         /// Metodo encargado de leer la base de datos utilizando el delegado 
@@ -119,7 +118,7 @@ namespace Formularios_TP4
         {
             if (this.InvokeRequired)
             {
-                LeerDelegate leer = new LeerDelegate(Leer);
+                Action leer = new Action(Leer);
                 this.lsbClientes.Invoke(leer);
             }
             else
