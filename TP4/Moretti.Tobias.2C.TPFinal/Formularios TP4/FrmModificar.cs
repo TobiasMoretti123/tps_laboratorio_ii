@@ -42,8 +42,6 @@ namespace Formularios_TP4
         {
             InitializeComponent();
             clienteDao = new ClienteDao();
-            eventos = new Eventos();
-            eventos.OnLeer += Leer;
         }
         #endregion
 
@@ -84,7 +82,10 @@ namespace Formularios_TP4
         /// <param name="e"></param>
         private void FrmModificar_Load(object sender, EventArgs e)
         {
-            this.ActualizarLstClientes();
+            eventos = new Eventos();
+            eventos.OnLeer += Leer;
+            Task hilo = new Task(() => eventos.Leer());
+            hilo.Start();
         }
         /// <summary>
         /// Al hacerle doble click a un cliente de la lista su nombre y su cuit apareceran

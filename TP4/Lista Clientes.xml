@@ -4,7 +4,7 @@
   <Clientes>
     <Cliente>
       <Nombre>Arcor</Nombre>
-      <IdCliente>38</IdCliente>
+      <IdCliente>1</IdCliente>
       <Cuit>30710969619</Cuit>
       <Cilindro xsi:type="Fisica">
         <Tamanio>100</Tamanio>
@@ -14,7 +14,7 @@
     </Cliente>
     <Cliente>
       <Nombre>Zicamor</Nombre>
-      <IdCliente>39</IdCliente>
+      <IdCliente>2</IdCliente>
       <Cuit>30710123388</Cuit>
       <Cilindro xsi:type="Quimica">
         <Tamanio>120</Tamanio>
@@ -24,7 +24,7 @@
     </Cliente>
     <Cliente>
       <Nombre>Estrada</Nombre>
-      <IdCliente>40</IdCliente>
+      <IdCliente>3</IdCliente>
       <Cuit>30717145220</Cuit>
       <Cilindro xsi:type="Termica">
         <Tamanio>100</Tamanio>
@@ -34,7 +34,7 @@
     </Cliente>
     <Cliente>
       <Nombre>Textil iberoamérica</Nombre>
-      <IdCliente>41</IdCliente>
+      <IdCliente>4</IdCliente>
       <Cuit>30717582922</Cuit>
       <Cilindro xsi:type="Fisica">
         <Tamanio>120</Tamanio>
@@ -44,7 +44,7 @@
     </Cliente>
     <Cliente>
       <Nombre>INPACO</Nombre>
-      <IdCliente>42</IdCliente>
+      <IdCliente>5</IdCliente>
       <Cuit>30715645579</Cuit>
       <Cilindro xsi:type="Quimica">
         <Tamanio>100</Tamanio>
@@ -54,7 +54,7 @@
     </Cliente>
     <Cliente>
       <Nombre>Ipesa</Nombre>
-      <IdCliente>43</IdCliente>
+      <IdCliente>6</IdCliente>
       <Cuit>30717248534</Cuit>
       <Cilindro xsi:type="Termica">
         <Tamanio>120</Tamanio>
@@ -64,7 +64,7 @@
     </Cliente>
     <Cliente>
       <Nombre>Ball</Nombre>
-      <IdCliente>44</IdCliente>
+      <IdCliente>7</IdCliente>
       <Cuit>30714583960</Cuit>
       <Cilindro xsi:type="Fisica">
         <Tamanio>120</Tamanio>
@@ -74,7 +74,7 @@
     </Cliente>
     <Cliente>
       <Nombre>Abbatiello</Nombre>
-      <IdCliente>45</IdCliente>
+      <IdCliente>8</IdCliente>
       <Cuit>30717149889</Cuit>
       <Cilindro xsi:type="Quimica">
         <Tamanio>120</Tamanio>
@@ -84,7 +84,7 @@
     </Cliente>
     <Cliente>
       <Nombre>Bolsaflex</Nombre>
-      <IdCliente>46</IdCliente>
+      <IdCliente>9</IdCliente>
       <Cuit>30708442034</Cuit>
       <Cilindro xsi:type="Termica">
         <Tamanio>100</Tamanio>

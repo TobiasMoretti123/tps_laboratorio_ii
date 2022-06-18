@@ -29,13 +29,10 @@ namespace Formularios_TP4
         /// </summary>
         private Empresa empresa;
         /// <summary>
-        /// Atributo privado de las task 
-        /// </summary>
-        private Task t;
-        /// <summary>
         /// Atributo privado de los eventos
         /// </summary>
         private Eventos eventos;
+        private CancellationTokenSource cancellationTokenSource;
         #endregion
 
         #region Constructores
@@ -49,9 +46,9 @@ namespace Formularios_TP4
         {
             InitializeComponent();
             clienteDao = new ClienteDao();
-            eventos = new Eventos();
-            eventos.OnLeer += Leer;
+            cancellationTokenSource = new CancellationTokenSource();
             this.empresa = empresa;
+            
         }
         #endregion
 
@@ -73,8 +70,7 @@ namespace Formularios_TP4
                 {
                     try
                     {
-                        clienteDao.Eliminar(clienteSeleccionado.IdCliente);
-                        empresa -= clienteSeleccionado;
+                        Eliminar(clienteSeleccionado.IdCliente);
                         this.ActualizarLstClientes();
                     }
                     catch (Exception ex)
@@ -96,7 +92,15 @@ namespace Formularios_TP4
         /// <param name="e"></param>
         private void FrmCancelar_Load(object sender, EventArgs e)
         {
-            ActualizarLstClientes();
+            eventos = new Eventos();
+            eventos.OnLeer += Leer;
+            Task hilo = new Task(() => eventos.Leer(), cancellationTokenSource.Token);
+            hilo.Start();
+        }
+
+        private void Eliminar(int id)
+        {
+            clienteDao.Eliminar(id);
         }
         #endregion
 
@@ -106,7 +110,7 @@ namespace Formularios_TP4
         /// </summary>
         private void ActualizarLstClientes()
         {
-            t = Task.Run(() => Leer());
+            Task.Run(() => Leer());
         }
         /// <summary>
         /// Lee la base de datos a traves del delagado de leer

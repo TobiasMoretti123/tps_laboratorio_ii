@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 using System.Data.SqlClient;
+using System.Text;
+using System.Collections.Generic;
 using Biblioteca;
-
 
 namespace BaseDeDatos
 {
@@ -16,36 +13,18 @@ namespace BaseDeDatos
     {
         #region Atributos
         /// <summary>
-        /// Atributo privado de la connection string de la base de datos
+        /// Atributo privado con la conexion a sql
         /// </summary>
-        private static string connectionString;
-        /// <summary>
-        /// Atributo privado de la conexion de la base de datos
-        /// </summary>
-        private SqlConnection connection;
-        /// <summary>
-        /// Atributo privado del comando de la base de datos
-        /// </summary>
-        private SqlCommand command;
+        private SqlConnection sqlConnection;
         #endregion
 
         #region Contructores
         /// <summary>
-        /// Constructor estatico que establece la connection string
-        /// </summary>
-        static ClienteDao()
-        {
-            connectionString = @"Server=DESKTOP-C2SN2MS;Database=Cliente_DB;Trusted_Connection=True;";
-        }
-        /// <summary>
-        /// Constructor sin parametros que inicializa la conexcion los comandos y setea la base de datos
+        /// Constructor que establece la connection string
         /// </summary>
         public ClienteDao()
         {
-            connection = new SqlConnection(ClienteDao.connectionString);
-            command = new SqlCommand();
-            command.CommandType = System.Data.CommandType.Text;
-            command.Connection = connection;
+            sqlConnection = new SqlConnection("Server=DESKTOP-C2SN2MS;Database=Cliente_DB;Trusted_Connection=True;");
         }
         #endregion
 
@@ -57,32 +36,21 @@ namespace BaseDeDatos
         /// <param name="cliente">El cliente a guardar en la base de datos</param>
         public void Guardar(Cliente cliente)
         {
-
             try
             {
-                connection.Open();
-
-                string query = "INSERT INTO Cliente (nombre, cuit, idCilindro,tamanioCilindro) VALUES (@nombre, @cuit, @idCilindro, @tamanioCilindro)";
-
-                command.CommandText = query;
-
-                command.Parameters.Clear();
-                command.Parameters.AddWithValue("nombre", cliente.Nombre);
-                command.Parameters.AddWithValue("cuit", cliente.Cuit);
-                command.Parameters.AddWithValue("idCilindro", cliente.Cilindro.TipoResistencia);
-                command.Parameters.AddWithValue("tamanioCilindro", cliente.Cilindro.Tamanio);
-
-                command.ExecuteNonQuery();
-            }
-            catch (Exception)
-            {
-                throw;
+                sqlConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand("INSERT INTO Cliente (nombre, cuit, idCilindro,tamanioCilindro) VALUES (@nombre, @cuit, @idCilindro, @tamanioCilindro)", sqlConnection);
+                sqlCommand.Parameters.AddWithValue("nombre", cliente.Nombre);
+                sqlCommand.Parameters.AddWithValue("cuit", cliente.Cuit);
+                sqlCommand.Parameters.AddWithValue("idCilindro", cliente.Cilindro.TipoResistencia);
+                sqlCommand.Parameters.AddWithValue("tamanioCilindro", cliente.Cilindro.Tamanio);
+                sqlCommand.ExecuteNonQuery();
             }
             finally
             {
-                if (connection is not null && connection.State == System.Data.ConnectionState.Open)
+                if (sqlConnection.State == ConnectionState.Open)
                 {
-                    connection.Close();
+                    sqlConnection.Close();
                 }
             }
         }
@@ -96,20 +64,18 @@ namespace BaseDeDatos
             List<Cliente> lista = new List<Cliente>();
             try
             {
-                string query = "Select * FROM Cliente";
-                connection.Open();
-                command.CommandText = query;
+                sqlConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand("Select * FROM Cliente", sqlConnection);
+                SqlDataReader reader = sqlCommand.ExecuteReader();
+                StringBuilder stringBuilder = new StringBuilder();
 
-                SqlDataReader dataReader = command.ExecuteReader();
-
-                while (dataReader.Read())
+                while (reader.Read())
                 {
-                    int idCliente = dataReader.GetInt32(0);
-                    string nombre = dataReader.GetString(1);
-                    string cuit = dataReader.GetString(2);
-                    int idCilindro = dataReader.GetInt32(3);
-                    int tamanioCilindro = dataReader.GetInt32(4);
-
+                    int idCliente = reader.GetInt32(0);
+                    string nombre = reader.GetString(1);
+                    string cuit = reader.GetString(2);
+                    int idCilindro = reader.GetInt32(3);
+                    int tamanioCilindro = reader.GetInt32(4);
                     Cliente cliente = new Cliente(idCliente, nombre, cuit);
 
                     switch (idCilindro)
@@ -131,18 +97,12 @@ namespace BaseDeDatos
                     lista.Add(cliente);
                 }
                 return lista;
-
-            }
-            catch (Exception)
-            {
-
-                throw;
             }
             finally
             {
-                if (connection is not null && connection.State == System.Data.ConnectionState.Open)
+                if (sqlConnection.State == ConnectionState.Open)
                 {
-                    connection.Close();
+                    sqlConnection.Close();
                 }
             }
         }
@@ -156,30 +116,18 @@ namespace BaseDeDatos
         {
             try
             {
-                string query = "UPDATE Cliente SET nombre = @nombre, cuit = @cuit WHERE idCliente = @id";
-
-                connection.Open();
-
-                command.CommandText = query;
-
-                command.Parameters.Clear();
-                command.Parameters.AddWithValue("id", id);
-                command.Parameters.AddWithValue("nombre", cliente.Nombre);
-                command.Parameters.AddWithValue("cuit", cliente.Cuit);
-
-                command.ExecuteNonQuery();
-
-            }
-            catch (Exception)
-            {
-
-                throw;
+                sqlConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand("UPDATE Cliente SET nombre = @nombre, cuit = @cuit WHERE idCliente = @id", sqlConnection);
+                sqlCommand.Parameters.AddWithValue("id", id);
+                sqlCommand.Parameters.AddWithValue("nombre", cliente.Nombre);
+                sqlCommand.Parameters.AddWithValue("cuit", cliente.Cuit);
+                sqlCommand.ExecuteNonQuery();
             }
             finally
             {
-                if (connection is not null && connection.State == System.Data.ConnectionState.Open)
+                if (sqlConnection.State == ConnectionState.Open)
                 {
-                    connection.Close();
+                    sqlConnection.Close();
                 }
             }
         }
@@ -192,27 +140,16 @@ namespace BaseDeDatos
         {
             try
             {
-                string query = "DELETE FROM Cliente WHERE idCliente = @idBuscado";
-
-                connection.Open();
-
-                command.CommandText = query;
-
-                command.Parameters.Clear();
-                command.Parameters.AddWithValue("idBuscado", id);
-
-                command.ExecuteNonQuery();
-            }
-            catch (Exception)
-            {
-
-                throw;
+                sqlConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand("DELETE FROM Cliente WHERE idCliente = @idBuscado", sqlConnection);
+                sqlCommand.Parameters.AddWithValue("idBuscado", id);
+                sqlCommand.ExecuteNonQuery();
             }
             finally
             {
-                if (connection is not null && connection.State == System.Data.ConnectionState.Open)
+                if (sqlConnection.State == ConnectionState.Open)
                 {
-                    connection.Close();
+                    sqlConnection.Close();
                 }
             }
         }

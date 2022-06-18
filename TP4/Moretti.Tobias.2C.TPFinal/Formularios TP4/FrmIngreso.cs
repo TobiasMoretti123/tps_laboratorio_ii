@@ -27,9 +27,6 @@ namespace Formularios_TP4
         /// Atributo privado de la base de datos de cliente
         /// </summary>
         private ClienteDao clienteDao;
-        /// <summary>
-        /// Atributo privado de los eventos
-        /// </summary>
         private Eventos eventos;
         #endregion
 
@@ -123,7 +120,7 @@ namespace Formularios_TP4
                     cliente = new Cliente(this.Nombre, this.Cuit, new Quimica(int.Parse(cmbTamanioCilindro.Text), Cilindro.ETipoResistencia.Quimica));
                     break;
                 case 2:
-                    cliente = new Cliente(this.Nombre, this.Cuit, new Termica(int.Parse(cmbTamanioCilindro.Text), Cilindro.ETipoResistencia.Quimica));
+                    cliente = new Cliente(this.Nombre, this.Cuit, new Termica(int.Parse(cmbTamanioCilindro.Text), Cilindro.ETipoResistencia.Termica));
                     break;
             }
 
@@ -131,7 +128,9 @@ namespace Formularios_TP4
             {
                 try
                 {
-                    Guardar(cliente);
+                    eventos.OnGuardar += Guardar;
+                    Task hilo = new Task(() => eventos.Guardar(cliente));
+                    hilo.Start();
                     this.Close();
                 }
                 catch (Exception ex)
@@ -166,9 +165,9 @@ namespace Formularios_TP4
         private void FrmIngreso_Load(object sender, EventArgs e)
         {
             clienteDao = new ClienteDao();
-            eventos = new Eventos();
-            eventos.OnGuardar += Guardar;
             cmbResistencia.DataSource = Enum.GetValues(typeof(Cilindro.ETipoResistencia));
+            eventos = new Eventos();
+            
         }
         #endregion
 
@@ -189,7 +188,7 @@ namespace Formularios_TP4
 
         private void Guardar(Cliente c)
         {
-            Task.Run(() => clienteDao.Guardar(cliente));
+            clienteDao.Guardar(c);
         }
         #endregion
     }

@@ -93,6 +93,10 @@ namespace Biblioteca
         /// <param name="id"></param>
         /// <param name="nombre"></param>
         /// <param name="cuit"></param>
+        public Cliente (int id)
+        {
+            this.idCliente = id;
+        }
         public Cliente(int id, string nombre, string cuit)
            : this(nombre, cuit)
         {

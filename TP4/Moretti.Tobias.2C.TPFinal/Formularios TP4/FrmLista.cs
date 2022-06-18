@@ -70,8 +70,6 @@ namespace Formularios_TP4
             openFileDialog.Filter = "Archivo de texto|*.txt|Archivo XML|*.xml";
             saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Archivo de texto|*.txt|Archivo XML|*.xml";
-            eventos = new Eventos();
-            eventos.OnLeer += Mostrar;
             this.empresa = empresa;
         }
         #endregion
@@ -168,15 +166,10 @@ namespace Formularios_TP4
             texto = new Txt();
             xml = new Xml<Empresa>();
             clientesDao = new ClienteDao();
-            try
-            {
-                Task t = Task.Run(() => Mostrar());
-            }
-            catch (Exception ex)
-            {
-                VentanaDeError(ex);
-            }
-                   
+            eventos = new Eventos();
+            eventos.OnLeer += Mostrar;
+            Task hilo = new Task(() => eventos.Leer());
+            hilo.Start();
         }
         #endregion
 
@@ -260,6 +253,7 @@ namespace Formularios_TP4
                     Contenido += "Cilindro de Goma\n";
                     Contenido += c.Cilindro.ToString();
                     Contenido += "--------------------------------\n";
+                    empresa += c;
                 }
             }      
         }

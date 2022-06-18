@@ -7,52 +7,32 @@ using System.Threading;
 
 namespace Biblioteca
 {
+    public delegate void GuardarHandler(Cliente c);
+    public delegate void LeerHandler();
     public class Eventos
     {
-        #region Delegados
-        /// <summary>
-        /// Delegado encargado de ser el handler del evento guardar
-        /// </summary>
-        /// <param name="c"></param>
-        public delegate void GuardarHandler(Cliente c);
-        /// <summary>
-        /// Delegado encargado de ser el handler del evento leer
-        /// </summary>
-        public delegate void LeerHandler();
-        #endregion
-
-        #region Eventos
-        /// <summary>
-        /// Evento guardar
-        /// </summary>
+        Empresa empresa = new Empresa("Rotadyne");
         public event GuardarHandler OnGuardar;
-        /// <summary>
-        /// Evento leer
-        /// </summary>
         public event LeerHandler OnLeer;
-        #endregion
 
-        #region Metodos
-        /// <summary>
-        /// Metodo que invoca al evento leer
-        /// </summary>
-        public void Leer()
-        {
-            if (OnLeer is not null)
-            {
-                OnLeer.Invoke();
-            }
-        }
-        /// <summary>
-        /// Metodo que invoca al evento guardar
-        /// </summary>
         public void Guardar(Cliente c)
         {
+            empresa += c;
+
             if (OnGuardar is not null)
             {
                 OnGuardar.Invoke(c);
             }
         }
-        #endregion
+
+        public void Leer()
+        {
+            empresa.ToString();
+
+            if(OnLeer is not null)
+            {
+                OnLeer.Invoke();
+            }       
+        }
     }
 }
