@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Excepciones;
 
 namespace Biblioteca
 {
@@ -19,11 +20,11 @@ namespace Biblioteca
         /// <returns>true si tiene 11 digitos false si no</returns>
         public static bool CacularCuit(this string str)
         {
-            if (str.Length == 11)
+            if (str.Length != 11)
             {
-                return true;
+                throw new CuitInvalidoException("Cuit debe ser de 11 digitos sin espacios o guiones");
             }
-            return false;
+            return true;
         }
         /// <summary>
         /// Metodo de extension de string valida que el nombre sea valido

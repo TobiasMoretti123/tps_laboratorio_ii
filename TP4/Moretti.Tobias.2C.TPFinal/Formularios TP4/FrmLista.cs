@@ -59,8 +59,7 @@ namespace Formularios_TP4
         /// <summary>
         /// Constructor del formulario de la lista, recibe una empresa
         /// Inicializa sus componentes, Inicializa la apertura de archivos
-        /// Inicializa el guardado de archivos, Aplica filtros a ambos, inicializa la empresa
-        /// e inicializa el eveto de leer
+        /// Inicializa el guardado de archivos, Aplica filtros a ambos e inicializa la empresa
         /// </summary>
         /// <param name="empresa"></param>
         public FrmLista(Empresa empresa)
@@ -157,7 +156,7 @@ namespace Formularios_TP4
         #region Eventos
         /// <summary>
         /// Al cargar el formulario el mismo inicializa el txt, xml y la base de datos
-        /// Tambien muestra la lista de clientes en la base de datos a ttraves de un hilo
+        /// Tambien muestra la lista de clientes en la base de datos a traves de un hilo
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -235,7 +234,7 @@ namespace Formularios_TP4
         }
         /// <summary>
         /// Metodo que muestra la lista de clientes de la base de datos
-        /// A traves del delegado de leer
+        /// A traves del evento de leer
         /// </summary>
         private void Mostrar()
         {

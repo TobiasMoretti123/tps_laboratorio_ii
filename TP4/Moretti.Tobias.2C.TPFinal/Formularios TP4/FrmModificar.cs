@@ -24,10 +24,6 @@ namespace Formularios_TP4
         /// </summary>
         private ClienteDao clienteDao;
         /// <summary>
-        /// Atributo privado con las task
-        /// </summary>
-        private Task t;
-        /// <summary>
         /// Atributo privado con los eventos
         /// </summary>
         private Eventos eventos;
@@ -113,7 +109,7 @@ namespace Formularios_TP4
             Task.Run(() => Leer());
         }
         /// <summary>
-        /// Metodo encargado de leer la base de datos utilizando el delegado 
+        /// Metodo encargado de leer la base de datos utilizando el evento de leer
         /// </summary>
         public void Leer()
         {

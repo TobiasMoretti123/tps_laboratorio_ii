@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Biblioteca;
+using Excepciones;
 
 namespace TP4Test
 {
@@ -43,15 +44,13 @@ namespace TP4Test
         }
 
         [TestMethod]
-        public void MetodoExtendidoCalcularCuit_RetornaTrueSiElCuitTiene11Digitos()
+        [ExpectedException(typeof(CuitInvalidoException))]
+        public void MetodoExtendidoCalcularCuit_RetornaExepcionCuandoNoTiene11Digitos()
         {
-            string cuit = "12345678911";
+            string cuit = "1234567891";
 
             bool actual = cuit.CacularCuit();
 
-            bool expected = true;
-
-            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]

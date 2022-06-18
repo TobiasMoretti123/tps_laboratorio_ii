@@ -32,7 +32,6 @@ namespace Formularios_TP4
         /// Atributo privado de los eventos
         /// </summary>
         private Eventos eventos;
-        private CancellationTokenSource cancellationTokenSource;
         #endregion
 
         #region Constructores
@@ -46,7 +45,6 @@ namespace Formularios_TP4
         {
             InitializeComponent();
             clienteDao = new ClienteDao();
-            cancellationTokenSource = new CancellationTokenSource();
             this.empresa = empresa;
             
         }
@@ -71,6 +69,7 @@ namespace Formularios_TP4
                     try
                     {
                         Eliminar(clienteSeleccionado.IdCliente);
+                        empresa -= clienteSeleccionado;
                         this.ActualizarLstClientes();
                     }
                     catch (Exception ex)
@@ -94,7 +93,7 @@ namespace Formularios_TP4
         {
             eventos = new Eventos();
             eventos.OnLeer += Leer;
-            Task hilo = new Task(() => eventos.Leer(), cancellationTokenSource.Token);
+            Task hilo = new Task(() => eventos.Leer());
             hilo.Start();
         }
 
@@ -113,7 +112,7 @@ namespace Formularios_TP4
             Task.Run(() => Leer());
         }
         /// <summary>
-        /// Lee la base de datos a traves del delagado de leer
+        /// Lee la base de datos a traves del evento de leer
         /// </summary>
         public void Leer()
         {

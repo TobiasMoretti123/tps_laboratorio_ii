@@ -27,6 +27,9 @@ namespace Formularios_TP4
         /// Atributo privado de la base de datos de cliente
         /// </summary>
         private ClienteDao clienteDao;
+        /// <summary>
+        /// Atributo privado del los eventos
+        /// </summary>
         private Eventos eventos;
         #endregion
 
@@ -100,8 +103,7 @@ namespace Formularios_TP4
 
             try
             {
-                if (!txtCuit.Text.CacularCuit())
-                    throw new CuitInvalidoException("El cuit es de 11 digitos sin guiones o espacios");
+                txtCuit.Text.CacularCuit();                  
             }
             catch (CuitInvalidoException ex)
             {
@@ -185,7 +187,10 @@ namespace Formularios_TP4
             }
             MessageBox.Show(sb.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-
+        /// <summary>
+        /// Evento guardar, guarda el cliente a la base de datos
+        /// </summary>
+        /// <param name="c"></param>
         private void Guardar(Cliente c)
         {
             clienteDao.Guardar(c);
