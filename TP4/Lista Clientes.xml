@@ -92,5 +92,15 @@
         <TipoResistencia>Termica</TipoResistencia>
       </Cilindro>
     </Cliente>
+    <Cliente>
+      <Nombre>Coca cola</Nombre>
+      <IdCliente>10</IdCliente>
+      <Cuit>21123456789</Cuit>
+      <Cilindro xsi:type="Termica">
+        <Tamanio>120</Tamanio>
+        <Precio>40000</Precio>
+        <TipoResistencia>Termica</TipoResistencia>
+      </Cilindro>
+    </Cliente>
   </Clientes>
 </Empresa>
