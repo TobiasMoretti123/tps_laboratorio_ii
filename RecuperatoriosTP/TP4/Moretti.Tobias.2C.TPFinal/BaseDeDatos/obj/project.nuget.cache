@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tq8UNdeMBUaS9/hvkgsZnQW7gUU4aqS1DuJYtXlbNFtFaWqfcKXye8Z5CQN2FJGjA6sVk/urnot9wgUBUtccSg==",
+  "dgSpecHash": "ilLSRkZkUMo5IqR9t/1TzZ9fwqfEPp7iB/oXmDSjehpK9kvyGZyz3YY+KLE65UViDBXTaMejKypmp//KLJXxtw==",
   "success": true,
-  "projectFilePath": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\TP4\\Moretti.Tobias.2C.TPFinal\\BaseDeDatos\\BaseDeDatos.csproj",
+  "projectFilePath": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\RecuperatoriosTP\\TP4\\Moretti.Tobias.2C.TPFinal\\BaseDeDatos\\BaseDeDatos.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tobias\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Tobias\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

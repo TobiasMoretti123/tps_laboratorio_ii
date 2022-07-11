@@ -6665,11 +6665,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\TP4\\Moretti.Tobias.2C.TPFinal\\TP4Test\\TP4Test.csproj",
+      "projectUniqueName": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\RecuperatoriosTP\\TP4\\Moretti.Tobias.2C.TPFinal\\TP4Test\\TP4Test.csproj",
       "projectName": "TP4Test",
-      "projectPath": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\TP4\\Moretti.Tobias.2C.TPFinal\\TP4Test\\TP4Test.csproj",
+      "projectPath": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\RecuperatoriosTP\\TP4\\Moretti.Tobias.2C.TPFinal\\TP4Test\\TP4Test.csproj",
       "packagesPath": "C:\\Users\\Tobias\\.nuget\\packages\\",
-      "outputPath": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\TP4\\Moretti.Tobias.2C.TPFinal\\TP4Test\\obj\\",
+      "outputPath": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\RecuperatoriosTP\\TP4\\Moretti.Tobias.2C.TPFinal\\TP4Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Tobias\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6686,8 +6686,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\TP4\\Moretti.Tobias.2C.TPFinal\\Biblioteca\\Biblioteca.csproj": {
-              "projectPath": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\TP4\\Moretti.Tobias.2C.TPFinal\\Biblioteca\\Biblioteca.csproj"
+            "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\RecuperatoriosTP\\TP4\\Moretti.Tobias.2C.TPFinal\\Biblioteca\\Biblioteca.csproj": {
+              "projectPath": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\RecuperatoriosTP\\TP4\\Moretti.Tobias.2C.TPFinal\\Biblioteca\\Biblioteca.csproj"
             }
           }
         }

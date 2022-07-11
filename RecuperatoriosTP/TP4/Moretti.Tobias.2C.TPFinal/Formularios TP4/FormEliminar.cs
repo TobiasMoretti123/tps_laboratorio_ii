@@ -5,7 +5,6 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Biblioteca;
@@ -13,12 +12,8 @@ using BaseDeDatos;
 
 namespace Formularios_TP4
 {
-    /// <summary>
-    /// Formulario que se encarga de eliminar un cliente
-    /// </summary>
-    public partial class FrmCancelar : Form
+    public partial class FormEliminar : Form
     {
-
         #region Atributos
         /// <summary>
         /// Atributo privado del cliente en la base de datos
@@ -41,12 +36,12 @@ namespace Formularios_TP4
         /// e inicializa el evento de leer
         /// </summary>
         /// <param name="empresa"></param>
-        public FrmCancelar(Empresa empresa)
+        public FormEliminar(Empresa empresa)
         {
             InitializeComponent();
             clienteDao = new ClienteDao();
             this.empresa = empresa;
-            
+
         }
         #endregion
 
@@ -57,10 +52,10 @@ namespace Formularios_TP4
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void btnEliminar_Click_1(object sender, EventArgs e)
         {
             Cliente clienteSeleccionado = lsbLista.SelectedItem as Cliente;
-            DialogResult dialogResult = MessageBox.Show($"¿Seguro desea eliminar a {clienteSeleccionado.Nombre}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dialogResult = MessageBox.Show($"¿Seguro desea eliminar a {clienteSeleccionado.RazonSocial}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (clienteSeleccionado is not null)
             {
@@ -99,7 +94,7 @@ namespace Formularios_TP4
 
         private void Eliminar(int id)
         {
-            clienteDao.Eliminar(id);
+            clienteDao.EliminarCliente(id);
         }
         #endregion
 
@@ -125,7 +120,7 @@ namespace Formularios_TP4
             {
                 try
                 {
-                    lsbLista.DataSource = clienteDao.Leer();
+                    lsbLista.DataSource = clienteDao.LeerCliente();
                 }
                 catch (Exception ex)
                 {
@@ -133,6 +128,13 @@ namespace Formularios_TP4
                 }
             }
         }
+
         #endregion
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            
+        }
     }
 }

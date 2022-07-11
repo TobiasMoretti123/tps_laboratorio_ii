@@ -497,11 +497,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\TP4\\Moretti.Tobias.2C.TPFinal\\BaseDeDatos\\BaseDeDatos.csproj",
+      "projectUniqueName": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\RecuperatoriosTP\\TP4\\Moretti.Tobias.2C.TPFinal\\BaseDeDatos\\BaseDeDatos.csproj",
       "projectName": "BaseDeDatos",
-      "projectPath": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\TP4\\Moretti.Tobias.2C.TPFinal\\BaseDeDatos\\BaseDeDatos.csproj",
+      "projectPath": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\RecuperatoriosTP\\TP4\\Moretti.Tobias.2C.TPFinal\\BaseDeDatos\\BaseDeDatos.csproj",
       "packagesPath": "C:\\Users\\Tobias\\.nuget\\packages\\",
-      "outputPath": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\TP4\\Moretti.Tobias.2C.TPFinal\\BaseDeDatos\\obj\\",
+      "outputPath": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\RecuperatoriosTP\\TP4\\Moretti.Tobias.2C.TPFinal\\BaseDeDatos\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Tobias\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -518,8 +518,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\TP4\\Moretti.Tobias.2C.TPFinal\\Biblioteca\\Biblioteca.csproj": {
-              "projectPath": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\TP4\\Moretti.Tobias.2C.TPFinal\\Biblioteca\\Biblioteca.csproj"
+            "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\RecuperatoriosTP\\TP4\\Moretti.Tobias.2C.TPFinal\\Biblioteca\\Biblioteca.csproj": {
+              "projectPath": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\RecuperatoriosTP\\TP4\\Moretti.Tobias.2C.TPFinal\\Biblioteca\\Biblioteca.csproj"
             }
           }
         }

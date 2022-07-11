@@ -10,7 +10,8 @@
         "dependencies": {
           "Archivos": "1.0.0",
           "BaseDeDatos": "1.0.0",
-          "Biblioteca": "1.0.0"
+          "Biblioteca": "1.0.0",
+          "Excepciones": "1.0.0"
         },
         "runtime": {
           "Formularios TP4.dll": {}

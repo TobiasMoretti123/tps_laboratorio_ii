@@ -79,29 +79,5 @@ namespace Biblioteca
             }
             return retorno;
         }
-        /// <summary>
-        /// Valida si es un telefono valido
-        /// </summary>
-        /// <param name="num"></param>
-        /// <returns>Si empieza con 15 0 11 retorna 1("es celular"), 0 si es telefono fijo, -1 si no es valido</returns>
-        public static int ValidarTelefono(this string str)
-        {
-            int retorno = -1;
-            if (str.Length > 10 || str.Length < 8)
-            {
-                throw new TelefonoInvalidoException("El telefono que ingreso es invalido");
-            }
-
-            if (str.StartsWith("15"))
-            {
-                retorno = 1;
-            }
-            else
-            {
-                retorno = 0;
-            }
-
-            return retorno;
-        }
     }
 }

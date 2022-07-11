@@ -1,38 +1,41 @@
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\Formularios TP4.exe
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\Formularios TP4.deps.json
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\Formularios TP4.runtimeconfig.json
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\Formularios TP4.runtimeconfig.dev.json
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\Formularios TP4.dll
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\Formularios TP4.pdb
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\System.Data.SqlClient.dll
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\runtimes\win-arm64\native\sni.dll
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\runtimes\win-x64\native\sni.dll
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\runtimes\win-x86\native\sni.dll
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\Biblioteca.dll
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\Excepciones.dll
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\Biblioteca.pdb
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\Excepciones.pdb
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios TP4.csproj.AssemblyReference.cache
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios_TP4.FrmCancelar.resources
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios_TP4.FrmIngreso.resources
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios_TP4.FrmLista.resources
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios_TP4.FrmMenu.resources
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios_TP4.FrmModificar.resources
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios_TP4.Properties.Resources.resources
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios TP4.csproj.GenerateResource.cache
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios TP4.GeneratedMSBuildEditorConfig.editorconfig
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios TP4.AssemblyInfoInputs.cache
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios TP4.AssemblyInfo.cs
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios TP4.csproj.CoreCompileInputs.cache
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios TP4.csproj.CopyComplete
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios TP4.dll
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\refint\Formularios TP4.dll
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios TP4.pdb
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios TP4.genruntimeconfig.cache
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\ref\Formularios TP4.dll
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\Archivos.dll
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\BaseDeDatos.dll
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\Archivos.pdb
-D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\BaseDeDatos.pdb
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios TP4.csproj.AssemblyReference.cache
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios_TP4.FormComprar.resources
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios_TP4.FormIngreso.resources
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios_TP4.FormMenu.resources
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios_TP4.FormUsuario.resources
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios_TP4.Properties.Resources.resources
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios TP4.csproj.GenerateResource.cache
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios TP4.GeneratedMSBuildEditorConfig.editorconfig
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios TP4.AssemblyInfoInputs.cache
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios TP4.AssemblyInfo.cs
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios TP4.csproj.CoreCompileInputs.cache
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\Formularios TP4.exe
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\Formularios TP4.deps.json
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\Formularios TP4.runtimeconfig.json
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\Formularios TP4.runtimeconfig.dev.json
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\Formularios TP4.dll
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\Formularios TP4.pdb
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\System.Data.SqlClient.dll
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\runtimes\win-arm64\native\sni.dll
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\runtimes\win-x64\native\sni.dll
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\runtimes\win-x86\native\sni.dll
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\Archivos.dll
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\BaseDeDatos.dll
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\Biblioteca.dll
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\Excepciones.dll
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\Archivos.pdb
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\BaseDeDatos.pdb
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\Biblioteca.pdb
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\bin\Debug\net5.0-windows\Excepciones.pdb
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios TP4.csproj.CopyComplete
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios TP4.dll
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\refint\Formularios TP4.dll
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios TP4.pdb
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios TP4.genruntimeconfig.cache
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\ref\Formularios TP4.dll
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios_TP4.FormConsultas.resources
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios_TP4.FormEliminar.resources
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios_TP4.FormInformacion.resources
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios_TP4.FormModificar.resources

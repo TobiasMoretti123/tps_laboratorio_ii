@@ -526,7 +526,8 @@
     "net5.0-windows7.0": [
       "Archivos >= 1.0.0",
       "BaseDeDatos >= 1.0.0",
-      "Biblioteca >= 1.0.0"
+      "Biblioteca >= 1.0.0",
+      "Excepciones >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -535,11 +536,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\TP4\\Moretti.Tobias.2C.TPFinal\\Formularios TP4\\Formularios TP4.csproj",
+      "projectUniqueName": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\RecuperatoriosTP\\TP4\\Moretti.Tobias.2C.TPFinal\\Formularios TP4\\Formularios TP4.csproj",
       "projectName": "Formularios TP4",
-      "projectPath": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\TP4\\Moretti.Tobias.2C.TPFinal\\Formularios TP4\\Formularios TP4.csproj",
+      "projectPath": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\RecuperatoriosTP\\TP4\\Moretti.Tobias.2C.TPFinal\\Formularios TP4\\Formularios TP4.csproj",
       "packagesPath": "C:\\Users\\Tobias\\.nuget\\packages\\",
-      "outputPath": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\TP4\\Moretti.Tobias.2C.TPFinal\\Formularios TP4\\obj\\",
+      "outputPath": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\RecuperatoriosTP\\TP4\\Moretti.Tobias.2C.TPFinal\\Formularios TP4\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Tobias\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -556,14 +557,17 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\TP4\\Moretti.Tobias.2C.TPFinal\\Archivos\\Archivos.csproj": {
-              "projectPath": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\TP4\\Moretti.Tobias.2C.TPFinal\\Archivos\\Archivos.csproj"
+            "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\RecuperatoriosTP\\TP4\\Moretti.Tobias.2C.TPFinal\\Archivos\\Archivos.csproj": {
+              "projectPath": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\RecuperatoriosTP\\TP4\\Moretti.Tobias.2C.TPFinal\\Archivos\\Archivos.csproj"
             },
-            "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\TP4\\Moretti.Tobias.2C.TPFinal\\BaseDeDatos\\BaseDeDatos.csproj": {
-              "projectPath": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\TP4\\Moretti.Tobias.2C.TPFinal\\BaseDeDatos\\BaseDeDatos.csproj"
+            "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\RecuperatoriosTP\\TP4\\Moretti.Tobias.2C.TPFinal\\BaseDeDatos\\BaseDeDatos.csproj": {
+              "projectPath": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\RecuperatoriosTP\\TP4\\Moretti.Tobias.2C.TPFinal\\BaseDeDatos\\BaseDeDatos.csproj"
             },
-            "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\TP4\\Moretti.Tobias.2C.TPFinal\\Biblioteca\\Biblioteca.csproj": {
-              "projectPath": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\TP4\\Moretti.Tobias.2C.TPFinal\\Biblioteca\\Biblioteca.csproj"
+            "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\RecuperatoriosTP\\TP4\\Moretti.Tobias.2C.TPFinal\\Biblioteca\\Biblioteca.csproj": {
+              "projectPath": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\RecuperatoriosTP\\TP4\\Moretti.Tobias.2C.TPFinal\\Biblioteca\\Biblioteca.csproj"
+            },
+            "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\RecuperatoriosTP\\TP4\\Moretti.Tobias.2C.TPFinal\\Excepciones\\Excepciones.csproj": {
+              "projectPath": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\RecuperatoriosTP\\TP4\\Moretti.Tobias.2C.TPFinal\\Excepciones\\Excepciones.csproj"
             }
           }
         }

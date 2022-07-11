@@ -10,25 +10,9 @@ namespace TP4Test
         [TestMethod]
         public void PropiedadPrecio_RetornaElPrecioSegunElTipoResistencia()
         {
-            Fisica cilindrofisico = new Fisica(120);
+            Cilindro cilindrofisico = new Cilindro(120,Cilindro.ETipoResistencia.Fisica);
             double actual = cilindrofisico.Precio;
             double expected = 26000;
-
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void OperadorMasEmpresa_NoAgregaClienteRepetido()
-        {
-            Empresa empresa = new Empresa("Rotadyne");
-            Cliente cl1 = new Cliente("juan", "2012131415","Uruguay 822",Cliente.ENacionalidad.Otra,"1541591556",new Fisica(100));
-            Cliente cl2 = new Cliente("juan", "2012131415", "Uruguay 822", Cliente.ENacionalidad.Otra, "1541591556", new Fisica(100));
-            Cliente cl3 = new Cliente("juan", "2012131415", "Uruguay 822", Cliente.ENacionalidad.Otra, "1541591556", new Fisica(100));
-            empresa += cl1;
-            empresa += cl2;
-            empresa += cl3;
-            int actual = empresa.Clientes.Count;
-            int expected = 1;
 
             Assert.AreEqual(expected, actual);
         }
@@ -54,20 +38,6 @@ namespace TP4Test
         }
 
         [TestMethod]
-        public void ClientesIguales_RetornaTrueSiClientesSonIguales()
-        {
-            bool esperado = true;
-            Cliente c2 = new Cliente("juan", "2012131415", "Uruguay 822", Cliente.ENacionalidad.Otra, "1541591556");
-            Cliente c = new Cliente("juan", "2012131415", "Uruguay 822", Cliente.ENacionalidad.Otra, "1541591556");
-            bool actual;
-
-            actual = (c == c2);
-
-            Assert.AreEqual(esperado, actual);
-
-        }
-
-        [TestMethod]
         public void MetodoExtendidoValidarNombre_RetornaElStringVacioSiElStringContieneNumeros()
         {
             string nombre = "12345678911";
@@ -75,16 +45,6 @@ namespace TP4Test
             string actual = nombre.ValidarNombre();
 
             string expected = string.Empty;
-
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void MetodoExtendidoValidarTelefono_Retorna1EnCasoDeSerCelular()
-        {
-            string telefonoCelular = "1541591556";
-            int expected = 1;
-            int actual = telefonoCelular.ValidarTelefono();
 
             Assert.AreEqual(expected, actual);
         }

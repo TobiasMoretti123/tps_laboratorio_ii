@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca", "Biblioteca\Biblioteca.csproj", "{BE9B3A9F-E93D-4E1B-B958-AFDE756AEAAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Biblioteca", "Biblioteca\Biblioteca.csproj", "{BE9B3A9F-E93D-4E1B-B958-AFDE756AEAAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excepciones", "Excepciones\Excepciones.csproj", "{41B179DD-5BE3-4ECB-AAE7-A342B611CBAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Excepciones", "Excepciones\Excepciones.csproj", "{41B179DD-5BE3-4ECB-AAE7-A342B611CBAB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseDeDatos", "BaseDeDatos\BaseDeDatos.csproj", "{B78F7061-E315-4679-9ED3-4DCF86E8AEEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaseDeDatos", "BaseDeDatos\BaseDeDatos.csproj", "{B78F7061-E315-4679-9ED3-4DCF86E8AEEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP4Test", "TP4Test\TP4Test.csproj", "{B0851C38-4F87-40DD-A1F6-D72E626CE7E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TP4Test", "TP4Test\TP4Test.csproj", "{B0851C38-4F87-40DD-A1F6-D72E626CE7E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formularios TP4", "Formularios TP4\Formularios TP4.csproj", "{AEF76898-9E05-4636-BB92-204B22E26373}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Archivos", "Archivos\Archivos.csproj", "{97D4B8CB-F4AA-4581-809E-A537DDDDD814}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Archivos", "Archivos\Archivos.csproj", "{97D4B8CB-F4AA-4581-809E-A537DDDDD814}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formularios TP4", "Formularios TP4\Formularios TP4.csproj", "{F78B1E0F-B7BC-4058-B0AD-1D2A31293F9F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,14 +37,14 @@ Global
 		{B0851C38-4F87-40DD-A1F6-D72E626CE7E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0851C38-4F87-40DD-A1F6-D72E626CE7E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0851C38-4F87-40DD-A1F6-D72E626CE7E2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AEF76898-9E05-4636-BB92-204B22E26373}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AEF76898-9E05-4636-BB92-204B22E26373}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AEF76898-9E05-4636-BB92-204B22E26373}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AEF76898-9E05-4636-BB92-204B22E26373}.Release|Any CPU.Build.0 = Release|Any CPU
 		{97D4B8CB-F4AA-4581-809E-A537DDDDD814}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{97D4B8CB-F4AA-4581-809E-A537DDDDD814}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97D4B8CB-F4AA-4581-809E-A537DDDDD814}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97D4B8CB-F4AA-4581-809E-A537DDDDD814}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F78B1E0F-B7BC-4058-B0AD-1D2A31293F9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F78B1E0F-B7BC-4058-B0AD-1D2A31293F9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F78B1E0F-B7BC-4058-B0AD-1D2A31293F9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F78B1E0F-B7BC-4058-B0AD-1D2A31293F9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

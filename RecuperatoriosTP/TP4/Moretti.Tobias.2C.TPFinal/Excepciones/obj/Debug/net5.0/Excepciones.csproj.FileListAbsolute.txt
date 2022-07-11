@@ -10,3 +10,15 @@ D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tob
 D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Excepciones\obj\Debug\net5.0\refint\Excepciones.dll
 D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Excepciones\obj\Debug\net5.0\Excepciones.pdb
 D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\TP4\Moretti.Tobias.2C.TPFinal\Excepciones\obj\Debug\net5.0\ref\Excepciones.dll
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Excepciones\bin\Debug\net5.0\Excepciones.deps.json
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Excepciones\bin\Debug\net5.0\Excepciones.dll
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Excepciones\bin\Debug\net5.0\Excepciones.pdb
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Excepciones\obj\Debug\net5.0\Excepciones.csproj.AssemblyReference.cache
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Excepciones\obj\Debug\net5.0\Excepciones.GeneratedMSBuildEditorConfig.editorconfig
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Excepciones\obj\Debug\net5.0\Excepciones.AssemblyInfoInputs.cache
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Excepciones\obj\Debug\net5.0\Excepciones.AssemblyInfo.cs
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Excepciones\obj\Debug\net5.0\Excepciones.csproj.CoreCompileInputs.cache
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Excepciones\obj\Debug\net5.0\Excepciones.dll
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Excepciones\obj\Debug\net5.0\refint\Excepciones.dll
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Excepciones\obj\Debug\net5.0\Excepciones.pdb
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Excepciones\obj\Debug\net5.0\ref\Excepciones.dll

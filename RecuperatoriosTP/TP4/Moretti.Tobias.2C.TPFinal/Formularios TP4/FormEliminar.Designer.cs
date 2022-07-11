@@ -1,6 +1,6 @@
 ﻿namespace Formularios_TP4
 {
-    partial class FrmCancelar
+    partial class FormEliminar
     {
         /// <summary>
         /// Required designer variable.
@@ -31,6 +31,7 @@
             this.lsbLista = new System.Windows.Forms.ListBox();
             this.lblLista = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lsbLista
@@ -39,7 +40,7 @@
             this.lsbLista.ItemHeight = 15;
             this.lsbLista.Location = new System.Drawing.Point(12, 59);
             this.lsbLista.Name = "lsbLista";
-            this.lsbLista.Size = new System.Drawing.Size(858, 379);
+            this.lsbLista.Size = new System.Drawing.Size(792, 484);
             this.lsbLista.TabIndex = 1;
             // 
             // lblLista
@@ -54,26 +55,37 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(701, 8);
+            this.btnEliminar.Location = new System.Drawing.Point(404, 12);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(169, 45);
             this.btnEliminar.TabIndex = 0;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click_1);
             // 
-            // FrmCancelar
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(635, 8);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(169, 45);
+            this.btnVolver.TabIndex = 3;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // FormEliminar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(882, 450);
+            this.ClientSize = new System.Drawing.Size(814, 547);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.lblLista);
             this.Controls.Add(this.lsbLista);
             this.Controls.Add(this.btnEliminar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmCancelar";
+            this.Name = "FormEliminar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Eliminar Cliente";
             this.Load += new System.EventHandler(this.FrmCancelar_Load);
@@ -84,8 +96,9 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox lsbLista;
         private System.Windows.Forms.Label lblLista;
+        private System.Windows.Forms.ListBox lsbLista;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

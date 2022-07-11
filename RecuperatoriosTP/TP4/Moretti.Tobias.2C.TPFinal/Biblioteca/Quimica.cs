@@ -11,23 +11,6 @@ namespace Biblioteca
     /// </summary>
     public class Quimica : Cilindro
     {
-        #region Propiedades
-        /// <summary>
-        /// Propiedad heredada de cilindro obtiene y estable el precio segun la resistencia del cilindro
-        /// </summary>
-        public override double Precio
-        {
-            get
-            {
-                return this.Tamanio.CacularPrecio(Cilindro.ETipoResistencia.Quimica);
-            }
-            set
-            {
-                this.Precio = value;
-            }
-        }
-        #endregion
-
         #region Constructores
         /// <summary>
         /// Contructor sin parametros de cilindro con resistencia quimica

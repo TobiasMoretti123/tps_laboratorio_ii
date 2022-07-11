@@ -12,6 +12,7 @@
     <ProjectReference Include="..\Archivos\Archivos.csproj" />
     <ProjectReference Include="..\BaseDeDatos\BaseDeDatos.csproj" />
     <ProjectReference Include="..\Biblioteca\Biblioteca.csproj" />
+    <ProjectReference Include="..\Excepciones\Excepciones.csproj" />
   </ItemGroup>
 
   <ItemGroup>

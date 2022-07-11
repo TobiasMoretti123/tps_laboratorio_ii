@@ -49,7 +49,7 @@ namespace Biblioteca
         }
 
         /// <summary>
-        /// El metodo donde el evento leer sera invocado
+        /// El metodo donde el evento leer empresa sera invocado
         /// </summary>
         public void Leer()
         {
@@ -59,6 +59,24 @@ namespace Biblioteca
             {
                 OnLeer.Invoke();
             }       
+        }
+        /// <summary>
+        /// El metodo donde el evento leer cilindros sera invocado
+        /// </summary>
+        public void LeerCilindro()
+        {
+            foreach(Cliente c in empresa.Clientes)
+            {
+                foreach(Cilindro cilindro in c.Cilindros)
+                {
+                    cilindro.ToString();
+                }
+            }
+
+            if (OnLeer is not null)
+            {
+                OnLeer.Invoke();
+            }
         }
     }
 }

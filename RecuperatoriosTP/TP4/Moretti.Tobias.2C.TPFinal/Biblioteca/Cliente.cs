@@ -21,13 +21,9 @@ namespace Biblioteca
         /// </summary>
         private int idCliente;
         /// <summary>
-        /// Atributo privado del nombre del cliente
+        /// Atributo privado de la razon social del cliente
         /// </summary>
-        private string nombre;
-        /// <summary>
-        /// Atributo privado del cuit del cliente
-        /// </summary>
-        private string cuit;
+        private string razonSocial;
         /// <summary>
         /// Atributo privado de la direccion del cliente
         /// </summary>
@@ -37,18 +33,34 @@ namespace Biblioteca
         /// </summary>
         private ENacionalidad nacionalidad;
         /// <summary>
-        /// Atributo privado del cilindro del cliente
+        /// Atributo privado del cuit del cliente
         /// </summary>
-        private Cilindro cilindro;
+        private string cuit;
+        /// <summary>
+        /// Atributo privado del contacto del cliente
+        /// </summary>
+        private string contacto;
         /// <summary>
         /// Atributo privado del telefono del cliente
         /// </summary>
         private string telefono;
+        /// <summary>
+        /// Atributo privado del mail del cliente
+        /// </summary>
+        private string mail;
+        /// <summary>
+        /// Atributo privado del mail de la factura electronica del cliente
+        /// </summary>
+        private string mailFacturaElectronica;
+        /// <summary>
+        /// Atributo privado de los cilindros del cliente
+        /// </summary>
+        private List<Cilindro> cilindros;    
         #endregion
 
-        #region
+        #region Enumerados
         /// <summary>
-        /// Enumerado con las distinctas nacionalidades del cliente
+        /// Enumerado con las distintas nacionalidades del cliente
         /// </summary>
         public enum ENacionalidad
         {
@@ -58,14 +70,6 @@ namespace Biblioteca
 
         #region Propiedades
         /// <summary>
-        /// Propiedad que establece y obtiene el nombre del cliente
-        /// </summary>
-        public string Nombre
-        {
-            get => this.nombre;
-            set => this.nombre = value;
-        }
-        /// <summary>
         /// Propiedad que establece y obtiene el id del cliente
         /// </summary>
         public int IdCliente
@@ -74,12 +78,12 @@ namespace Biblioteca
             set => this.idCliente = value;
         }
         /// <summary>
-        /// Propiedad que establece y obtiene el cuit del cliente
+        /// Propiedad que establece y obtiene la razon social del cliente
         /// </summary>
-        public string Cuit
+        public string RazonSocial
         {
-            get => this.cuit;
-            set => this.cuit = value;
+            get => this.razonSocial;
+            set => this.razonSocial = value;
         }
         /// <summary>
         /// Propiedad que establece y obtiene la direccion del cliente
@@ -98,6 +102,22 @@ namespace Biblioteca
             set => this.nacionalidad = value;
         }
         /// <summary>
+        /// Propiedad que establece y obtiene el cuit del cliente
+        /// </summary>
+        public string Cuit
+        {
+            get => this.cuit;
+            set => this.cuit = value;
+        }
+        /// <summary>
+        /// Propiedad que establece y obtiene el contacto del cliente
+        /// </summary>
+        public string Contacto
+        {
+            get => this.contacto;
+            set => this.contacto = value;
+        }
+        /// <summary>
         /// Propiedad que establece y obtiene el telefono del cliente
         /// </summary>
         public string Telefono
@@ -106,12 +126,28 @@ namespace Biblioteca
             set => this.telefono = value;
         }
         /// <summary>
-        /// Propiedad que establece y obtiene el cilindro del cliente
+        /// Propiedad que establece y obtiene el mail del cliente
         /// </summary>
-        public Cilindro Cilindro
+        public string Mail
         {
-            get => this.cilindro;
-            set => cilindro = value;
+            get => this.mail;
+            set => this.mail = value;
+        }
+        /// <summary>
+        /// Propiedad que establece y obtiene el mail de la factura electronica del cliente
+        /// </summary>
+        public string MailFacturaElectronico
+        {
+            get => this.mailFacturaElectronica;
+            set => this.mailFacturaElectronica = value;
+        }
+        /// <summary>
+        /// Propiedad que establece y obtiene la lista de cilindros del cliente
+        /// </summary>
+        public List<Cilindro> Cilindros
+        {
+            get => this.cilindros;
+            set => cilindros = value;
         }
         #endregion
 
@@ -121,43 +157,64 @@ namespace Biblioteca
         /// </summary>
         public Cliente()
         {
+            this.idCliente = 0;
+            this.razonSocial = "";
+            this.direccion = "";
+            this.nacionalidad = ENacionalidad.Otra;
+            this.cuit = "11111111111";
+            this.contacto = "";
+            this.telefono = "1111111111";
+            this.mail = "";
+            this.mailFacturaElectronica = "";
+            this.cilindros = new List<Cilindro>();
+        }
+        /// <summary>
+        /// Constructor parametrizado con todos los datos del cliente
+        /// </summary>
+        /// <param name="idCliente"></param>
+        /// <param name="razonSocial"></param>
+        /// <param name="direccion"></param>
+        /// <param name="nacionalidad"></param>
+        /// <param name="cuit"></param>
+        /// <param name="contacto"></param>
+        /// <param name="telefono"></param>
+        /// <param name="mail"></param>
+        /// <param name="mailFacturaElectronica"></param>
+        public Cliente(int idCliente,string razonSocial,string direccion,ENacionalidad nacionalidad,
+            string cuit,string contacto,string telefono,string mail,
+            string mailFacturaElectronica)
+            :this()
+        {
+            this.idCliente = idCliente;
+            this.razonSocial = razonSocial;
+            this.direccion = direccion;
+            this.nacionalidad = nacionalidad;
+            this.cuit = cuit;
+            this.contacto = contacto;
+            this.telefono = telefono;
+            this.mail = mail;
+            this.mailFacturaElectronica = mailFacturaElectronica;
+            this.cilindros = new List<Cilindro>();
+        }
+        /// <summary>
+        /// Contructor parametrizado del cliente con todos los datos menos el id
+        /// </summary>
+        /// <param name="razonSocial"></param>
+        /// <param name="direccion"></param>
+        /// <param name="nacionalidad"></param>
+        /// <param name="cuit"></param>
+        /// <param name="contacto"></param>
+        /// <param name="telefono"></param>
+        /// <param name="mail"></param>
+        /// <param name="mailFacturaElectronica"></param>
+        public Cliente(string razonSocial, string direccion, ENacionalidad nacionalidad,
+            string cuit, string contacto, string telefono, string mail,
+            string mailFacturaElectronica)
+            : this(0,razonSocial,direccion,nacionalidad,cuit,contacto,telefono,mail,mailFacturaElectronica)
+        {
 
         }
-        /// <summary>
-        /// Constructor parametrizado que establece todos los datos del cliente menos el id
-        /// </summary>
-        /// <param name="nombre"></param>
-        /// <param name="cuit"></param>
-        public Cliente(string nombre, string cuit, string direccion,ENacionalidad nacionalidad,string telefono)
-        {
-            this.nombre = nombre;
-            this.cuit = cuit;
-            this.direccion=direccion;
-            this.nacionalidad = nacionalidad;
-            this.telefono = telefono;
-        }
-        /// <summary>
-        /// Contructor parametrizado que establece todos los datos del cliente menos el cilindro
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="nombre"></param>
-        /// <param name="cuit"></param>
-        public Cliente(int id, string nombre, string cuit, string direccion, ENacionalidad nacionalidad, string telefono)
-           : this(nombre, cuit,direccion,nacionalidad,telefono)
-        {
-            this.idCliente = id;
-        }
-        /// <summary>
-        /// Constructor parametrizado que establece todos los datos del cliente con el cilindro y sin el id
-        /// </summary>
-        /// <param name="nombre"></param>
-        /// <param name="cuit"></param>
-        /// <param name="cilindro"></param>
-        public Cliente(string nombre, string cuit,string direccion, ENacionalidad nacionalidad, string telefono,Cilindro cilindro)
-            : this(nombre, cuit,direccion,nacionalidad,telefono)
-        {
-            this.Cilindro = cilindro;
-        }
+
         #endregion
 
         #region Sobrecargas
@@ -168,17 +225,24 @@ namespace Biblioteca
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"Nombre Empresa: {this.nombre} ");
-            sb.AppendLine($"Cuit: {this.cuit} ");
+            sb.AppendLine($"Nombre Cliente: {this.razonSocial} ");
             sb.AppendLine($"Direccion: {this.direccion} ");
             sb.AppendLine($"Nacionalidad: {this.nacionalidad} ");
-            if(this.telefono.ValidarTelefono() == 1)
+            sb.AppendLine($"Cuit: {this.cuit} ");
+            return sb.ToString();
+        }
+
+        public string MostrarCliente()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(this.ToString());
+            sb.AppendLine($"Contacto: {this.contacto} ");
+            sb.AppendLine($"Telefono: {this.telefono} ");
+            sb.AppendLine($"Mail: {this.mail} ");
+            sb.AppendLine($"Mail Factura Electronica: {this.mailFacturaElectronica} ");
+            foreach (Cilindro cilindro in Cilindros)
             {
-                sb.AppendLine($"Telefono Celular: {this.telefono} ");
-            }
-            else
-            {
-                sb.AppendLine($"Telefono Fijo: {this.telefono} ");
+                sb.AppendLine(cilindro.ToString());
             }
             return sb.ToString();
         }
@@ -194,7 +258,7 @@ namespace Biblioteca
         public static bool operator ==(Cliente clienteUno, Cliente clienteDos)
         {
             bool retorno = false;
-            if (clienteUno.nombre == clienteDos.nombre)
+            if (clienteUno.razonSocial == clienteDos.razonSocial)
             {
                 retorno = true;
             }
@@ -209,6 +273,17 @@ namespace Biblioteca
         public static bool operator !=(Cliente clienteUno, Cliente clienteDos)
         {
             return !(clienteUno == clienteDos);
+        }
+        /// <summary>
+        /// Operador + agrega un cilindro a la lista de cilindros del cliente
+        /// </summary>
+        /// <param name="cliente"></param>
+        /// <param name="cilindro"></param>
+        /// <returns></returns>
+        public static Cliente operator +(Cliente cliente, Cilindro cilindro)
+        {
+            cliente.Cilindros.Add(cilindro);
+            return cliente;
         }
         #endregion
     }

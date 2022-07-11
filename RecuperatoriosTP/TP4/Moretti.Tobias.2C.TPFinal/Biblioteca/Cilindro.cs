@@ -4,15 +4,19 @@ using System.Text;
 namespace Biblioteca
 {
     /// <summary>
-    /// Clase abstracta cilindro
+    /// Clase publica cilindro
     /// </summary>
-    public abstract class Cilindro
+    public class Cilindro
     {
         #region Atributos
         /// <summary>
         /// Atributo privado del tamaño del cilindro
         /// </summary>
         private int tamanio;
+        /// <summary>
+        /// Atributo privado del precio del cilindro
+        /// </summary>
+        private int precio;
         /// <summary>
         /// Atributo privado del tipo de resistencia del cilindro
         /// </summary>
@@ -40,12 +44,26 @@ namespace Biblioteca
             set => this.tamanio = value;
         }
         /// <summary>
-        /// Propiedad abstracta para estableces y obtener el precio de las clases que la heredan
+        /// Propiedad virtual para establecer y obtener el precio de las clases que la heredan
         /// </summary>
-        public abstract double Precio
+        public int Precio
         {
-            get;
-            set;
+            get
+            {
+                if(this.tipoResistencia is ETipoResistencia.Fisica)
+                {
+                    return this.tamanio.CacularPrecio(ETipoResistencia.Fisica);
+                }
+                else if(this.tipoResistencia is ETipoResistencia.Quimica)
+                {
+                    return this.tamanio.CacularPrecio(ETipoResistencia.Quimica);
+                }
+                else 
+                {
+                    return this.tamanio.CacularPrecio(ETipoResistencia.Termica);
+                }
+            }
+            set => this.precio = value;
         }
         /// <summary>
         /// Propiedad que establece y obtiene el tipo de resistencia de un cilindro

@@ -24,7 +24,7 @@ namespace BaseDeDatos
         /// </summary>
         public ClienteDao()
         {
-            sqlConnection = new SqlConnection("Server=DESKTOP-C2SN2MS;Database=Cliente_DB;Trusted_Connection=True;");
+            sqlConnection = new SqlConnection("Server=DESKTOP-C2SN2MS;Database=ClienteCilindroDB;Trusted_Connection=True;");
         }
         #endregion
 
@@ -34,19 +34,20 @@ namespace BaseDeDatos
         /// una vez guardado cierra la base de datos
         /// </summary>
         /// <param name="cliente">El cliente a guardar en la base de datos</param>
-        public void Guardar(Cliente cliente)
+        public void GuardarCliente(Cliente cliente)
         {
             try
             {
                 sqlConnection.Open();
-                SqlCommand sqlCommand = new SqlCommand("INSERT INTO Cliente (nombre, cuit, idCilindro,tamanioCilindro,direccion,nacionalidad,telefono) VALUES (@nombre, @cuit, @idCilindro, @tamanioCilindro, @direccion, @nacionalidad, @telefono)", sqlConnection);
-                sqlCommand.Parameters.AddWithValue("nombre", cliente.Nombre);
-                sqlCommand.Parameters.AddWithValue("cuit", cliente.Cuit);
-                sqlCommand.Parameters.AddWithValue("idCilindro", cliente.Cilindro.TipoResistencia);
-                sqlCommand.Parameters.AddWithValue("tamanioCilindro", cliente.Cilindro.Tamanio);
+                SqlCommand sqlCommand = new SqlCommand("INSERT INTO Clientes (nombre,direccion,nacionalidad,cuit,contacto,telefono,mail,mailFacturaElectronica) VALUES (@nombre, @direccion, @nacionalidad, @cuit, @contacto, @telefono, @mail,@mailFacturaElectronica)", sqlConnection);
+                sqlCommand.Parameters.AddWithValue("nombre", cliente.RazonSocial);
                 sqlCommand.Parameters.AddWithValue("direccion", cliente.Direccion);
                 sqlCommand.Parameters.AddWithValue("nacionalidad", cliente.Nacionalidad);
+                sqlCommand.Parameters.AddWithValue("cuit", cliente.Cuit);
+                sqlCommand.Parameters.AddWithValue("contacto", cliente.Contacto);
                 sqlCommand.Parameters.AddWithValue("telefono", cliente.Telefono);
+                sqlCommand.Parameters.AddWithValue("mail", cliente.Mail);
+                sqlCommand.Parameters.AddWithValue("mailFacturaElectronica", cliente.MailFacturaElectronico);
                 sqlCommand.ExecuteNonQuery();
             }
             finally
@@ -62,13 +63,13 @@ namespace BaseDeDatos
         /// luego lo agrega a una lista de clientes. Al terminar de leer y agregar cierra la conexion
         /// </summary>
         /// <returns>La lista de los clientes leidos</returns>
-        public List<Cliente> Leer()
+        public List<Cliente> LeerCliente()
         {
             List<Cliente> lista = new List<Cliente>();
             try
             {
                 sqlConnection.Open();
-                SqlCommand sqlCommand = new SqlCommand("Select * FROM Cliente", sqlConnection);
+                SqlCommand sqlCommand = new SqlCommand("Select * FROM Clientes", sqlConnection);
                 SqlDataReader reader = sqlCommand.ExecuteReader();
                 StringBuilder stringBuilder = new StringBuilder();
 
@@ -76,32 +77,49 @@ namespace BaseDeDatos
                 {
                     int idCliente = reader.GetInt32(0);
                     string nombre = reader.GetString(1);
-                    string cuit = reader.GetString(2);
-                    int idCilindro = reader.GetInt32(3);
-                    int tamanioCilindro = reader.GetInt32(4);
-                    string direccion = reader.GetString(5);
-                    int nacionalidad = reader.GetInt32(6);
-                    string telefono = reader.GetString(7);
-                    
-                    Cliente cliente = new Cliente(idCliente, nombre, cuit,direccion,(Cliente.ENacionalidad)nacionalidad,telefono);
+                    string direccion = reader.GetString(2);
+                    int nacionalidad = reader.GetInt32(3);
+                    string cuit = reader.GetString(4);
+                    string contacto = reader.GetString(5);
+                    string telefono = reader.GetString(6);
+                    string mail = reader.GetString(7);
+                    string mailFacturaElectronica = reader.GetString(8);
+                    Cliente cliente = new Cliente(idCliente,nombre,direccion,(Cliente.ENacionalidad)nacionalidad,cuit,contacto,telefono,mail,mailFacturaElectronica);
 
-                    switch (idCilindro)
-                    {
-                        case 0:
-                            cliente.Cilindro = new Fisica();
-                            cliente.Cilindro.TipoResistencia = Cilindro.ETipoResistencia.Fisica;
-                            break;
-                        case 1:
-                            cliente.Cilindro = new Quimica();
-                            cliente.Cilindro.TipoResistencia = Cilindro.ETipoResistencia.Quimica;
-                            break;
-                        case 2:
-                            cliente.Cilindro = new Termica();
-                            cliente.Cilindro.TipoResistencia = Cilindro.ETipoResistencia.Termica;
-                            break;
-                    }
-                    cliente.Cilindro.Tamanio = tamanioCilindro;
                     lista.Add(cliente);
+                }
+                return lista;
+            }
+            finally
+            {
+                if (sqlConnection.State == ConnectionState.Open)
+                {
+                    sqlConnection.Close();
+                }
+            }
+        }
+        /// <summary>
+        /// Lee la base de datos del cilindro utilizando una query y establece cada dato que lee de ella en un cilindro
+        /// luego lo agrega a una lista de cilindros. Al terminar de leer y agregar cierra la conexion
+        /// </summary>
+        /// <returns>La lista de los cilindros leidos</returns>
+        public List<Cilindro> LeerCilindro()
+        {
+            List<Cilindro> lista = new List<Cilindro>();
+            try
+            {
+                sqlConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand("Select * FROM Cilindros", sqlConnection);
+                SqlDataReader reader = sqlCommand.ExecuteReader();
+                StringBuilder stringBuilder = new StringBuilder();
+
+                while (reader.Read())
+                {
+                    int tamanioCilindro = reader.GetInt32(0);
+                    int tipoCilindro = reader.GetInt32(1);
+                    Cilindro cilindro = new Cilindro(tamanioCilindro, (Cilindro.ETipoResistencia)tipoCilindro);
+
+                    lista.Add(cilindro);
                 }
                 return lista;
             }
@@ -119,18 +137,21 @@ namespace BaseDeDatos
         /// </summary>
         /// <param name="id">El id del cliente a modificar</param>
         /// <param name="cliente">El cliente a modificar</param>
-        public void Modificar(int id, Cliente cliente)
+        public void ModificarCliente(int id, Cliente cliente)
         {
             try
             {
                 sqlConnection.Open();
-                SqlCommand sqlCommand = new SqlCommand("UPDATE Cliente SET nombre = @nombre, cuit = @cuit, direccion = @direccion, nacionalidad = @nacionalidad, telefono = @telefono WHERE idCliente = @id", sqlConnection);
+                SqlCommand sqlCommand = new SqlCommand("UPDATE Clientes SET nombre = @nombre,direccion = @direccion,nacionalidad = @nacionalidad,cuit = @cuit,contacto = @contacto,telefono = @telefono,mail = @mail,mailFacturaElectronica = @mailFacturaElectronica WHERE idCliente = @id", sqlConnection);
                 sqlCommand.Parameters.AddWithValue("id", id);
-                sqlCommand.Parameters.AddWithValue("nombre", cliente.Nombre);
-                sqlCommand.Parameters.AddWithValue("cuit", cliente.Cuit);
+                sqlCommand.Parameters.AddWithValue("nombre", cliente.RazonSocial);
                 sqlCommand.Parameters.AddWithValue("direccion", cliente.Direccion);
                 sqlCommand.Parameters.AddWithValue("nacionalidad", cliente.Nacionalidad);
+                sqlCommand.Parameters.AddWithValue("cuit", cliente.Cuit);
+                sqlCommand.Parameters.AddWithValue("contacto", cliente.Contacto);
                 sqlCommand.Parameters.AddWithValue("telefono", cliente.Telefono);
+                sqlCommand.Parameters.AddWithValue("mail", cliente.Mail);
+                sqlCommand.Parameters.AddWithValue("mailFacturaElectronica", cliente.MailFacturaElectronico);
                 sqlCommand.ExecuteNonQuery();
             }
             finally
@@ -146,12 +167,12 @@ namespace BaseDeDatos
         /// al finalizar cierra la conexion
         /// </summary>
         /// <param name="id">El id a eliminar</param>
-        public void Eliminar(int id)
+        public void EliminarCliente(int id)
         {
             try
             {
                 sqlConnection.Open();
-                SqlCommand sqlCommand = new SqlCommand("DELETE FROM Cliente WHERE idCliente = @idBuscado", sqlConnection);
+                SqlCommand sqlCommand = new SqlCommand("DELETE FROM Clientes WHERE idCliente = @idBuscado", sqlConnection);
                 sqlCommand.Parameters.AddWithValue("idBuscado", id);
                 sqlCommand.ExecuteNonQuery();
             }
