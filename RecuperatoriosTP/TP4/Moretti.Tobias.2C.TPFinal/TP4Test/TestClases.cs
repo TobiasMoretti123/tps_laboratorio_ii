@@ -1,6 +1,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Biblioteca;
 using Excepciones;
+using BaseDeDatos;
+using System;
 
 namespace TP4Test
 {
@@ -10,7 +12,7 @@ namespace TP4Test
         [TestMethod]
         public void PropiedadPrecio_RetornaElPrecioSegunElTipoResistencia()
         {
-            Cilindro cilindrofisico = new Cilindro(120,Cilindro.ETipoResistencia.Fisica);
+            Cilindro cilindrofisico = new Cilindro(120, Cilindro.ETipoResistencia.Fisica);
             double actual = cilindrofisico.Precio;
             double expected = 26000;
 
@@ -47,6 +49,26 @@ namespace TP4Test
             string expected = string.Empty;
 
             Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void MetodoCargarCliente_DeberiaUtilizarElClienteQuePasoPorNombre()
+        {
+            ClienteDao clienteDao = new ClienteDao();
+            Cliente cliente = new Cliente();
+            Cliente clienteEsperado = new Cliente("INPACO", "Costanera 1968", Cliente.ENacionalidad.Argentina, "30710969619", "Hernesto Gonzales", "1149415237", "arcorargentina@gmail.com", "arcorfacturas@gmail.com");
+            cliente.RazonSocial = "INPACO";
+
+            foreach (Cliente c in clienteDao.LeerCliente())
+            {
+                if (c == cliente)
+                {
+                    cliente = c;
+                }
+            }
+
+
+            Assert.AreEqual(cliente.RazonSocial, clienteEsperado.RazonSocial);
         }
     }
 }

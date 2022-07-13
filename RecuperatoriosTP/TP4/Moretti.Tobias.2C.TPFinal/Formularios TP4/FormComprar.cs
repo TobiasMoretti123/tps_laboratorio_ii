@@ -32,7 +32,6 @@ namespace Formularios_TP4
 
         private void FormComprar_Load(object sender, EventArgs e)
         {
-            
             Task hilo = new Task(() =>
             {
                 eventos.LeerCilindro();
@@ -42,23 +41,29 @@ namespace Formularios_TP4
 
         private void btnComprar_Click(object sender, EventArgs e)
         {
-            Cilindro? cilindro = lstbProductos.SelectedItem as Cilindro;
-            if(cilindro is not null)
+            Cilindro cilindro = lstbProductos.SelectedItem as Cilindro;
+            if (cilindro is not null)
             {
                 cliente += cilindro;
                 try
                 {
+                    foreach(Cliente c in clienteDao.LeerCliente())
+                    {
+                        if(c == cliente)
+                        {
+                            cliente.IdCliente = c.IdCliente;
+                        }
+                    }
                     xml.Guardar(GetFolderPath(SpecialFolder.Desktop) + "\\Cliente.xml", cliente);
                     MessageBox.Show($"Usted acaba de comprar un cilindro de goma la factura a sido enviada a {cliente.MailFacturaElectronico}", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                
+
             }
         }
-
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();

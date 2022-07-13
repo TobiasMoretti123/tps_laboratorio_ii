@@ -16,11 +16,13 @@ namespace Formularios_TP4
     public partial class FormConsultas : Form
     {
         private Empresa empresa;
+        private Cliente cliente;
         private Txt txt;
-        public FormConsultas(Empresa empresa)
+        public FormConsultas(Empresa empresa, Cliente cliente)
         {
             InitializeComponent();
             this.empresa = empresa;
+            this.cliente = cliente;
             txt = new Txt();
         }
         /// <summary>
@@ -43,7 +45,9 @@ namespace Formularios_TP4
             {      
                 try
                 {
+                    ConstruirConsulta();
                     txt.Guardar(GetFolderPath(SpecialFolder.Desktop) + "\\Consultas.txt", Contenido);
+                    Contenido = string.Empty;
                     MessageBox.Show($"Su consulata a sido enviada a {empresa.MailConsultaEmpresa}", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
@@ -54,13 +58,22 @@ namespace Formularios_TP4
             }
             else
             {
-                MessageBox.Show("La consulta debe ser entre 50 y 100 caracteres", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("La consulta debe ser entre 50 y 200 caracteres", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ConstruirConsulta()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"Recibio una consulta de {cliente.RazonSocial}");
+            sb.AppendLine($"Mail {cliente.Mail}");
+            sb.AppendLine(rtxConsultas.Text);
+            Contenido = sb.ToString();
         }
     }
 }

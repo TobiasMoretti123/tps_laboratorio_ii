@@ -157,15 +157,6 @@ namespace Biblioteca
         /// </summary>
         public Cliente()
         {
-            this.idCliente = 0;
-            this.razonSocial = "";
-            this.direccion = "";
-            this.nacionalidad = ENacionalidad.Otra;
-            this.cuit = "11111111111";
-            this.contacto = "";
-            this.telefono = "1111111111";
-            this.mail = "";
-            this.mailFacturaElectronica = "";
             this.cilindros = new List<Cilindro>();
         }
         /// <summary>
@@ -183,18 +174,10 @@ namespace Biblioteca
         public Cliente(int idCliente,string razonSocial,string direccion,ENacionalidad nacionalidad,
             string cuit,string contacto,string telefono,string mail,
             string mailFacturaElectronica)
-            :this()
+            :this(razonSocial,direccion,nacionalidad,cuit,contacto,telefono,mail,mailFacturaElectronica)
         {
             this.idCliente = idCliente;
-            this.razonSocial = razonSocial;
-            this.direccion = direccion;
-            this.nacionalidad = nacionalidad;
-            this.cuit = cuit;
-            this.contacto = contacto;
-            this.telefono = telefono;
-            this.mail = mail;
-            this.mailFacturaElectronica = mailFacturaElectronica;
-            this.cilindros = new List<Cilindro>();
+            
         }
         /// <summary>
         /// Contructor parametrizado del cliente con todos los datos menos el id
@@ -210,9 +193,16 @@ namespace Biblioteca
         public Cliente(string razonSocial, string direccion, ENacionalidad nacionalidad,
             string cuit, string contacto, string telefono, string mail,
             string mailFacturaElectronica)
-            : this(0,razonSocial,direccion,nacionalidad,cuit,contacto,telefono,mail,mailFacturaElectronica)
+            : this()
         {
-
+            this.razonSocial = razonSocial;
+            this.direccion = direccion;
+            this.nacionalidad = nacionalidad;
+            this.cuit = cuit;
+            this.contacto = contacto;
+            this.telefono = telefono;
+            this.mail = mail;
+            this.mailFacturaElectronica = mailFacturaElectronica;
         }
 
         #endregion
@@ -257,12 +247,7 @@ namespace Biblioteca
         /// <returns></returns>
         public static bool operator ==(Cliente clienteUno, Cliente clienteDos)
         {
-            bool retorno = false;
-            if (clienteUno.razonSocial == clienteDos.razonSocial)
-            {
-                retorno = true;
-            }
-            return retorno;
+            return clienteUno.razonSocial == clienteDos.razonSocial;
         }
         /// <summary>
         /// Dos clientes seran distintos cuando sus nombres sean distintos
@@ -282,7 +267,10 @@ namespace Biblioteca
         /// <returns></returns>
         public static Cliente operator +(Cliente cliente, Cilindro cilindro)
         {
-            cliente.Cilindros.Add(cilindro);
+            if(cilindro is not null)
+            {
+                cliente.cilindros.Add(cilindro);
+            }
             return cliente;
         }
         #endregion

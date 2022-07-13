@@ -218,3 +218,5 @@ D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosT
 D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\TP4Test\obj\Debug\net5.0\TP4Test.pdb
 D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\TP4Test\obj\Debug\net5.0\TP4Test.genruntimeconfig.cache
 D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\TP4Test\obj\Debug\net5.0\ref\TP4Test.dll
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\TP4Test\bin\Debug\net5.0\BaseDeDatos.dll
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\TP4Test\bin\Debug\net5.0\BaseDeDatos.pdb

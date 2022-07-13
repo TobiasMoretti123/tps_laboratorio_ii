@@ -1781,6 +1781,20 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
+      "BaseDeDatos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Biblioteca": "1.0.0",
+          "System.Data.SqlClient": "4.8.3"
+        },
+        "compile": {
+          "bin/placeholder/BaseDeDatos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BaseDeDatos.dll": {}
+        }
+      },
       "Biblioteca/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -6639,6 +6653,11 @@
         "system.xml.xdocument.nuspec"
       ]
     },
+    "BaseDeDatos/1.0.0": {
+      "type": "project",
+      "path": "../BaseDeDatos/BaseDeDatos.csproj",
+      "msbuildProject": "../BaseDeDatos/BaseDeDatos.csproj"
+    },
     "Biblioteca/1.0.0": {
       "type": "project",
       "path": "../Biblioteca/Biblioteca.csproj",
@@ -6652,6 +6671,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "BaseDeDatos >= 1.0.0",
       "Biblioteca >= 1.0.0",
       "MSTest.TestAdapter >= 2.2.7",
       "MSTest.TestFramework >= 2.2.7",
@@ -6686,6 +6706,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\RecuperatoriosTP\\TP4\\Moretti.Tobias.2C.TPFinal\\BaseDeDatos\\BaseDeDatos.csproj": {
+              "projectPath": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\RecuperatoriosTP\\TP4\\Moretti.Tobias.2C.TPFinal\\BaseDeDatos\\BaseDeDatos.csproj"
+            },
             "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\RecuperatoriosTP\\TP4\\Moretti.Tobias.2C.TPFinal\\Biblioteca\\Biblioteca.csproj": {
               "projectPath": "D:\\Facu\\Programacion Laboratorio II\\Proyectos\\tps_laboratorio_ii\\RecuperatoriosTP\\TP4\\Moretti.Tobias.2C.TPFinal\\Biblioteca\\Biblioteca.csproj"
             }

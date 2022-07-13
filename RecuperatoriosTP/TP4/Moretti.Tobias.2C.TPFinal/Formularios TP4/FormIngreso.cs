@@ -66,7 +66,6 @@ namespace Formularios_TP4
             {
                 excepciones.Add(ex);
             }
-
             cliente = new Cliente(txtNombre.Text,txtDireccion.Text,(Cliente.ENacionalidad)cmbNacionalidad.SelectedIndex,
                 txtCuit.Text,txtContacto.Text,txtTelefono.Text,txtMail.Text,txtMailFacturaElectronica.Text);
 

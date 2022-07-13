@@ -15,7 +15,7 @@ namespace Formularios_TP4
     {
         Empresa empresa;
         Cliente cliente;
-        public FormMenu(Cliente cliente,Empresa empresa)
+        public FormMenu(Cliente cliente, Empresa empresa)
         {
             InitializeComponent();
             this.empresa = empresa;
@@ -24,7 +24,7 @@ namespace Formularios_TP4
 
         private void FormMenu_Load(object sender, EventArgs e)
         {
-            if(cliente.RazonSocial != empresa.NombreEmpresa)
+            if (cliente.RazonSocial != empresa.NombreEmpresa)
             {
                 btnEliminar.Enabled = false;
                 btnModificar.Enabled = false;
@@ -48,7 +48,7 @@ namespace Formularios_TP4
 
         private void btnConsultas_Click(object sender, EventArgs e)
         {
-            FormConsultas frmConsultas = new FormConsultas(empresa);
+            FormConsultas frmConsultas = new FormConsultas(empresa,cliente);
 
             frmConsultas.ShowDialog();
         }
