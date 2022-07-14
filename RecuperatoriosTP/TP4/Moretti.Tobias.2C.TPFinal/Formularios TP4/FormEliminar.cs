@@ -12,6 +12,9 @@ using BaseDeDatos;
 
 namespace Formularios_TP4
 {
+    /// <summary>
+    /// Formulario manejador de la eliminacion de un cliente
+    /// </summary>
     public partial class FormEliminar : Form
     {
         #region Atributos
@@ -75,6 +78,15 @@ namespace Formularios_TP4
                 }
             }
         }
+        /// <summary>
+        /// Boton volver regresa al menu principal
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         #endregion
 
         #region Eventos
@@ -91,7 +103,10 @@ namespace Formularios_TP4
             Task hilo = new Task(() => eventos.Leer());
             hilo.Start();
         }
-
+        /// <summary>
+        /// Evento que se encarga de eliminar el cliente de la base de datos
+        /// </summary>
+        /// <param name="id"></param>
         private void Eliminar(int id)
         {
             clienteDao.EliminarCliente(id);
@@ -128,13 +143,6 @@ namespace Formularios_TP4
                 }
             }
         }
-
         #endregion
-
-        private void btnVolver_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            
-        }
     }
 }

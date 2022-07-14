@@ -77,7 +77,6 @@
             this.Name = "FormConsultas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Realice una Consulta";
-            this.Load += new System.EventHandler(this.FormConsultas_Load);
             this.ResumeLayout(false);
 
         }

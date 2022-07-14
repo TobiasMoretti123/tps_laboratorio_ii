@@ -32,6 +32,7 @@
             this.lblProductos = new System.Windows.Forms.Label();
             this.btnComprar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.btnConfirmar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstbProductos
@@ -55,7 +56,7 @@
             // 
             // btnComprar
             // 
-            this.btnComprar.Location = new System.Drawing.Point(490, 170);
+            this.btnComprar.Location = new System.Drawing.Point(490, 72);
             this.btnComprar.Name = "btnComprar";
             this.btnComprar.Size = new System.Drawing.Size(134, 52);
             this.btnComprar.TabIndex = 2;
@@ -65,7 +66,7 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(490, 243);
+            this.btnVolver.Location = new System.Drawing.Point(490, 369);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(134, 52);
             this.btnVolver.TabIndex = 3;
@@ -73,11 +74,22 @@
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.Location = new System.Drawing.Point(490, 216);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(134, 52);
+            this.btnConfirmar.TabIndex = 4;
+            this.btnConfirmar.Text = "Confirmar Compra";
+            this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            // 
             // FormComprar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(682, 450);
+            this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnComprar);
             this.Controls.Add(this.lblProductos);
@@ -98,5 +110,6 @@
         private System.Windows.Forms.Label lblProductos;
         private System.Windows.Forms.Button btnComprar;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Button btnConfirmar;
     }
 }

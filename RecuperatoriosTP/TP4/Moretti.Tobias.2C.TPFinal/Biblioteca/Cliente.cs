@@ -209,7 +209,8 @@ namespace Biblioteca
 
         #region Sobrecargas
         /// <summary>
-        /// Sobrecarga del metodo TuString de cliente crea un stringbuilder con los datos del cliente
+        /// Sobrecarga del metodo TuString de cliente crea un stringbuilder 
+        /// con nombre,direccion,nacionalidad y cuit del cliente
         /// </summary>
         /// <returns>El stringbuilder a modo de string</returns>
         public override string ToString()
@@ -221,19 +222,26 @@ namespace Biblioteca
             sb.AppendLine($"Cuit: {this.cuit} ");
             return sb.ToString();
         }
-
+        /// <summary>
+        /// Crea un stringbuilder con todos los datos del cliente a modo de factura con sus cilindros
+        /// </summary>
+        /// <returns>El stringbuilder a modo de string</returns>
         public string MostrarCliente()
         {
             StringBuilder sb = new StringBuilder();
+            int precioTotal = 0;
             sb.AppendLine(this.ToString());
             sb.AppendLine($"Contacto: {this.contacto} ");
             sb.AppendLine($"Telefono: {this.telefono} ");
             sb.AppendLine($"Mail: {this.mail} ");
             sb.AppendLine($"Mail Factura Electronica: {this.mailFacturaElectronica} ");
+            sb.AppendLine($"Cilindros:");
             foreach (Cilindro cilindro in Cilindros)
             {
                 sb.AppendLine(cilindro.ToString());
+                precioTotal += cilindro.Precio;
             }
+            sb.AppendLine($"Total factura = ${precioTotal}");
             return sb.ToString();
         }
         #endregion

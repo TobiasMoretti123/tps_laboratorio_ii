@@ -7,6 +7,7 @@ using System.Threading;
 
 namespace Biblioteca
 {
+    #region Delegados
     /// <summary>
     /// Delegado handler que utilizara el evento guardar
     /// </summary>
@@ -19,8 +20,10 @@ namespace Biblioteca
     /// <summary>
     /// Clase publica eventos
     /// </summary>
+    #endregion
     public class Eventos
     {
+        #region Atributos
         /// <summary>
         /// Atributo privado empresa
         /// </summary>
@@ -33,7 +36,9 @@ namespace Biblioteca
         /// Evento publico de leer
         /// </summary>
         public event LeerHandler OnLeer;
+        #endregion
 
+        #region Eventos
         /// <summary>
         /// El metodo donde el evento guardar sera invocado
         /// </summary>
@@ -78,5 +83,6 @@ namespace Biblioteca
                 OnLeer.Invoke();
             }
         }
+        #endregion
     }
 }

@@ -13,6 +13,9 @@ using Excepciones;
 
 namespace Formularios_TP4
 {
+    /// <summary>
+    /// Formulario manejador de la modificacion de clientes
+    /// </summary>
     public partial class FormModificar : Form
     {
         #region Atributos
@@ -25,22 +28,28 @@ namespace Formularios_TP4
         /// </summary>
         private Eventos eventos;
         #endregion
+
+        #region Constructores
+        /// <summary>
+        /// inicializa el manejador de la base de datos y establece el boton modificar como invalido
+        /// </summary>
         public FormModificar()
         {
             InitializeComponent();
             clienteDao = new ClienteDao();
             btnModificar.Enabled = false;
         }
+        #endregion
 
-        private void FormModificar_Load(object sender, EventArgs e)
-        {
-            eventos = new Eventos();
-            eventos.OnLeer += Leer;
-            cmbNacionalidad.DataSource = Enum.GetValues(typeof(Cliente.ENacionalidad));
-            Task hilo = new Task(() => eventos.Leer());
-            hilo.Start();
-        }
-
+        #region Botones
+        /// <summary>
+        /// Boton modificar, luego de seleccionar un cliente de la lista e ingresar sus nuevos datos
+        /// Este es modificado utilizando la base de datos, siempre y cuando los cuadros no esten vacios
+        /// Pregunta si esta seguro de la modificacion antes de hacerla.
+        /// Este estara habilitado solo si se selecciona algun cliente de la lista
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModificar_Click(object sender, EventArgs e)
         {
             List<Exception> excepciones = new List<Exception>();
@@ -98,19 +107,36 @@ namespace Formularios_TP4
             }
         }
         /// <summary>
-        /// Metodo que muestra las ecepciones creadas a modo de lista de errores
+        /// Boton volver retorna al menu principal
         /// </summary>
-        /// <param name="ex"></param>
-        private void VentanaDeErrores(List<Exception> ex)
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnVolver_Click(object sender, EventArgs e)
         {
-            StringBuilder sb = new StringBuilder();
-            foreach (Exception e in ex)
-            {
-                sb.AppendLine($"{e.Message}");
-            }
-            MessageBox.Show(sb.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            this.Close();
         }
+        #endregion
 
+        #region Eventos
+        /// <summary>
+        /// Al cargar el formulario este lee la base de datos y la muestra en la listbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FormModificar_Load(object sender, EventArgs e)
+        {
+            eventos = new Eventos();
+            eventos.OnLeer += Leer;
+            cmbNacionalidad.DataSource = Enum.GetValues(typeof(Cliente.ENacionalidad));
+            Task hilo = new Task(() => eventos.Leer());
+            hilo.Start();
+        }
+        /// <summary>
+        /// Al hacer doble click sobre un cliente en la lista, todos sus datos apareceran en sus respectivos textbox.
+        /// Una vez modificado el dato que desee puede clickear el boton modificar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lbstClientes_DoubleClick(object sender, EventArgs e)
         {
             Cliente? cliente = lbstClientes.SelectedItem as Cliente;
@@ -124,9 +150,10 @@ namespace Formularios_TP4
                 txtContacto.Text = cliente.Contacto;
                 txtTelefono.Text = cliente.Telefono;
                 txtMail.Text = cliente.Mail;
-                txtMailFacturaElectronica.Text = cliente.MailFacturaElectronico;               
+                txtMailFacturaElectronica.Text = cliente.MailFacturaElectronico;
             }
         }
+        #endregion
 
         #region Metodos
         /// <summary>
@@ -158,11 +185,19 @@ namespace Formularios_TP4
                 }
             }
         }
-        #endregion
-
-        private void btnVolver_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Metodo que muestra las ecepciones creadas a modo de lista de errores
+        /// </summary>
+        /// <param name="ex"></param>
+        private void VentanaDeErrores(List<Exception> ex)
         {
-            this.Close();
+            StringBuilder sb = new StringBuilder();
+            foreach (Exception e in ex)
+            {
+                sb.AppendLine($"{e.Message}");
+            }
+            MessageBox.Show(sb.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+        #endregion
     }
 }

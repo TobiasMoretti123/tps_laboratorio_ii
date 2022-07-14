@@ -12,7 +12,7 @@ namespace TP4Test
         [TestMethod]
         public void PropiedadPrecio_RetornaElPrecioSegunElTipoResistencia()
         {
-            Cilindro cilindrofisico = new Cilindro(120, Cilindro.ETipoResistencia.Fisica);
+            Cilindro cilindrofisico = new Fisica(120, Cilindro.ETipoResistencia.Fisica);
             double actual = cilindrofisico.Precio;
             double expected = 26000;
 
@@ -52,8 +52,9 @@ namespace TP4Test
         }
 
         [TestMethod]
-        public void MetodoCargarCliente_DeberiaUtilizarElClienteQuePasoPorNombre()
+        public void MetodoCargarCliente_RetornaElClienteQuePasoPorNombre()
         {
+            //Simulacion del metodo que se encuentra en el formUsuario.
             ClienteDao clienteDao = new ClienteDao();
             Cliente cliente = new Cliente();
             Cliente clienteEsperado = new Cliente("INPACO", "Costanera 1968", Cliente.ENacionalidad.Argentina, "30710969619", "Hernesto Gonzales", "1149415237", "arcorargentina@gmail.com", "arcorfacturas@gmail.com");

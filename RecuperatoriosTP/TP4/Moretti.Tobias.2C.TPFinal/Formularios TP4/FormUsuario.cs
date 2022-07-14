@@ -13,8 +13,12 @@ using Excepciones;
 
 namespace Formularios_TP4
 {
+    /// <summary>
+    /// Formulario manejador del usuario, este es el primero en abrirse
+    /// </summary>
     public partial class FormUsuario : Form
     {
+        #region Atributos
         /// <summary>
         /// Atributo privado del cliente
         /// </summary>
@@ -27,19 +31,24 @@ namespace Formularios_TP4
         /// Atributo privado de la base de datos de cliente
         /// </summary>
         private ClienteDao clienteDao;
+        #endregion
+
+        #region Constructores
+        /// <summary>
+        /// Inicializa el formulario
+        /// </summary>
         public FormUsuario()
         {
             InitializeComponent();
         }
+        #endregion
 
-        private void FormUsuario_Load(object sender, EventArgs e)
-        {
-            clienteDao = new ClienteDao();
-            cliente = new Cliente();
-            empresa = new Empresa("Rotadyne", "Av. Rodríguez Peña 3095", "Argentina", "30123456789", "Tobias Moretti",
-                "41591556", "rotadyneargentina@gmail.com", "rotadyneconsultas@gmail.com");
-        }
-
+        #region Botones
+        /// <summary>
+        /// Boton ingresar llama al metodo de cargar cliente si su nombre es valido 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             try
@@ -58,9 +67,31 @@ namespace Formularios_TP4
                 VentanaDeError(ex);
             }
         }
+        #endregion
 
+        #region Eventos
+        /// <summary>
+        /// Al cargar el formulario inicializa el cliente, la base de datos y la empresa con sus datos predefinidos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FormUsuario_Load(object sender, EventArgs e)
+        {
+            clienteDao = new ClienteDao();
+            cliente = new Cliente();
+            empresa = new Empresa("Rotadyne", "Av. Rodríguez Peña 3095", "Argentina", "30123456789", "Tobias Moretti",
+                "41591556", "rotadyneargentina@gmail.com", "rotadyneconsultas@gmail.com");
+        }
+        #endregion
+
+        #region Metodos 
+        /// <summary>
+        /// Establece lo ingresado en el textbox como razon social del cliente.
+        /// Si este cliente ya esta en la base de datos se abrira el formulario manejador del menu normal.
+        /// Si este cliente es nuevo, se abrira el formulario manejador del ingreso.
+        /// </summary>
         private void CargarCliente()
-        {   
+        {
             cliente.RazonSocial = txtUsuario.Text;
 
             foreach (Cliente c in clienteDao.LeerCliente())
@@ -75,7 +106,7 @@ namespace Formularios_TP4
                     this.Close();
                 }
 
-                if(cliente.RazonSocial == empresa.NombreEmpresa)
+                if (cliente.RazonSocial == empresa.NombreEmpresa)
                 {
                     MessageBox.Show($"Ingreso como empresa, se abrira menu principal", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     FormMenu formMenu = new FormMenu(cliente, empresa);
@@ -100,5 +131,6 @@ namespace Formularios_TP4
             sb.AppendLine($"Error: {ex.Message}");
             MessageBox.Show(sb.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+        #endregion
     }  
 }

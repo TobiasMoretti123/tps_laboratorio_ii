@@ -4,9 +4,9 @@ using System.Text;
 namespace Biblioteca
 {
     /// <summary>
-    /// Clase publica cilindro
+    /// Clase abstracta cilindro
     /// </summary>
-    public class Cilindro
+    public abstract class Cilindro
     {
         #region Atributos
         /// <summary>
@@ -44,26 +44,12 @@ namespace Biblioteca
             set => this.tamanio = value;
         }
         /// <summary>
-        /// Propiedad virtual para establecer y obtener el precio de las clases que la heredan
+        /// Propiedad abstracta para establecer y obtener el precio de las clases que la heredan
         /// </summary>
-        public int Precio
+        public abstract int Precio
         {
-            get
-            {
-                if(this.tipoResistencia is ETipoResistencia.Fisica)
-                {
-                    return this.tamanio.CacularPrecio(ETipoResistencia.Fisica);
-                }
-                else if(this.tipoResistencia is ETipoResistencia.Quimica)
-                {
-                    return this.tamanio.CacularPrecio(ETipoResistencia.Quimica);
-                }
-                else 
-                {
-                    return this.tamanio.CacularPrecio(ETipoResistencia.Termica);
-                }
-            }
-            set => this.precio = value;
+            get;
+            set;
         }
         /// <summary>
         /// Propiedad que establece y obtiene el tipo de resistencia de un cilindro

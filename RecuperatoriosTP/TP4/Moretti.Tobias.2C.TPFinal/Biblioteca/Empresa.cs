@@ -182,6 +182,11 @@ namespace Biblioteca
             sb.AppendLine($"Telefono: {this.telefonoEmpresa}");
             sb.AppendLine($"Mail: {this.mailEmpresa} ");
             sb.AppendLine($"Mail De Consultas: {this.mailConsultaEmpresa} ");
+            sb.AppendLine($"Nuestros Clientes:");
+            foreach(Cliente c in clientes)
+            {
+                sb.AppendLine(c.RazonSocial);
+            }
             return sb.ToString();
         }
         #endregion
@@ -193,7 +198,7 @@ namespace Biblioteca
         /// <param name="em"></param>
         /// <param name="cl"></param>
         /// <returns>La empresa con el cliente agregado</returns>
-        public static Empresa operator +(Empresa em, Cliente cl)
+        public static Empresa operator + (Empresa em, Cliente cl)
         {
             if (em == cl)
             {
@@ -225,7 +230,7 @@ namespace Biblioteca
         /// <param name="em"></param>
         /// <param name="cl"></param>
         /// <returns></returns>
-        public static bool operator ==(Empresa em, Cliente cl)
+        public static bool operator == (Empresa em, Cliente cl)
         {
             foreach (Cliente c in em.clientes)
             {

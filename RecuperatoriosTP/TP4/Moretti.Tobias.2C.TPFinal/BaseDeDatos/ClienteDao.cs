@@ -117,7 +117,20 @@ namespace BaseDeDatos
                 {
                     int tamanioCilindro = reader.GetInt32(0);
                     int tipoCilindro = reader.GetInt32(1);
-                    Cilindro cilindro = new Cilindro(tamanioCilindro, (Cilindro.ETipoResistencia)tipoCilindro);
+                    Cilindro cilindro = new Fisica();
+                    Cilindro.ETipoResistencia resistencia = (Cilindro.ETipoResistencia)tipoCilindro;
+                    switch (tipoCilindro)
+                    {
+                        case 0:
+                            cilindro = new Fisica(tamanioCilindro,resistencia);
+                            break;
+                        case 1:
+                            cilindro = new Quimica(tamanioCilindro, resistencia);
+                            break;
+                        case 2:
+                            cilindro = new Termica(tamanioCilindro, resistencia);
+                            break;
+                    }
 
                     lista.Add(cilindro);
                 }
