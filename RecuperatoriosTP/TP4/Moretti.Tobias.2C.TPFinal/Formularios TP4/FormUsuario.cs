@@ -96,6 +96,7 @@ namespace Formularios_TP4
 
             foreach (Cliente c in clienteDao.LeerCliente())
             {
+                empresa += c;
                 if (c == cliente)
                 {
                     cliente = c;

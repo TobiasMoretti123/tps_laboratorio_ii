@@ -183,10 +183,6 @@ namespace Biblioteca
             sb.AppendLine($"Mail: {this.mailEmpresa} ");
             sb.AppendLine($"Mail De Consultas: {this.mailConsultaEmpresa} ");
             sb.AppendLine($"Nuestros Clientes:");
-            foreach(Cliente c in clientes)
-            {
-                sb.AppendLine(c.RazonSocial);
-            }
             return sb.ToString();
         }
         #endregion
