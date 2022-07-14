@@ -182,7 +182,6 @@ namespace Biblioteca
             sb.AppendLine($"Telefono: {this.telefonoEmpresa}");
             sb.AppendLine($"Mail: {this.mailEmpresa} ");
             sb.AppendLine($"Mail De Consultas: {this.mailConsultaEmpresa} ");
-            sb.AppendLine($"Nuestros Clientes:");
             return sb.ToString();
         }
         #endregion
