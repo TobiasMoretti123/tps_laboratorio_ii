@@ -33,6 +33,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.btnIngresar = new System.Windows.Forms.Button();
+            this.lblContrasenia = new System.Windows.Forms.Label();
+            this.txtContrasenia = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,7 +68,7 @@
             // btnIngresar
             // 
             this.btnIngresar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnIngresar.Location = new System.Drawing.Point(35, 184);
+            this.btnIngresar.Location = new System.Drawing.Point(35, 275);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(253, 34);
             this.btnIngresar.TabIndex = 4;
@@ -74,11 +76,31 @@
             this.btnIngresar.UseVisualStyleBackColor = true;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
+            // lblContrasenia
+            // 
+            this.lblContrasenia.AutoSize = true;
+            this.lblContrasenia.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblContrasenia.Location = new System.Drawing.Point(35, 190);
+            this.lblContrasenia.Name = "lblContrasenia";
+            this.lblContrasenia.Size = new System.Drawing.Size(144, 21);
+            this.lblContrasenia.TabIndex = 6;
+            this.lblContrasenia.Text = "Ingrese Contraseña";
+            // 
+            // txtContrasenia
+            // 
+            this.txtContrasenia.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtContrasenia.Location = new System.Drawing.Point(35, 217);
+            this.txtContrasenia.Name = "txtContrasenia";
+            this.txtContrasenia.Size = new System.Drawing.Size(253, 29);
+            this.txtContrasenia.TabIndex = 5;
+            // 
             // FormUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(325, 230);
+            this.ClientSize = new System.Drawing.Size(325, 321);
+            this.Controls.Add(this.lblContrasenia);
+            this.Controls.Add(this.txtContrasenia);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.pictureBox1);
@@ -102,5 +124,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Button btnIngresar;
+        private System.Windows.Forms.Label lblContrasenia;
+        private System.Windows.Forms.TextBox txtContrasenia;
     }
 }

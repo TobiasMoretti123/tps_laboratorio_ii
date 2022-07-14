@@ -31,15 +31,20 @@ namespace Formularios_TP4
         /// Atributo privado de la base de datos de cliente
         /// </summary>
         private ClienteDao clienteDao;
+        /// <summary>
+        /// Atributo privado para la contraseña de todos los usuarios
+        /// </summary>
+        private string contrasenia;
         #endregion
 
         #region Constructores
         /// <summary>
-        /// Inicializa el formulario
+        /// Inicializa el formulario y establece la contraseña
         /// </summary>
         public FormUsuario()
         {
             InitializeComponent();
+            contrasenia = "19789";
         }
         #endregion
 
@@ -55,10 +60,14 @@ namespace Formularios_TP4
             {
                 if (string.IsNullOrEmpty(txtUsuario.Text.ValidarNombre()))
                 {
-                    throw new ParametrosVaciosException("El usuario no puede ser vacio o numeros");
+                    throw new ParametrosVaciosException("El usuario no puede ser numeros o vacio");
                 }
                 else
                 {
+                    if(txtContrasenia.Text != contrasenia)
+                    {
+                        throw new ContraseniaIncorrectaExeption("Contraseña invalida, intentelo nuevamente");
+                    }
                     CargarCliente();
                 }
             }
@@ -66,6 +75,15 @@ namespace Formularios_TP4
             {
                 VentanaDeError(ex);
             }
+            catch (ContraseniaIncorrectaExeption ex)
+            {
+                VentanaDeError(ex);
+            }
+            catch(Exception ex)
+            {
+                VentanaDeError(ex);
+            }
+
         }
         #endregion
 
@@ -101,26 +119,22 @@ namespace Formularios_TP4
                 {
                     cliente = c;
                     MessageBox.Show($"Cliente ya ingresado, se abrira menu principal", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    FormMenu formMenu = new FormMenu(cliente, empresa);
-                    this.Hide();
-                    formMenu.ShowDialog();
-                    this.Close();
+                    AbrirMenu();
                 }
-
                 if (cliente.RazonSocial == empresa.NombreEmpresa)
                 {
                     MessageBox.Show($"Ingreso como empresa, se abrira menu principal", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    FormMenu formMenu = new FormMenu(cliente, empresa);
-                    this.Hide();
-                    formMenu.ShowDialog();
-                    this.Close();
+                    AbrirMenu();
                 }
-            }
+
+            } 
+
             MessageBox.Show($"Nuevo Cliente, se abrira ingreso para completar los datos", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             FormIngreso formIngreso = new FormIngreso(cliente, empresa);
             this.Hide();
             formIngreso.ShowDialog();
             this.Close();
+
         }
         /// <summary>
         /// Metodo encargado de mostrar cualquier excepcion como un error
@@ -132,6 +146,16 @@ namespace Formularios_TP4
             sb.AppendLine($"Error: {ex.Message}");
             MessageBox.Show(sb.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+        /// <summary>
+        /// Abre el menu principal
+        /// </summary>
+        private void AbrirMenu()
+        {
+            FormMenu formMenu = new FormMenu(cliente, empresa);
+            this.Hide();
+            formMenu.ShowDialog();
+            this.Close();
+        }
         #endregion
-    }  
+    }
 }

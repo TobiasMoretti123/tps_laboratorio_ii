@@ -77,7 +77,8 @@ namespace Formularios_TP4
                     CrearCarpeta();
                     txt.Guardar(CrearCarpeta() + "\\Consultas.txt", Contenido);
                     Contenido = string.Empty;
-                    MessageBox.Show($"Su consulata a sido enviada a {empresa.MailConsultaEmpresa}", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Su consulta a sido enviada a {empresa.MailConsultaEmpresa}", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
                 }
                 catch (Exception ex)
                 {

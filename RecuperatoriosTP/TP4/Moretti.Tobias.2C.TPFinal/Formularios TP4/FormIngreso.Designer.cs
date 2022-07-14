@@ -226,7 +226,11 @@
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.cmbNacionalidad);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormIngreso";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingrese sus Datos";
             this.Load += new System.EventHandler(this.FormIngreso_Load);
             this.ResumeLayout(false);
