@@ -35,6 +35,10 @@ namespace Formularios_TP4
         /// Atributo privado para la contraseña de todos los usuarios
         /// </summary>
         private string contrasenia;
+        /// <summary>
+        /// Atributo privado para la contraseña de la empresa
+        /// </summary>
+        private string contraseniaEmpresa;
         #endregion
 
         #region Constructores
@@ -45,6 +49,7 @@ namespace Formularios_TP4
         {
             InitializeComponent();
             contrasenia = "19789";
+            contraseniaEmpresa = "98791";
         }
         #endregion
 
@@ -64,10 +69,6 @@ namespace Formularios_TP4
                 }
                 else
                 {
-                    if(txtContrasenia.Text != contrasenia)
-                    {
-                        throw new ContraseniaIncorrectaExeption("Contraseña invalida, intentelo nuevamente");
-                    }
                     CargarCliente();
                 }
             }
@@ -79,7 +80,7 @@ namespace Formularios_TP4
             {
                 VentanaDeError(ex);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 VentanaDeError(ex);
             }
@@ -112,29 +113,38 @@ namespace Formularios_TP4
         {
             cliente.RazonSocial = txtUsuario.Text;
 
+            if(txtContrasenia.Text != contrasenia && txtContrasenia.Text != contraseniaEmpresa)
+            {
+                throw new ContraseniaIncorrectaExeption("Contraseña invalida intentelo nuevamente");
+            }
             foreach (Cliente c in clienteDao.LeerCliente())
             {
                 empresa += c;
+                
                 if (c == cliente)
                 {
                     cliente = c;
                     MessageBox.Show($"Cliente ya ingresado, se abrira menu principal", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     AbrirMenu();
                 }
-                if (cliente.RazonSocial == empresa.NombreEmpresa)
-                {
-                    MessageBox.Show($"Ingreso como empresa, se abrira menu principal", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    AbrirMenu();
-                }
-
-            } 
-
-            MessageBox.Show($"Nuevo Cliente, se abrira ingreso para completar los datos", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            FormIngreso formIngreso = new FormIngreso(cliente, empresa);
-            this.Hide();
-            formIngreso.ShowDialog();
-            this.Close();
-
+            }
+            if (cliente.RazonSocial == empresa.NombreEmpresa && txtContrasenia.Text == contraseniaEmpresa)
+            {
+                MessageBox.Show($"Ingreso como empresa, se abrira menu principal", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                AbrirMenu();
+            }
+            else if(cliente.RazonSocial != empresa.NombreEmpresa && txtContrasenia.Text != contraseniaEmpresa)
+            {
+                MessageBox.Show($"Nuevo Cliente, se abrira ingreso para completar los datos", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                FormIngreso formIngreso = new FormIngreso(cliente, empresa);
+                this.Hide();
+                formIngreso.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                throw new ContraseniaIncorrectaExeption("Contraseña invalida intentelo nuevamente");
+            }
         }
         /// <summary>
         /// Metodo encargado de mostrar cualquier excepcion como un error
