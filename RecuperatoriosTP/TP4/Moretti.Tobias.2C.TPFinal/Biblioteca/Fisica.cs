@@ -47,7 +47,7 @@ namespace Biblioteca
 
         }
         /// <summary>
-        /// Contructor que establece todos los parametros del cilindro con resistencia fisica
+        /// Contructor que establece todos los parametros del cilindro con resistencia fisica menos id
         /// utilizando el constructor de la base
         /// </summary>
         /// <param name="tamanio"></param>
@@ -56,6 +56,17 @@ namespace Biblioteca
             : base(tamanio, tipoResistencia)
         {
 
+        }
+        /// <summary>
+        /// Constructor parametrizado de cilindro que establece todos los datos del cilindro con resistencia fisica
+        /// </summary>
+        /// <param name="idCilindro"></param>
+        /// <param name="tamanio"></param>
+        /// <param name="tipoResistencia"></param>
+        public Fisica(int idCilindro, int tamanio, ETipoResistencia tipoResistencia)
+            : base(idCilindro,tamanio, tipoResistencia)
+        {
+            
         }
         #endregion
 

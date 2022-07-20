@@ -12,6 +12,7 @@ using Biblioteca;
 using Archivos;
 using static System.Environment;
 using BaseDeDatos;
+using Excepciones;
 
 namespace Formularios_TP4
 {
@@ -34,10 +35,6 @@ namespace Formularios_TP4
         /// </summary>
         private ClienteDao clienteDao;
         /// <summary>
-        /// Atributo privado manejador del archivo xml
-        /// </summary>
-        private Xml<Cliente> xml;
-        /// <summary>
         /// Atributo privado manejador de eventos
         /// </summary>
         private Eventos eventos;
@@ -57,12 +54,11 @@ namespace Formularios_TP4
             clienteAux = cliente;
             this.clienteDao = new ClienteDao();
             this.eventos = new Eventos();
-            this.xml = new Xml<Cliente>();
+            txtCantidadCilindros.Text = string.Empty;
             eventos.OnLeer += MostrarCilindros;
-    
         }
         #endregion
-       
+
         #region Botones
         /// <summary>
         /// Boton comprar agrega el producto seleccionado a un carrito de compra temporal.
@@ -72,11 +68,31 @@ namespace Formularios_TP4
         private void btnComprar_Click(object sender, EventArgs e)
         {
             Cilindro cilindro = lstbProductos.SelectedItem as Cilindro;
-            btnConfirmar.Enabled = true;
-            if (cilindro is not null)
+            try
             {
-                clienteAux += cilindro;              
-                MessageBox.Show($"Usted acaba de comprar un cilindro de goma tiene {cliente.Cilindros.Count} en el carrito\nPrecione el boton confirmar para finalizar su compra", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (string.IsNullOrEmpty(txtCantidadCilindros.Text))
+                {
+                    throw new ParametrosVaciosException("La cantidad no puede estar vacia");
+                }
+                if(int.Parse(txtCantidadCilindros.Text) <= 0)
+                {
+                    throw new ParametrosVaciosException("La cantidad no puede ser 0 o negativo");
+                }
+                int cantidadCilindros = int.Parse(txtCantidadCilindros.Text);
+                btnVerCompra.Enabled = true;
+                if (cilindro is not null)
+                {
+                    for (int i = 0; i < cantidadCilindros; i++)
+                    {
+                        clienteAux += cilindro;
+                    }
+                    MessageBox.Show($"Usted acaba de comprar {cantidadCilindros} cilindros de goma con resistencia {cilindro.TipoResistencia} tiene {cliente.Cilindros.Count} en el carrito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                txtCantidadCilindros.Text = string.Empty;
+            }
+            catch (ParametrosVaciosException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         /// <summary>
@@ -88,42 +104,12 @@ namespace Formularios_TP4
         {
             this.Close();
         }
-        /// <summary>
-        /// Boton confirmar confirma la compra agregando los productos al cliente actual.
-        /// Una vez finalizado imprime una factura y se guarda en un xml.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnConfirmar_Click(object sender, EventArgs e)
+        private void btnVerCompra_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show($"¿Seguro desea confirmar su compra?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialogResult == DialogResult.Yes)
-            {
-                try
-                {
-                    cliente = clienteAux;
-                    foreach (Cliente c in clienteDao.LeerCliente())
-                    {
-                        if (c == cliente)
-                        {
-                            cliente.IdCliente = c.IdCliente;
-                        }
-                    }
-                    foreach (Cliente c in clienteDao.LeerCliente())
-                    {
-                        if (cliente.IdCliente == c.IdCliente)
-                        {
-                            MessageBox.Show($"Su factura a sido enviada a {cliente.MailFacturaElectronico}\nDetalles de compra:\n{cliente.MostrarCliente()}", "Factura", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                    xml.Guardar(CrearCarpeta() + "\\Compras.xml", cliente);
-                    this.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
+            FormListaProductos frmListaProductos = new FormListaProductos(clienteAux);
+            this.Hide();
+            frmListaProductos.ShowDialog();
+            this.Close();
         }
         #endregion
 
@@ -144,7 +130,7 @@ namespace Formularios_TP4
             hilo.Start();
             if (cliente.Cilindros.Count == 0)
             {
-                btnConfirmar.Enabled = false;
+                btnVerCompra.Enabled = false;
             }
         }
         #endregion
@@ -172,19 +158,8 @@ namespace Formularios_TP4
                 }
             }
         }
-        /// <summary>
-        /// Crea una carpeta en el escritorio donde se guarda el archivo xml
-        /// </summary>
-        /// <returns>El path donde se encuentra la carpeta</returns>
-        public string CrearCarpeta()
-        {
-            string folderPath = GetFolderPath(SpecialFolder.Desktop) + "\\Carpeta Archivos Tobias MorettiTP4";
-            if (!Directory.Exists(folderPath))
-            {
-                Directory.CreateDirectory(folderPath);
-            }
-            return folderPath;
-        }
         #endregion
+
+       
     }
 }

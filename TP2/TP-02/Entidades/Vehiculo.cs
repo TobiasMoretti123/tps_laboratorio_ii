@@ -70,7 +70,7 @@ namespace Entidades
         /// <returns></returns>
         public static bool operator !=(Vehiculo v1, Vehiculo v2)
         {
-            return (v1.chasis == v2.chasis);
+            return !(v1 == v2);
         }
 
         public Vehiculo (string chasis,EMarca marca, ConsoleColor color)

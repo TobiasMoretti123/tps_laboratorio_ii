@@ -99,52 +99,6 @@ namespace BaseDeDatos
             }
         }
         /// <summary>
-        /// Lee la base de datos del cilindro utilizando una query y establece cada dato que lee de ella en un cilindro
-        /// luego lo agrega a una lista de cilindros. Al terminar de leer y agregar cierra la conexion
-        /// </summary>
-        /// <returns>La lista de los cilindros leidos</returns>
-        public List<Cilindro> LeerCilindro()
-        {
-            List<Cilindro> lista = new List<Cilindro>();
-            try
-            {
-                sqlConnection.Open();
-                SqlCommand sqlCommand = new SqlCommand("Select * FROM Cilindros", sqlConnection);
-                SqlDataReader reader = sqlCommand.ExecuteReader();
-                StringBuilder stringBuilder = new StringBuilder();
-
-                while (reader.Read())
-                {
-                    int tamanioCilindro = reader.GetInt32(0);
-                    int tipoCilindro = reader.GetInt32(1);
-                    Cilindro cilindro = new Fisica();
-                    Cilindro.ETipoResistencia resistencia = (Cilindro.ETipoResistencia)tipoCilindro;
-                    switch (tipoCilindro)
-                    {
-                        case 0:
-                            cilindro = new Fisica(tamanioCilindro,resistencia);
-                            break;
-                        case 1:
-                            cilindro = new Quimica(tamanioCilindro, resistencia);
-                            break;
-                        case 2:
-                            cilindro = new Termica(tamanioCilindro, resistencia);
-                            break;
-                    }
-
-                    lista.Add(cilindro);
-                }
-                return lista;
-            }
-            finally
-            {
-                if (sqlConnection.State == ConnectionState.Open)
-                {
-                    sqlConnection.Close();
-                }
-            }
-        }
-        /// <summary>
         /// Modifica a un cliente de la base de datos en base a su id utilizando una query
         /// Cuando termina cierra la conexion
         /// </summary>
@@ -188,6 +142,53 @@ namespace BaseDeDatos
                 SqlCommand sqlCommand = new SqlCommand("DELETE FROM Clientes WHERE idCliente = @idBuscado", sqlConnection);
                 sqlCommand.Parameters.AddWithValue("idBuscado", id);
                 sqlCommand.ExecuteNonQuery();
+            }
+            finally
+            {
+                if (sqlConnection.State == ConnectionState.Open)
+                {
+                    sqlConnection.Close();
+                }
+            }
+        }
+        /// <summary>
+        /// Lee la base de datos del cilindro utilizando una query y establece cada dato que lee de ella en un cilindro
+        /// luego lo agrega a una lista de cilindros. Al terminar de leer y agregar cierra la conexion
+        /// </summary>
+        /// <returns>La lista de los cilindros leidos</returns>
+        public List<Cilindro> LeerCilindro()
+        {
+            List<Cilindro> lista = new List<Cilindro>();
+            try
+            {
+                sqlConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand("Select * FROM Cilindros", sqlConnection);
+                SqlDataReader reader = sqlCommand.ExecuteReader();
+                StringBuilder stringBuilder = new StringBuilder();
+
+                while (reader.Read())
+                {
+                    int idCilindro = reader.GetInt32(0);
+                    int tamanioCilindro = reader.GetInt32(1);
+                    int tipoCilindro = reader.GetInt32(2);
+                    Cilindro cilindro = new Fisica();
+                    Cilindro.ETipoResistencia resistencia = (Cilindro.ETipoResistencia)tipoCilindro;
+                    switch (tipoCilindro)
+                    {
+                        case 0:
+                            cilindro = new Fisica(idCilindro,tamanioCilindro, resistencia);
+                            break;
+                        case 1:
+                            cilindro = new Quimica(idCilindro,tamanioCilindro, resistencia);
+                            break;
+                        case 2:
+                            cilindro = new Termica(idCilindro,tamanioCilindro, resistencia);
+                            break;
+                    }
+
+                    lista.Add(cilindro);
+                }
+                return lista;
             }
             finally
             {

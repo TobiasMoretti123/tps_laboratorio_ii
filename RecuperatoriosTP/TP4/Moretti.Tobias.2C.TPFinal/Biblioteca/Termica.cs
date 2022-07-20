@@ -30,14 +30,14 @@ namespace Biblioteca
 
         #region Constructores
         /// <summary>
-        /// Contructor sin parametros de cilindro con resistencia quimica
+        /// Contructor sin parametros de cilindro con resistencia termica
         /// </summary>
         public Termica()
         {
 
         }
         /// <summary>
-        /// Contructor que solo establece el tamaño del cilindro con resistencia quimica
+        /// Contructor que solo establece el tamaño del cilindro con resistencia termica
         /// utilizando el constructor de la base
         /// </summary>
         /// <param name="tamanio"></param>
@@ -47,7 +47,7 @@ namespace Biblioteca
 
         }
         /// <summary>
-        /// Contructor que establece todos los parametros del cilindro con resistencia quimica
+        /// Contructor que establece todos los parametros del cilindro con resistencia termica menos id
         /// utilizando el constructor de la base
         /// </summary>
         /// <param name="tamanio"></param>
@@ -57,11 +57,22 @@ namespace Biblioteca
         {
 
         }
+        /// <summary>
+        /// Constructor parametrizado de cilindro que establece todos los datos del cilindro con resistencia Termica
+        /// </summary>
+        /// <param name="idCilindro"></param>
+        /// <param name="tamanio"></param>
+        /// <param name="tipoResistencia"></param>
+        public Termica(int idCilindro, int tamanio, ETipoResistencia tipoResistencia)
+            : base(idCilindro, tamanio, tipoResistencia)
+        {
+
+        }
         #endregion
 
         #region Sobrecargas
         /// <summary>
-        /// Sobrecarga del metodo TuString de quimica
+        /// Sobrecarga del metodo TuString de termica
         /// </summary>
         /// <returns>Retorna la sobrecarga del metodo TuString de la base</returns>
         public override string ToString()

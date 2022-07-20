@@ -10,6 +10,10 @@ namespace Biblioteca
     {
         #region Atributos
         /// <summary>
+        /// Atributo privado del id del cilindro
+        /// </summary>
+        private int idCilindro;
+        /// <summary>
         /// Atributo privado del tamaño del cilindro
         /// </summary>
         private int tamanio;
@@ -35,6 +39,14 @@ namespace Biblioteca
         #endregion
 
         #region Propiedades
+        /// <summary>
+        /// Propiedad para establecer y obtener el id de un cilindro
+        /// </summary>
+        public int IdCilindro
+        {
+            get => this.idCilindro;
+            set => this.idCilindro = value;
+        }
         /// <summary>
         /// Propiedad para establecer y obtener el tamaño de un cilindro
         /// </summary>
@@ -78,7 +90,7 @@ namespace Biblioteca
             this.Tamanio = tamanio;
         }
         /// <summary>
-        /// Constructor parametrizado de cilindro que establece todos los datos del cilindro
+        /// Constructor parametrizado de cilindro que establece todos los datos del cilindro menos el ID
         /// </summary>
         /// <param name="tamanio"></param>
         /// <param name="tipoResistencia"></param>
@@ -86,6 +98,17 @@ namespace Biblioteca
             : this(tamanio)
         {
             this.tipoResistencia = tipoResistencia;
+        }
+        /// <summary>
+        /// Constructor parametrizado de cilindro que establece todos los datos del cilindro
+        /// </summary>
+        /// <param name="idCilindro"></param>
+        /// <param name="tamanio"></param>
+        /// <param name="tipoResistencia"></param>
+        public Cilindro(int idCilindro,int tamanio, ETipoResistencia tipoResistencia)
+            : this(tamanio,tipoResistencia)
+        {
+            this.idCilindro = idCilindro;
         }
         #endregion
 

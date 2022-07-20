@@ -47,13 +47,24 @@ namespace Biblioteca
 
         }
         /// <summary>
-        /// Contructor que establece todos los parametros del cilindro con resistencia quimica
+        /// Contructor que establece todos los parametros del cilindro con resistencia quimica menos id
         /// utilizando el constructor de la base
         /// </summary>
         /// <param name="tamanio"></param>
         /// <param name="tipoResistencia"></param>
         public Quimica(int tamanio, Cilindro.ETipoResistencia tipoResistencia)
             : base(tamanio, tipoResistencia)
+        {
+
+        }
+        /// <summary>
+        /// Constructor parametrizado de cilindro que establece todos los datos del cilindro con resistencia quimica
+        /// </summary>
+        /// <param name="idCilindro"></param>
+        /// <param name="tamanio"></param>
+        /// <param name="tipoResistencia"></param>
+        public Quimica(int idCilindro, int tamanio, ETipoResistencia tipoResistencia)
+            : base(idCilindro, tamanio, tipoResistencia)
         {
 
         }

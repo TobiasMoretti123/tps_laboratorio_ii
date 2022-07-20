@@ -39,3 +39,4 @@ D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosT
 D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios_TP4.FormEliminar.resources
 D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios_TP4.FormInformacion.resources
 D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios_TP4.FormModificar.resources
+D:\Facu\Programacion Laboratorio II\Proyectos\tps_laboratorio_ii\RecuperatoriosTP\TP4\Moretti.Tobias.2C.TPFinal\Formularios TP4\obj\Debug\net5.0-windows\Formularios_TP4.FormListaProductos.resources

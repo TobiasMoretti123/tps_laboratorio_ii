@@ -32,7 +32,9 @@
             this.lblProductos = new System.Windows.Forms.Label();
             this.btnComprar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
-            this.btnConfirmar = new System.Windows.Forms.Button();
+            this.btnVerCompra = new System.Windows.Forms.Button();
+            this.txtCantidadCilindros = new System.Windows.Forms.TextBox();
+            this.lblCantidadCilindros = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lstbProductos
@@ -56,7 +58,7 @@
             // 
             // btnComprar
             // 
-            this.btnComprar.Location = new System.Drawing.Point(490, 72);
+            this.btnComprar.Location = new System.Drawing.Point(490, 179);
             this.btnComprar.Name = "btnComprar";
             this.btnComprar.Size = new System.Drawing.Size(134, 52);
             this.btnComprar.TabIndex = 2;
@@ -74,22 +76,42 @@
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // btnConfirmar
+            // btnVerCompra
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(490, 216);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(134, 52);
-            this.btnConfirmar.TabIndex = 4;
-            this.btnConfirmar.Text = "Confirmar Compra";
-            this.btnConfirmar.UseVisualStyleBackColor = true;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            this.btnVerCompra.Location = new System.Drawing.Point(490, 277);
+            this.btnVerCompra.Name = "btnVerCompra";
+            this.btnVerCompra.Size = new System.Drawing.Size(134, 52);
+            this.btnVerCompra.TabIndex = 4;
+            this.btnVerCompra.Text = "Ver Carrito";
+            this.btnVerCompra.UseVisualStyleBackColor = true;
+            this.btnVerCompra.Click += new System.EventHandler(this.btnVerCompra_Click);
+            // 
+            // txtCantidadCilindros
+            // 
+            this.txtCantidadCilindros.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCantidadCilindros.Location = new System.Drawing.Point(490, 96);
+            this.txtCantidadCilindros.Name = "txtCantidadCilindros";
+            this.txtCantidadCilindros.Size = new System.Drawing.Size(134, 29);
+            this.txtCantidadCilindros.TabIndex = 5;
+            // 
+            // lblCantidadCilindros
+            // 
+            this.lblCantidadCilindros.AutoSize = true;
+            this.lblCantidadCilindros.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCantidadCilindros.Location = new System.Drawing.Point(490, 72);
+            this.lblCantidadCilindros.Name = "lblCantidadCilindros";
+            this.lblCantidadCilindros.Size = new System.Drawing.Size(72, 21);
+            this.lblCantidadCilindros.TabIndex = 6;
+            this.lblCantidadCilindros.Text = "Cantidad";
             // 
             // FormComprar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(682, 450);
-            this.Controls.Add(this.btnConfirmar);
+            this.Controls.Add(this.lblCantidadCilindros);
+            this.Controls.Add(this.txtCantidadCilindros);
+            this.Controls.Add(this.btnVerCompra);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnComprar);
             this.Controls.Add(this.lblProductos);
@@ -112,6 +134,8 @@
         private System.Windows.Forms.Label lblProductos;
         private System.Windows.Forms.Button btnComprar;
         private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.Button btnConfirmar;
+        private System.Windows.Forms.Button btnVerCompra;
+        private System.Windows.Forms.TextBox txtCantidadCilindros;
+        private System.Windows.Forms.Label lblCantidadCilindros;
     }
 }
