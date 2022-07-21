@@ -206,13 +206,13 @@ namespace Formularios_TP4
         /// <returns></returns>
         private List<Cilindro> ActualizarCarrito()
         {
-            List<Cilindro> list = new List<Cilindro>();
+            List<Cilindro> lista = new List<Cilindro>();
 
             foreach (Cilindro cilindro in cliente.Cilindros)
             {
-                list.Add(cilindro);
+                lista.Add(cilindro);
             }
-            return list;
+            return lista;
         }
         #endregion
     }

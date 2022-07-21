@@ -29,7 +29,6 @@ namespace Entidades
 
             sb.AppendLine("SUV");
             sb.AppendLine((string)this);
-            sb.AppendFormat("TAMAÑO : {0}", this.Tamanio);
             sb.AppendLine("");
             sb.AppendLine("---------------------");
 
