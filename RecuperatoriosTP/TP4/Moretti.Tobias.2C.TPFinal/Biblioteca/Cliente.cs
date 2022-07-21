@@ -13,7 +13,7 @@ namespace Biblioteca
     [XmlInclude(typeof(Fisica))]
     [XmlInclude(typeof(Quimica))]
     [XmlInclude(typeof(Termica))] 
-    public class Cliente
+    public class Cliente 
     {
         #region Atributos
         /// <summary>
@@ -55,7 +55,7 @@ namespace Biblioteca
         /// <summary>
         /// Atributo privado de los cilindros del cliente
         /// </summary>
-        private List<Cilindro> cilindros;    
+        private List<Cilindro> cilindros;
         #endregion
 
         #region Enumerados
