@@ -68,6 +68,7 @@ namespace Formularios_TP4
         private void btnComprar_Click(object sender, EventArgs e)
         {
             Cilindro cilindro = lstbProductos.SelectedItem as Cilindro;
+            int precioTotal = 0;
             try
             {
                 if (string.IsNullOrEmpty(txtCantidadCilindros.Text))
@@ -85,8 +86,9 @@ namespace Formularios_TP4
                     for (int i = 0; i < cantidadCilindros; i++)
                     {
                         clienteAux += cilindro;
+                        precioTotal += cilindro.Precio;
                     }
-                    MessageBox.Show($"Usted acaba de comprar {cantidadCilindros} cilindros de goma con resistencia {cilindro.TipoResistencia} tiene {cliente.Cilindros.Count} en el carrito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Usted acaba de comprar {cantidadCilindros} cilindros de goma con resistencia {cilindro.TipoResistencia}, Precio ${cilindro.Precio}.\nTiene {cliente.Cilindros.Count} en el carrito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 txtCantidadCilindros.Text = string.Empty;
             }

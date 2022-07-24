@@ -36,6 +36,7 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.lblCliente = new System.Windows.Forms.Label();
             this.lblCarrito = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lstCarrito
@@ -122,11 +123,22 @@
             this.lblCarrito.TabIndex = 7;
             this.lblCarrito.Text = "Carrito";
             // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTotal.Location = new System.Drawing.Point(446, 59);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(97, 21);
+            this.lblTotal.TabIndex = 8;
+            this.lblTotal.Text = "Total a Pagar";
+            // 
             // FormListaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.lblCarrito);
             this.Controls.Add(this.lblCliente);
             this.Controls.Add(this.btnVolver);
@@ -157,5 +169,6 @@
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Label lblCliente;
         private System.Windows.Forms.Label lblCarrito;
+        private System.Windows.Forms.Label lblTotal;
     }
 }

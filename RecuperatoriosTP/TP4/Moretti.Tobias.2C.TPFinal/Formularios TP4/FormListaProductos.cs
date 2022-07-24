@@ -136,6 +136,7 @@ namespace Formularios_TP4
                 {
                     cliente.Cilindros.Remove(cilindro);
                     MostrarCarrito();
+                    MensajeTotal();
                 }
             }
         }
@@ -160,6 +161,7 @@ namespace Formularios_TP4
         private void FormListaProductos_Load(object sender, EventArgs e)
         {
             lblCliente.Text = "Cliente: " + cliente.RazonSocial;
+            MensajeTotal();
             Task hilo = new Task(() =>
             {
                 eventos.LeerCilindro();
@@ -217,6 +219,16 @@ namespace Formularios_TP4
                 lista.Add(cilindro);
             }
             return lista;
+        }
+
+        private void MensajeTotal()
+        {
+            int total = 0;
+            foreach (Cilindro c in cliente.Cilindros)
+            {
+                total += c.Precio;
+                lblTotal.Text = "Total: $" + total.ToString();
+            }     
         }
         #endregion
     }
