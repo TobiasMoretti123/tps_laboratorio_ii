@@ -16,6 +16,9 @@ using Excepciones;
 
 namespace Formularios_TP4
 {
+    /// <summary>
+    /// Manejador del carrito de compra
+    /// </summary>
     public partial class FormListaProductos : Form
     {
         #region Atributos
@@ -83,6 +86,7 @@ namespace Formularios_TP4
                         }
                     }
                     xml.Guardar(CrearCarpeta() + "\\Compras.xml", cliente);
+                    cliente.Cilindros.Clear();
                     this.Close();
                 }
                 catch (Exception ex)
